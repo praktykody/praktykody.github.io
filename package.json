@@ -1,0 +1,17 @@
+{
+  "name": "taicoders.github.io",
+  "version": "1.0.0",
+  "description": "Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "docs:build": "markdown-docs build docs-src docs",
+     "docs:dev": "markdown-docs dev docs-src"
+
+  },
+  "author": "",
+  "license": "ISC"
+}
