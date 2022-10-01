@@ -34,10 +34,14 @@ i przeprowadź instalację z domyślnymi ustawieniami, poza domyślnym edytorem,
 
 ## Rozwiązania oparte na technologii GIT
 
-Jako rozproszony system kontroli wersji, Git nie wymaga odrębnej aplikacji serwerowej. Istnieją jednak pakiety rozszerzające oryginalne oprogramowanie, przede wszystkim o kontrolę dostępu, wsparcie dla zarządzania wieloma repozytoriami, czy interfejs WWW. Przykłady niektórych popularnych projektów to GitHub, Bitbucket, GitLab, Git Daemon, Gitolite, Gerrit, Gitiles, Bonobo Git Server, Git Server.
-
-![GitHub Octocat](./images/octocat.webp)
-
+<div style="display:flex">
+  <div style="flex:1;">
+    Jako rozproszony system kontroli wersji, Git nie wymaga odrębnej aplikacji serwerowej. Istnieją jednak pakiety rozszerzające oryginalne oprogramowanie, przede wszystkim o kontrolę dostępu, wsparcie dla zarządzania wieloma repozytoriami, czy interfejs WWW. Przykłady niektórych popularnych projektów to <b>GitHub, Bitbucket, GitLab, Git Daemon, Gitolite, Gerrit, Gitiles, Bonobo Git Server, Git Server.</b>
+  </div>
+  <div style="flex:1;">
+    <img src="./images/octocat.webp" alt="GitHub Octocat">
+  </div>
+</div>
 
 <div style="display:flex;justify-content:space-between;">
   <a href="./#/code_editors?id=edytory-kodu">Prev: 🖊️ Edytory kodu</a>
