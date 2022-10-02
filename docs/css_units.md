@@ -59,3 +59,74 @@ Relatywne jednostki bazują na
 ```
 
 ![Percents example](./images/css_units_percent.webp)
+
+### Rzuty 
+- viewport width
+- viewport height
+```css
+#vw{
+    background-color:red;
+    width:49vw;
+    height:49vh;
+}
+```
+![Viewports](./images/css_viewports.webp)
+
+### Wielkości czcionek - REM
+```html
+<div id="rodzic_rem">
+	<div class="rem">REM
+		<div class="rem">REM
+			<div class="rem">REM
+			</div>
+		</div>
+	</div>
+</div>
+```
+```css
+:root{
+	font-size:5px;
+}
+#rodzic_rem{
+	font-size: 15px;
+}
+.rem{
+	font-size:2rem;
+}
+```
+
+### Wielkości czcionek - EM
+```html
+<div id="rodzic_em">
+	<div class="em">EM
+		<div class="em">EM
+			<div class="em">EM</div>
+		</div>
+	</div>
+</div>
+```
+```css
+#rodzic_em{
+	font-size: 15px;
+}
+.em{
+	font-size:2em;
+}
+```
+![em units](./images/css_units_em.webp)
+
+
+
+## Media rule
+```css
+.divL,.divR{
+	width:50%;
+	height:50%;
+}
+@media only screen and (max-width: 600px) {
+	.divL,.divR{
+		width:100%;
+	}	
+}
+```
+![css media](./images/css_media.gif)

@@ -58,6 +58,37 @@ element.style {
 ![positions](./images/css_positions.gif)
 
 
+
+## box-sizing*
+```html
+<!-- <div class="box1 box-sizing"> -->
+<div class="box1">
+</div>
+
+
+<!-- <div class="box2 box-sizing"> -->
+<div class="box2">
+</div>
+```
+```css
+.box1,.box2{
+	border: 1px solid #000;
+	width:100px;
+	height:100px;
+}
+.box2{
+	padding:20px;
+}
+.box-sizing{
+	box-sizing:border-box;
+}
+```
+![box-sizing](./images/css_box_sizing.webp)
+
+
+
+
+
 <div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
   <a href="./#/css_overview?id=przeglĄd-cssa">Prev: 👁️ Przegląd CSS</a>
   <a href="./#/css_units?id=jednostki-css">Next: ⚽️ Jednostki</a>
