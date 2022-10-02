@@ -16,5 +16,5 @@ możesz pobrać te aktualizacje.
 
 <div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
   <a href="./#/version_control_systems?id=systemy-kontroli-wersji">Prev: 👌  Systemy kontroli wersji</a>
-  <a href="./#/html_overview">Next: 👀 HTML - Przegląd</a>
+  <a href="./#/html_overview?id=przeglĄd-htmla">Next: 👀 HTML - Przegląd</a>
 </div>

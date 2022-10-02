@@ -1,4 +1,4 @@
-- [Home](/)
+- [👨‍💻 Home](/)
 - Konfiguracja
 
   - [🖊️&nbsp;Edytory kodu](code_editors.md)
@@ -7,11 +7,11 @@
 
 - HTML 
 
-  - [👀&nbsp;Przegląd](html_overview.md)
-  - [Semantyka](html_overview.md)
-  - [Podstawowe Tagi](html_overview.md)
+  - [👀&nbsp;Przegląd HTML](html_overview.md)
+  - [🤖&nbsp;Tagi semantyczne](html_semantic_tags.md)
+  - [🏗️&nbsp;Tagi podstawowe](html_basic_tags.md)
   - [Ćwiczenia](html_overview.md)
 
 - CSS 
 
-  - [Przegląd](css_overview.md)
+  - [👁️&nbsp;Przegląd CSS](css_overview.md)
