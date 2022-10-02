@@ -1,10 +1,13 @@
 # PRZEGLĄD CSSA
-## Powstanie HTML
+## Powstanie CSS
 Kaskadowe arkusze stylów (ang. **Cascading Style Sheets**, w skrócie **CSS**) – język służący do opisu formy prezentacji stron WWW. 
 
 **Håkon Wium Lie** jako pierwszy zaproponował CHSS (Cascading HTML Style Sheets) w październiku 1994 roku.
 
 Pod koniec 1996 roku wydano oficjalną dokumentację CSS, Kaskadowe arkusze stylów, poziom 1.
+
+![Håkon Wium Lie](./images/css_hakon_lie.webp)
+
 
 ### Technologia 
 ![css and html](./images/css_tech.webp)
@@ -66,3 +69,11 @@ możemy użyć kilku klas na jeden tag:
 <!-- TODO: ZROBIĆ -->
 ### Tagi
 <!-- TODO: ZROBIĆ -->
+
+
+
+
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
+  <a href="./#/html_basic_tags?id=tagi-podstawowe">Prev: 🏗️ Tagi podstawowe</a>
+  <a href="./#/css_properties?id=właściwości-css">Next: 🥅 Podstawowe właściwości</a>
+</div>

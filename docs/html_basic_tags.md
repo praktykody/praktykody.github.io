@@ -136,27 +136,10 @@ Komentarze nie są widoczne w wyjściowym programie, jedynie w kodzie
 <!-- TO JEST KOMENTARZ HTML -->
 ```
 
-## Ćwiczenie
-Do efektu pracy ćwiczenia 1 dodaj tagi:
-- h1, 
-- h2, 
-- [img](https://www.w3schools.com/w3css/img_avatar3.png), 
-- table, 
-- tr, 
-- td, 
-- ol, 
-- li, 
-- form, 
-- input 
-- textarea
-
-Do tabelki możesz dodać emotikony które znajdziesz na stronie [emojipedia.org](https://emojipedia.org)
-Napis ***CONTENT*** wrzuć w komentarz
-
-![Ćwiczenie html basic](./images/html_basic_exercise.webp)
+[Ćwiczenie 2](/ex_html?id=Ćwiczenie-2)
 
 
 <div style="display:flex;justify-content:space-between;">
   <a href="./#/html_semantic_tags?id=tagi-semantyczne">Prev: 🤖 Tagi semantyczne</a>
-  <a href="./#/css_overview?id=przeglĄd-cssa">Next: 🐙 GitHub</a>
+  <a href="./#/css_overview?id=przeglĄd-cssa">Next: 👁️ Przegląd CSS</a>
 </div>

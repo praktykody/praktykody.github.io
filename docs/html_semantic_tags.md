@@ -51,16 +51,7 @@ Możemy otwierać sekcje headerami, a zamykać footerami
 ## &lt;noscript&gt;
 W tag &lt;noscript> wpisujemy alternatywną treść wyświetlaną w przeglądarkach nieobsługujących skryptów lub w przeglądarkach, w których użytkownik wyłącza obsługę skryptów. W przeciwnym razie przeglądarka ignoruje ten tag i jego zawartość. W HTML5 znacznik &lt;noscript&gt; można umieścić w elementach &lt;head&gt; i &lt;body&gt;.
 
-## Ćwiczenia
-Stwórz szkielet strony, a
-następnie wypełnij go tagami
-semantycznymi z podanymi 
-wartościami. 
-
-Do budowy wykorzystaj tagi : header, nav, main, article, section, footer
-
-![Ćwiczenie semantyczne](./images/html_semantic_exercise.webp)
-
+[Ćwiczenie 1](/ex_html?id=Ćwiczenia-1)
 
 <div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
   <a href="./#/html_overview">Prev: 👀 HTML - Przegląd</a>
