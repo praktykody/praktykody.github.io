@@ -53,7 +53,11 @@ W tag &lt;noscript> wpisujemy alternatywną treść wyświetlaną w przeglądark
 
 [Ćwiczenie 1](/ex_html?id=Ćwiczenia-1)
 
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
-  <a href="./#/html_overview">Prev: 👀 HTML - Przegląd</a>
-  <a href="./#/html_basic_tags?id=tagi-podstawowe">Next: 🏗️ Tagi podstawowe</a>
+<div class="prevNextButtons">
+  <a href="./#/html_overview?id=przeglĄd-htmla">
+    <button class="prev">👀 HTML - Przegląd</button>
+  </a>
+  <a href="./#/html_basic_tags?id=tagi-podstawowe">
+    <button class="next">🏗️ Tagi podstawowe</button>
+  </a>
 </div>

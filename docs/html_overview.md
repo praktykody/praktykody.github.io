@@ -1,8 +1,8 @@
 # PRZEGLĄD HTMLA 
 ## Powstanie HTML
 
-<div style="display:flex;align-items:center;justify-content:space-between;">
-  <div style="flex:1;">
+<div class="standardWrapper">
+  <div>
     <ul>
       <li>
         W 1980 roku Tim Berners-Lee stworzył pierwszy hipertekstowy system informacyjny - ENQUIRE. Rewolucyjność pomysłu polegała na tym, że użytkownik, posługując się odnośnikami, mógł z jednej lokalizacji przeglądać dokumenty fizycznie znajdujące się w innych miejscach na świecie. 
@@ -15,22 +15,39 @@
       </li>
     </ul>
     Struktura stron WWW jest oparta na plikach HTML, które to są plikami tekstowymi z rozszerzeniem .html lub .htm
-
   </div>
-  <div style="flex:1;">
+  <div>
     <img src="./images/html_tim_berens_lee.webp" alt="Tim Berners-Lee">
   </div>
 </div>
 
 ## Wyjątkowość HTML 
-![Devices compatibile with HTML](./images/html_devices.webp)
+<!-- ![Devices compatibile with HTML](./images/html_devices.webp) -->
+![Devices compatibile with HTML](./images/html_devices.svg)
 
 ## Składnia HTML
 ### Tag pojedynczy
 **HTML - (ang. HyperText Markup Language)** – hipertekstowy* język znaczników.
 Język opisowy oparty na znacznikach (tagach) opisujący zawartość strony internetowej.
 
-![Składnia języka HTML](./images/html_syntax.webp)
+<div class="exampleTagsContainer">
+  <div class="exampleTag withUpperLabel">
+    <div class="upperLabel">znacznik otwierający</div>
+    <span style="color:var(--red);"><</span><span style="color:var(--blue);">a</span>
+    <span style="color:var(--green);">href</span><span>=</span><span>"https://google.com"</span><span style="color:var(--red);">></span>
+  </div>
+  <div class="exampleTag">
+    <span>&nbsp;Kliknij&nbsp;</span>
+  </div>
+  <div class="exampleTag withUpperLabel">
+    <div class="upperLabel">znacznik zamykający</div>
+    <span style="color:var(--red);">&lt;\</span><span style="color:var(--blue);">a</span><span style="color:var(--red);">></span>
+  </div>
+</div>
+
+ - <span style="color:var(--red);">ostry nawias</span>
+ - <span style="color:var(--blue);">znacznik / tag (a od "anchor" - kotwica)</span>
+ - <span style="color:var(--green);">atrybut (właściwość): href hypertext referency (odnośnik hipertekstowy)</span>
 
 *nazwa mechanizmu linkowania i przenoszenia się po kliknięciu pomiędzy różnymi dokumentami HTML
 
@@ -42,7 +59,25 @@ Rezultat:
 <a href="http://google.com">Kliknij</a>
 
 ### Tag podwójny
-![Tagi pojedyncze i podwójne](./images/html_syntax2.webp)
+<div class="exampleTagsContainer">
+  <div class="exampleTag withUpperLabel">
+    <div class="upperLabel">znacznik podwójny (kontenerowy)</div>
+    <span style="color:var(--red);"><</span><span style="color:var(--blue);">a</span>
+    <span style="color:var(--green);">href</span><span>=</span><span>"https://google.com"</span><span style="color:var(--red);">></span>
+    <span>&nbsp;Kliknij&nbsp;</span>
+    <span style="color:var(--red);">&lt;\</span><span style="color:var(--blue);">a</span><span style="color:var(--red);">></span>
+  </div>
+</div>
+
+<div class="exampleTagsContainer">
+  <div class="exampleTag withUpperLabel">
+    <div class="upperLabel">znacznik pojedynczy (samodzielny)</div>
+    <span style="color:var(--red);"><</span><span style="color:var(--blue);">img</span>
+    <span style="color:var(--green);">src</span><span>=</span><span>"photo.jpg"</span>
+    <span style="color:var(--green);">alt</span><span>=</span><span>"My photo"</span>
+    <span style="color:var(--red);">></span>
+  </div>
+</div>
 
 ## Struktura HTML
 ```html
@@ -53,8 +88,7 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
 [listę rekomendowanych deklaracji doctype organizacji W3C](https://www.w3.org/QA/2002/04/valid-dtd-list.html)
 
 ### Szkielet strony
-
-<div style="display:flex;align-items:center;justify-content:space-between;">
+<div class="standardWrapper">
   <div>
 
   ```html
@@ -82,12 +116,15 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
   </div>
   <div>
 
-  ![Pan Cyfrowy](./images/html_mr_digital.webp)
+  ![Pan Cyfrowy](./images/html_mr_digital.svg)
   </div>
 </div>
 
-
-<div style="display:flex;justify-content:space-between;">
-  <a href="./#/github?id=github">Prev: 🐙 GitHub</a>
-  <a href="./#/html_semantic_tags?id=tagi-semantyczne">Next: 🤖 Tagi semantyczne</a>
+<div class="prevNextButtons">
+  <a href="./#/github?id=github">
+    <button class="prev">🐙 GitHub</button>
+  </a>
+  <a href="./#/html_semantic_tags?id=tagi-semantyczne">
+    <button class="next">🤖 Tagi semantyczne</button>
+  </a>
 </div>

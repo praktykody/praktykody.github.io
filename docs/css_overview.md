@@ -1,34 +1,37 @@
 # PRZEGLĄD CSSA
 ## Powstanie CSS
-Kaskadowe arkusze stylów (ang. **Cascading Style Sheets**, w skrócie **CSS**) – język służący do opisu formy prezentacji stron WWW. 
+<div class="standardWrapper">
+  <div>
+  Kaskadowe arkusze stylów (ang. <b>Cascading Style Sheets</b>, w skrócie <b>CSS</b>) – język służący do opisu formy prezentacji stron WWW. 
 
-**Håkon Wium Lie** jako pierwszy zaproponował CHSS (Cascading HTML Style Sheets) w październiku 1994 roku.
+  **Håkon Wium Lie** jako pierwszy zaproponował CHSS (Cascading HTML Style Sheets) w październiku 1994 roku.
 
-Pod koniec 1996 roku wydano oficjalną dokumentację CSS, Kaskadowe arkusze stylów, poziom 1.
+  Pod koniec 1996 roku wydano oficjalną dokumentację CSS, Kaskadowe arkusze stylów, poziom 1.
+  </div>
+  <div>
 
-![Håkon Wium Lie](./images/css_hakon_lie.webp)
+  ![Håkon Wium Lie](./images/css_hakon_lie.webp)
+  </div>
+</div>
 
 
 ### Technologia 
-![css and html](./images/css_tech.webp)
+<div class="standardWrapper">
+  <div style="text-align:center;">
 
+  ![css logo](./images/css3_logo.svg)
+  
+  kolory, rozmiary, marginesy, kolor tła, cienie, kroje czcionek etc
+  </div>
+  <div style="text-align:center;">
 
-## Struktura CSS
-Arkusz stylów CSS to lista dyrektyw ustalających w jaki sposób ma zostać wyświetlana przez przeglądarkę internetową zawartość wybranego elementu HTML.
-![CSS scheme](./images/css_template.webp)
-```css
-h1{
-   color:green;
-   font-size:20px;
-}
+  ![html logo](./images/html5_logo.svg)
 
-h2{ 
-   padding: 12px
-   border:2px dashed red;
-}
-```
+  tekst, obrazy, przyciski, listy wyboru, hiperłącza etc
+  </div>
+</div>
 
-### CSS w HTML
+## CSS w HTML
 CSS został stworzony w celu odseparowania struktury dokumentu od formy jego prezentacji. Separacja ta zwiększa zakres dostępności witryny, zmniejsza zawiłość dokumentu, ułatwia wprowadzanie zmian w strukturze dokumentu.
 Osadzamy go w sekcji head pliku HTML tagiem link:
 
@@ -37,6 +40,36 @@ Osadzamy go w sekcji head pliku HTML tagiem link:
   <link rel="stylesheet" href="style.css">
 </head>
 ```
+
+## Struktura CSS
+Arkusz stylów CSS to lista dyrektyw ustalających w jaki sposób ma zostać wyświetlana przez przeglądarkę internetową zawartość wybranego elementu HTML.
+
+
+<div class="standardWrapper reverse">
+  <div class="exampleTagsContainer">
+    <div class="exampleTag">
+      <span style="color:var(--green);">selektor</span>
+      <span style="color:var(--red);">{</span><br />
+      <span style="color:var(--blue);">&nbsp;&nbsp;&nbsp;właściwość:</span>
+      <span style="color:var(--pink);">wartość;</span><br />
+      <span style="color:var(--red);">}</span><br />
+    </div>
+  </div><br />
+  <div>
+
+  ```css
+  h1{
+    color:green;
+    font-size:20px;
+  }
+
+  h2{ 
+    padding: 12px
+    border:2px dashed red;
+  }
+  ```
+  </div>
+</div>
 
 ## Rodzaje selektorów CSS
 ### Klasy
@@ -71,9 +104,11 @@ możemy użyć kilku klas na jeden tag:
 <!-- TODO: ZROBIĆ -->
 
 
-
-
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
-  <a href="./#/html_basic_tags?id=tagi-podstawowe">Prev: 🏗️ Tagi podstawowe</a>
-  <a href="./#/css_properties?id=właściwości-css">Next: 🥅 Podstawowe właściwości</a>
+<div class="prevNextButtons">
+  <a href="./#/html_basic_tags?id=tagi-podstawowe">
+    <button class="prev">🏗️ Tagi podstawowe</button>
+  </a>
+  <a href="./#/css_properties?id=właściwości-css">
+    <button class="next">🥅 Podstawowe właściwości</button>
+  </a>
 </div>

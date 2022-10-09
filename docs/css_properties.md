@@ -1,12 +1,22 @@
 # Właściwości CSS
 ## margin / padding
+<div class="standardWrapper">
+<div>
+
 ```css
 element.style {
     margin: 20px;
     padding: 10px 2px;
 }
 ```
+</div>
+	<div>
+
 ![Margin & padding difference](./images/css_margin_padding.webp)
+
+</div>
+</div>
+
 ## display
 ```css
 #div{
@@ -85,11 +95,11 @@ element.style {
 ```
 ![box-sizing](./images/css_box_sizing.webp)
 
-
-
-
-
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
-  <a href="./#/css_overview?id=przeglĄd-cssa">Prev: 👁️ Przegląd CSS</a>
-  <a href="./#/css_units?id=jednostki-css">Next: ⚽️ Jednostki</a>
+<div class="prevNextButtons">
+  <a href="./#/css_overview?id=przeglĄd-cssa">
+    <button class="prev">👁️ Przegląd CSS</button>
+  </a>
+  <a href="./#/css_units?id=jednostki-css">
+    <button class="next">⚽️ Jednostki</button>
+  </a>
 </div>

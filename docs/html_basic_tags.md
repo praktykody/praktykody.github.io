@@ -9,7 +9,7 @@ Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konk
 ```
 
 ## &lt;table&gt;
-<div style="display:flex;align-items:center;justify-content:space-between;">
+<div class="standardWrapper">
   <div>
 
 ```html
@@ -29,7 +29,18 @@ Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konk
   </div>
   <div>
 
-![basic table](./images/html_basic_table.webp)
+  <table border="1" style="width:100%">
+    <tr>
+      <td colspan="2">Komórka1</td>
+    </tr>
+    <tr>
+      <td>Komórka2</td>
+      <td>Komórka3</td>
+    </tr>
+    <tr>
+      <td colspan="2">Komórka 4</td>
+    </tr>
+  </table>
   </div>
 </div>
 
@@ -38,29 +49,41 @@ Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konk
 - &lt;ul&gt; (unordered list) - lista nienumerowana
 - &lt;li&gt; (list item) - element listy 
 
-<div style="display:flex;align-items:center;justify-content:space-between;">
+<div class="standardWrapper">
   <div>
 
-```html
-<ol>
-	<li>Lista numerowana 1
-		<ul>
-			<li>Lista nienumerowana 1.1</li>
-			<li>Lista nienumerowana 1.2</li>			
-		</ul>
-	</li>
-	<li>Lista numerowana 2
-		<ul>
-			<li>Lista nienumerowana 2.1</li>
-			<li>Lista nienumerowana 2.2</li>
-		</ul>
-	</li>
-</ol>
-```
+  ```html
+  <ol>
+    <li>Lista numerowana 1
+      <ul>
+        <li>Lista nienumerowana 1.1</li>
+        <li>Lista nienumerowana 1.2</li>			
+      </ul>
+    </li>
+    <li>Lista numerowana 2
+      <ul>
+        <li>Lista nienumerowana 2.1</li>
+        <li>Lista nienumerowana 2.2</li>
+      </ul>
+    </li>
+  </ol>
+  ```
   </div>
   <div>
-
-![basic table](./images/html_basic_ul.webp)
+    <ol>
+      <li>Lista numerowana 1
+        <ul>
+          <li>Lista nienumerowana 1.1</li>
+          <li>Lista nienumerowana 1.2</li>			
+        </ul>
+      </li>
+      <li>Lista numerowana 2
+        <ul>
+          <li>Lista nienumerowana 2.1</li>
+          <li>Lista nienumerowana 2.2</li>
+        </ul>
+      </li>
+    </ol>
   </div>
 </div>
 
@@ -75,7 +98,7 @@ Img jest “wyjątkowym” znacznikiem pojedynczym. Wynika to z faktu, że wstaw
 Tagi h*, to nagłówki (ang. heading). Posługujemy się nimi, aby zatytułować konkretne bloki tekstu oraz nadać im hierarchię. 
 Nagłówków mamy 6 (od największego):
 
-<div style="display:flex;align-items:center;justify-content:space-between;">
+<div class="standardWrapper">
   <div>
 
 ```html
@@ -98,31 +121,26 @@ Nagłówków mamy 6 (od największego):
   </div>
 </div>
 
-
-
-
-
 ## &lt;form&gt;
 Znacznik form pozwala na stworzenie formularza.
 Formularzy używamy do pozyskania informacji od użytkownika. 
 Wewnątrz formularzy używamy znaczników input z odpowiednimi parametrami (w zależności od tego jakiego typu informacje chcemy uzyskać)
 
-<div style="display:flex;align-items:center;justify-content:space-between;">
+<div class="standardWrapper">
   <div>
 
-```html
-<form action=”result.html” method=”post|get”>
-  <input type=”text” name=”firstName” />
-  <input type =”submit” />
-</form>
-```
+  ```html
+  <form action=”result.html” method=”post|get”>
+    <input type=”text” name=”firstName” />
+    <input type =”submit” />
+  </form>
+  ```
   </div>
   <div>
-
-<form action=”result.html” method=”post|get”>
-  <input type=”text” name=”firstName” />
-  <input type =”submit” />
-</form>
+    <form action=”result.html” method=”post|get”>
+      <input type=”text” name=”firstName” /><br />
+      <input type =”submit” />
+    </form>
   </div>
 </div>
 
@@ -138,8 +156,11 @@ Komentarze nie są widoczne w wyjściowym programie, jedynie w kodzie
 
 [Ćwiczenie 2](/ex_html?id=Ćwiczenie-2)
 
-
-<div style="display:flex;justify-content:space-between;">
-  <a href="./#/html_semantic_tags?id=tagi-semantyczne">Prev: 🤖 Tagi semantyczne</a>
-  <a href="./#/css_overview?id=przeglĄd-cssa">Next: 👁️ Przegląd CSS</a>
+<div class="prevNextButtons">
+  <a href="./#/html_semantic_tags?id=tagi-semantyczne">
+    <button class="prev">🤖 Tagi semantyczne</button>
+  </a>
+  <a href="./#/css_overview?id=przeglĄd-cssa">
+    <button class="next">👁️ Przegląd CSS</button>
+  </a>
 </div>

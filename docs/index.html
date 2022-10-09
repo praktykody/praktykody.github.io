@@ -16,16 +16,105 @@
     type="text/css"
   />
 
-  <script 
-    src="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/index.min.js"
-    type="text/javascript" defer>
-  </script>
-
   <!-- Search bar -->
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js" defer></script>
 </head>
 <body>
   <div id="app"></div>
+  <style>
+    .content{
+      padding-top:20px;
+    }
+    .prevNextButtons{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:50px;
+    }
+    .prevNextButtons button{
+      color:var(--accent);
+      font-weight: bold;
+      cursor:pointer;
+      padding:.5rem 1rem;
+      border-radius: 1rem;
+      background-color: var(--toogleBackground);
+      border:none;
+      display:flex;
+      align-items: center;
+    }
+    .prevNextButtons button:hover{
+      background-color: var(--textColor);
+    }
+    .next::after{
+      content: ">";
+    }
+    .prev::before{
+      content: "<";
+    }
+    
+    .standardWrapper{
+      display:flex;
+      flex-wrap:wrap;
+      gap:20px;
+      align-items: center;
+    }
+    .standardWrapper > div{
+      flex:1;
+      max-width:100%;
+    }
+
+    @media screen and (max-width: 768px){
+      #docsify-darklight-theme {
+        right:10px;
+        left:unset;
+      }
+      .standardWrapper{
+        flex-direction: column-reverse;
+      }
+      .reverse{
+        flex-direction: column;
+      }
+    }
+
+    /* CODE SHOWERS */
+    :root{
+      --blue:#3a429c;
+      --green:#368f35;
+      --red:#ba4343;
+      --pink:#c221a7;
+    }
+    .exampleTagsContainer{
+      margin-top:5rem;
+      display:flex;
+      justify-content:center;
+    }
+    .exampleTag{
+      display:inline;
+      position:relative;
+      font-size: clamp(1rem, 2.5vw, 2rem); 
+    }
+    .upperLabel{
+      font-size:.8rem;
+      position:absolute;
+      width:100%;
+      bottom:2.8rem;
+      text-align:center;
+      color:var(--accent);
+    }
+    .withUpperLabel::before{
+      content:"";
+      border-color: var(--accent);
+      border-style: solid;
+      position:absolute;
+      width:calc(100% - 6px);
+      height:60%;
+      top:-30%;
+      left:0;
+      border-width:3px 3px 0 3px;
+    }
+
+  </style>
+  
   <script>
     window.$docsify = {
       name: '',
@@ -38,6 +127,71 @@
       //   '/GIT/_sidebar.md': '/_sidebar.md'
       // }
     }
+
+    // Dark theme
+    window.$docsify.plugins = [].concat((e, o) => {
+      let t = {
+        siteFont: "PT Sans",
+        defaultTheme: "dark",
+        codeFontFamily: "Roboto Mono, Monaco, courier, monospace",
+        bodyFontSize: "17px",
+        dark: {
+          accent: "#42b983",
+          toogleBackground: "#ffffff",
+          background: "#0d1117",
+          textColor: "#b4b4b4",
+          codeTextColor: "#ffffff",
+          codeBackgroundColor: "#0e2233",
+          borderColor: "#0d2538",
+          blockQuoteColor: "#858585",
+          highlightColor: "#d22778",
+          sidebarSublink: "#b4b4b4",
+          codeTypeColor: "#ffffff",
+          coverBackground: "linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)",
+          toogleImage: "url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)",
+        },
+        light: {
+          accent: "#42b983",
+          toogleBackground: "#091a28",
+          background: "#ffffff",
+          textColor: "#34495e",
+          codeTextColor: "#525252",
+          codeBackgroundColor: "#f8f8f8",
+          borderColor: "rgba(0, 0, 0, 0.07)",
+          blockQuoteColor: "#858585",
+          highlightColor: "#d22778",
+          sidebarSublink: "#505d6b",
+          codeTypeColor: "#091a28",
+          coverBackground: "linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)",
+          toogleImage: "url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)",
+        },
+      };
+      if (o.config.hasOwnProperty("darklightTheme")) {
+        for (var [r, l] of Object.entries(o.config.darklightTheme)) "light" !== r && "dark" !== r && "defaultTheme" !== r && (t[r] = l);
+        for (var [r, l] of Object.entries(t)) "light" !== r && "dark" !== r && ((t[r] = l), document.documentElement.style.setProperty("--" + r, l));
+        if (o.config.darklightTheme.hasOwnProperty("dark")) for (var [r, l] of Object.entries(o.config.darklightTheme.dark)) t.dark[r] = l;
+        if (o.config.darklightTheme.hasOwnProperty("light")) for (var [r, l] of Object.entries(o.config.darklightTheme.light)) t.light[r] = l;
+      } else for (var [r, l] of Object.entries(t)) "light" !== r && "dark" !== r && ((t[r] = l), document.documentElement.style.setProperty("--" + r, l));
+      window.matchMedia("(prefers-color-scheme: dark)").matches ? (t.defaultTheme = "dark") : window.matchMedia("(prefers-color-scheme: light)").matches && (t.defaultTheme = "light");
+      var d = (e) => {
+        if ((localStorage.setItem("DARK_LIGHT_THEME", e), (t.defaultTheme = e), "light" == e)) for (var [o, r] of Object.entries(t.light)) document.documentElement.style.setProperty("--" + o, r);
+        else if ("dark" == e) for (var [o, r] of Object.entries(t.dark)) document.documentElement.style.setProperty("--" + o, r);
+        document.documentElement.style.setProperty("color-scheme", e);
+      };
+      e.afterEach(function (e, o) {
+        o((e = '<div id="docsify-darklight-theme"><p>.</p></div>' + e));
+      }),
+        e.doneEach(function () {
+          let e = localStorage.getItem("DARK_LIGHT_THEME");
+          "light" == e || "dark" == e ? ((t.defaultTheme = e), d(t.defaultTheme)) : d(t.defaultTheme);
+          const o = document.getElementById("docsify-darklight-theme");
+          null !== o &&
+            o.addEventListener("click", function () {
+              "light" === t.defaultTheme ? d("dark") : d("light");
+            });
+        });
+    }, window.$docsify.plugins);
+
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>

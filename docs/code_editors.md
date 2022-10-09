@@ -32,6 +32,10 @@ Z pośród wspieranych najpopularniejszych edytorów kodu wyróżniamy:
 2. Wybierz swoją platrformę i kliknij "pobierz"
 3. Zainstaluj pobrany plik
 
-<div style="text-align:right;">
-  <a href="./#/version_control_systems?id=systemy-kontroli-wersji">Next: 👌  Systemy kontroli wersji</a>
-</div>
+
+<div class="prevNextButtons">
+  <div></div>
+  <a href="./#/version_control_systems?id=systemy-kontroli-wersji">
+    <button class="next">👌 Systemy kontroli wersji</button>
+  </a>
+</div
