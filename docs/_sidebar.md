@@ -1,4 +1,3 @@
-- [👨‍💻 Home](/)
 - Konfiguracja
 
   - [🖊️&nbsp;Edytory kodu](code_editors.md)
@@ -14,7 +13,7 @@
 - CSS 
 
   - [👀&nbsp;Przegląd CSS](css_overview.md)
-  - [🥅&nbsp;Podstawowe właściwości](css_properties.md.md)
+  - [🥅&nbsp;Podstawowe właściwości](css_properties.md)
   - [⚽️&nbsp;Jednostki](css_units.md)
 
 - Preprocesory

@@ -7,7 +7,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍🏫</text></svg>">
   <!-- Dark theme -->
   <link 
     rel="stylesheet"
@@ -113,6 +113,13 @@
       border-width:3px 3px 0 3px;
     }
 
+    /* sidebar */
+    .search .input-wrap{
+      margin:0 !important;
+    }
+    .search{
+      margin:0 !important;
+    }
   </style>
   
   <script>
@@ -121,6 +128,7 @@
       repo: '',
       loadSidebar: true,
       subMaxLevel: 2,
+      // executeScript: true,
       //  basePath: '/docs/',
       // alias: {
       //   // '/.*/_sidebar.md': '/_sidebar.md'
@@ -192,6 +200,36 @@
         });
     }, window.$docsify.plugins);
 
+    // Main roadmap
+    const loadRoadMap = () => {
+      if("👨‍🏫 TAI Coders Codex" != document.querySelector("h1").innerText) { return }
+      const script = document.createElement("script")
+      script.src = "/js/roadmap.js"
+      document.head.append(script)
+    }
+    window.addEventListener('load', loadRoadMap);
+    document.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', loadRoadMap);
+    }, true)
+
+    // APPEND MAIN LOGO
+    window.addEventListener('load', () => {
+      // document.querySelector(".sidebar").prepend("<div>ELO</div>")
+      const logo = document.createElement('a')
+      logo.innerHTML = '<div>👨‍🏫 TAI Coders</div>'
+      logo.href = '/#'
+      logo.style.cssText = `
+        padding:1rem;
+        cursor:pointer;
+        display:inline-block;
+        font-size:1.5rem;
+        font-weight:bolder;
+        text-decoration:none;
+        color:inherit;
+      `
+
+      document.querySelector(".sidebar").prepend(logo)
+    })
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>

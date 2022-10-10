@@ -7,4 +7,6 @@ dokumentacja stoi na
 https://docsify.js.org/#/more-pages
 
 run : 
+```bash
 docsify serve docs
+```
