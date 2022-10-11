@@ -2,226 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>TAICoders</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍🏫</text></svg>">
-  <!-- Dark theme -->
-  <link 
-    rel="stylesheet"
-    href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css"
-    title="docsify-darklight-theme"
-    type="text/css"
-  />
+
+  <!-- Docify config -->
+  <script src="js/docifyConfig.js" defer></script>
 
   <!-- Search bar -->
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js" defer></script>
-</head>
-<body>
-  <div id="app"></div>
-  <style>
-    *{
-      scroll-margin-top :100px;
-    }
-    .content{
-      padding-top:20px;
-    }
-    .prevNextButtons{
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      margin-top:50px;
-    }
-    .prevNextButtons button{
-      color:var(--accent);
-      font-weight: bold;
-      cursor:pointer;
-      padding:.5rem 1rem;
-      border-radius: 1rem;
-      background-color: var(--toogleBackground);
-      border:none;
-      display:flex;
-      align-items: center;
-    }
-    .prevNextButtons button:hover{
-      background-color: var(--textColor);
-    }
-    .next::after{
-      content: ">";
-    }
-    .prev::before{
-      content: "<";
-    }
-    
-    .standardWrapper{
-      display:flex;
-      flex-wrap:wrap;
-      gap:20px;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .standardWrapper > div{
-      flex:1;
-      max-width:100%;
-    }
-    .standardWrapper > *:nth-child(2){
-      text-align:center;
-    }
 
-    @media screen and (max-width: 768px){
-      #docsify-darklight-theme {
-        right:10px;
-        left:unset;
-      }
-      .standardWrapper{
-        flex-direction: column-reverse;
-      }
-      .reverse{
-        flex-direction: column;
-      }
-    }
-
-    /* CODE SHOWERS */
-    :root{
-      --blue:#3a429c;
-      --green:#368f35;
-      --red:#ba4343;
-      --pink:#c221a7;
-      /* --h-header: 3rem; */
-    }
-    #docsify-darklight-theme{
-        display:none;
-    }
-    /* h2{
-      scroll-margin-top: 100px;
-    } */
-    .exampleTagsContainer{
-      margin-top:5rem;
-      display:flex;
-      justify-content:center;
-    }
-    .exampleTag{
-      display:inline;
-      position:relative;
-      font-size: clamp(1rem, 2.5vw, 2rem); 
-    }
-    .upperLabel{
-      font-size:.8rem;
-      position:absolute;
-      width:100%;
-      bottom:2.8rem;
-      text-align:center;
-      color:var(--accent);
-    }
-    .withUpperLabel::before{
-      content:"";
-      border-color: var(--accent);
-      border-style: solid;
-      position:absolute;
-      width:calc(100% - 6px);
-      height:60%;
-      top:-30%;
-      left:0;
-      border-width:3px 3px 0 3px;
-    }
-
-    /* sidebar */
-    .search .input-wrap{
-      margin:0 !important;
-    }
-    .search{
-      margin:0 !important;
-    }
-    .sidebar-toggle{
-      background-color: transparent!important;
-    }
-  </style>
+  <!-- Custom scripts -->
+  <script src="js/topNavbar.js" defer></script>
   
+  <!-- Dark theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" />
+  <script src="js/darkTheme.js" defer></script>
+
+
   <script>
-    window.$docsify = {
-      name: '',
-      repo: '',
-      loadSidebar: true,
-      subMaxLevel: 2,
-      // executeScript: true,
-      //  basePath: '/docs/',
-      // alias: {
-      //   // '/.*/_sidebar.md': '/_sidebar.md'
-      //   '/GIT/_sidebar.md': '/_sidebar.md'
-      // }
-    }
-
-    // Dark theme
-    window.$docsify.plugins = [].concat((e, o) => {
-      let t = {
-        siteFont: "PT Sans",
-        defaultTheme: "dark",
-        codeFontFamily: "Roboto Mono, Monaco, courier, monospace",
-        bodyFontSize: "17px",
-        dark: {
-          accent: "#42b983",
-          toogleBackground: "#ffffff",
-          background: "#0d1117",
-          textColor: "#b4b4b4",
-          codeTextColor: "#ffffff",
-          codeBackgroundColor: "#0e2233",
-          borderColor: "#0d2538",
-          blockQuoteColor: "#858585",
-          highlightColor: "#d22778",
-          sidebarSublink: "#b4b4b4",
-          codeTypeColor: "#ffffff",
-          coverBackground: "linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)",
-          toogleImage: "url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/sun.svg)",
-        },
-        light: {
-          accent: "#42b983",
-          toogleBackground: "#091a28",
-          background: "#ffffff",
-          textColor: "#34495e",
-          codeTextColor: "#525252",
-          codeBackgroundColor: "#f8f8f8",
-          borderColor: "rgba(0, 0, 0, 0.07)",
-          blockQuoteColor: "#858585",
-          highlightColor: "#d22778",
-          sidebarSublink: "#505d6b",
-          codeTypeColor: "#091a28",
-          coverBackground: "linear-gradient(to left bottom, hsl(118, 100%, 85%) 0%,hsl(181, 100%, 85%) 100%)",
-          toogleImage: "url(https://cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/icons/moon.svg)",
-        },
-      };
-      if (o.config.hasOwnProperty("darklightTheme")) {
-        for (var [r, l] of Object.entries(o.config.darklightTheme)) "light" !== r && "dark" !== r && "defaultTheme" !== r && (t[r] = l);
-        for (var [r, l] of Object.entries(t)) "light" !== r && "dark" !== r && ((t[r] = l), document.documentElement.style.setProperty("--" + r, l));
-        if (o.config.darklightTheme.hasOwnProperty("dark")) for (var [r, l] of Object.entries(o.config.darklightTheme.dark)) t.dark[r] = l;
-        if (o.config.darklightTheme.hasOwnProperty("light")) for (var [r, l] of Object.entries(o.config.darklightTheme.light)) t.light[r] = l;
-      } else for (var [r, l] of Object.entries(t)) "light" !== r && "dark" !== r && ((t[r] = l), document.documentElement.style.setProperty("--" + r, l));
-      window.matchMedia("(prefers-color-scheme: dark)").matches ? (t.defaultTheme = "dark") : window.matchMedia("(prefers-color-scheme: light)").matches && (t.defaultTheme = "light");
-      var d = (e) => {
-        if ((localStorage.setItem("DARK_LIGHT_THEME", e), (t.defaultTheme = e), "light" == e)) for (var [o, r] of Object.entries(t.light)) document.documentElement.style.setProperty("--" + o, r);
-        else if ("dark" == e) for (var [o, r] of Object.entries(t.dark)) document.documentElement.style.setProperty("--" + o, r);
-        document.documentElement.style.setProperty("color-scheme", e);
-      };
-      e.afterEach(function (e, o) {
-        o((e = '<div id="docsify-darklight-theme"><p>.</p></div>' + e));
-      }),
-        e.doneEach(function () {
-          let e = localStorage.getItem("DARK_LIGHT_THEME");
-          "light" == e || "dark" == e ? ((t.defaultTheme = e), d(t.defaultTheme)) : d(t.defaultTheme);
-          const o = document.getElementById("docsify-darklight-theme");
-          null !== o &&
-            o.addEventListener("click", function () {
-              "light" === t.defaultTheme ? d("dark") : d("light");
-            });
-        });
-    }, window.$docsify.plugins);
-
-    // Main roadmap
+    
+    // load roadmap only on main
     const loadRoadMap = () => {
-      if("👨‍🏫 TAI Coders Codex" != document.querySelector("h1").innerText) { return }
+      if("👨‍🏫 TAI Coders Codex" != document.querySelector("h1")?.innerText) { return }
       const script = document.createElement("script")
-      script.src = "/js/roadmap.js"
+      script.src = "/js/roadMap.js"
       document.head.append(script)
     }
     window.addEventListener('load', loadRoadMap);
@@ -229,73 +37,15 @@
       a.addEventListener('click', loadRoadMap);
     }, true)
 
-    // make top navbar
-    window.$docsify.plugins = [].concat((e, o) => {
-      e.afterEach( e => {
-        console.log("TESTING", e)
-      })
-    }, window.$docsify.plugins)
-    
-    window.addEventListener('load', () => {
-      const nav = document.createElement("nav")
-      nav.style.cssText = `
-        position:fixed;
-        top:0;
-        width:100%;
-        height:3rem;
-        z-index:1;
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        background-color:var(--codeBackgroundColor);
-      `
-      const logoWithToggler = document.createElement("div")
-      logoWithToggler.style.cssText = `
-        display:flex;
-        align-item:center;
-      ` 
-      const logo = document.createElement('a')
-      logo.innerHTML = '<div>👨‍🏫 TAI Coders</div>'
-      logo.href = '/#'
-      logo.style.cssText = `
-        cursor:pointer;
-        display:inline-block;
-        font-size:1rem;
-        font-weight:bolder;
-        text-decoration:none;
-        color:inherit;
-      `
-      const sidebarToggler = document.querySelector(".sidebar-toggle")
-      sidebarToggler.style.cssText = `
-        position:relative;
-        width:unset;
-        padding:0 1rem;
-      `
-      const searchBar = document.querySelector(".search")
-      searchBar.style.cssText = `
-        flex:1;
-      `
-      const lightDarkButton = document.querySelector("#docsify-darklight-theme")
-      lightDarkButton.style.cssText = `
-        position:relative;
-        top:unset;
-        display:flex;
-      `
 
-      logoWithToggler.append(sidebarToggler)
-      logoWithToggler.append(logo)
-      nav.append(logoWithToggler)
-      nav.append(searchBar)
-      nav.append(lightDarkButton)
-      
-      document.body.prepend(nav)
-      const aside = document.querySelector('.sidebar');
-      aside.style.cssText = `padding-top:3rem;`
-
-    })
-
-  
   </script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="/style/style.min.css">
+</head>
+<body>
+  <div id="app"></div>
+
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
