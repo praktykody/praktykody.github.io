@@ -3,7 +3,7 @@ window.$docsify = {
   repo: '',
   loadSidebar: true,
   subMaxLevel: 2,
-  // executeScript: true,
+  executeScript: true,
   //  basePath: '/docs/',
   // alias: {
   //   // '/.*/_sidebar.md': '/_sidebar.md'
