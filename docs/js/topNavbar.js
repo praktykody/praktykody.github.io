@@ -1,5 +1,8 @@
 // make top navbar
-const addSpacers = () => { document.querySelectorAll('h1, h2, h3, h4').forEach( l => { l.style.cssText = "padding-top:5rem; margin-top:0;" }) }
+const addSpacers = () => { 
+  document.querySelectorAll('h1, h2, h3, h4').forEach( l => { l.style.cssText = "padding-top:5rem; margin-top:0;" })
+  document.querySelector('.content').style.cssText = "top:-7rem;";
+}
 window.addEventListener('load', () => { addSpacers() })
 window.$docsify.plugins = [].concat(e => { e.afterEach((e, o) => { o((e = e)); addSpacers() })}, window.$docsify.plugins)
 window.addEventListener('load', () => {
