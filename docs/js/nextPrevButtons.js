@@ -37,6 +37,7 @@ const renderButtons = (e, o, arr) => {
 
 window.$docsify.plugins = [].concat((e, ox) => {
   e.afterEach( async (e, o) => { 
+    scrollTo({top:0})
     const arr = loadMenuItems(ox.route)
     if(!arr){
       const interval = setInterval(() => { 
