@@ -42,13 +42,3 @@ i przeprowadź instalację z domyślnymi ustawieniami, poza domyślnym edytorem,
     <img src="./images/octocat.webp" alt="GitHub Octocat">
   </div>
 </div>
-
-
-<div class="prevNextButtons">
-  <a href="./#/code_editors?id=edytory-kodu">
-    <button class="prev">🖊️ Edytory kodu</button>
-  </a>
-  <a href="./#/github?id=github">
-    <button class="next">🐙 GitHub</button>
-  </a>
-</div>

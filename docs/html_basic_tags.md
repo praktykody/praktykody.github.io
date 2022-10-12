@@ -156,11 +156,3 @@ Komentarze nie są widoczne w wyjściowym programie, jedynie w kodzie
 
 [Ćwiczenie 2](/ex_html?id=Ćwiczenie-2)
 
-<div class="prevNextButtons">
-  <a href="./#/html_semantic_tags?id=tagi-semantyczne">
-    <button class="prev">🤖 Tagi semantyczne</button>
-  </a>
-  <a href="./#/css_overview?id=przeglĄd-cssa">
-    <button class="next">👁️ Przegląd CSS</button>
-  </a>
-</div>

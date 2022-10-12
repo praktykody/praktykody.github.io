@@ -14,11 +14,3 @@ możesz pobrać te aktualizacje.
 
 ## Połącz VSC z GIT i GitHub
 
-<div class="prevNextButtons">
-  <a href="./#/version_control_systems?id=systemy-kontroli-wersji">
-    <button class="prev">👌 Systemy kontroli wersji</button>
-  </a>
-  <a href="./#/html_overview?id=przeglĄd-htmla">
-    <button class="next">👀 HTML - Przegląd</button>
-  </a>
-</div>

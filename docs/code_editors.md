@@ -31,11 +31,3 @@ Z pośród wspieranych najpopularniejszych edytorów kodu wyróżniamy:
 1. Wejdź na [code.visualstudio.com](https://code.visualstudio.com/)
 2. Wybierz swoją platrformę i kliknij "pobierz"
 3. Zainstaluj pobrany plik
-
-
-<div class="prevNextButtons">
-  <div></div>
-  <a href="./#/version_control_systems?id=systemy-kontroli-wersji">
-    <button class="next">👌 Systemy kontroli wersji</button>
-  </a>
-</div

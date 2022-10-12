@@ -131,7 +131,3 @@ n
 ```
 ![css media](./images/css_media.gif)
 
-<div style="display:flex;justify-content:space-between;flex-wrap:wrap;">
-  <a href="./#/css_properties?id=właściwości-css">Prev: 🥅 Podstawowe właściwości</a>
-  <a href="./#/preprocesors_overview?id=preprocesory-css">Next: 👀 Przegląd preprocesorów</a>
-</div>

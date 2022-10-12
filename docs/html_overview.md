@@ -119,12 +119,3 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
   ![Pan Cyfrowy](./images/html_mr_digital.svg)
   </div>
 </div>
-
-<div class="prevNextButtons">
-  <a href="./#/github?id=github">
-    <button class="prev">🐙 GitHub</button>
-  </a>
-  <a href="./#/html_semantic_tags?id=tagi-semantyczne">
-    <button class="next">🤖 Tagi semantyczne</button>
-  </a>
-</div>

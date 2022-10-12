@@ -103,12 +103,3 @@ możemy użyć kilku klas na jeden tag:
 ### Tagi
 <!-- TODO: ZROBIĆ -->
 
-
-<div class="prevNextButtons">
-  <a href="./#/html_basic_tags?id=tagi-podstawowe">
-    <button class="prev">🏗️ Tagi podstawowe</button>
-  </a>
-  <a href="./#/css_properties?id=właściwości-css">
-    <button class="next">🥅 Podstawowe właściwości</button>
-  </a>
-</div>

@@ -95,11 +95,3 @@ element.style {
 ```
 ![box-sizing](./images/css_box_sizing.webp)
 
-<div class="prevNextButtons">
-  <a href="./#/css_overview?id=przeglĄd-cssa">
-    <button class="prev">👁️ Przegląd CSS</button>
-  </a>
-  <a href="./#/css_units?id=jednostki-css">
-    <button class="next">⚽️ Jednostki</button>
-  </a>
-</div>
