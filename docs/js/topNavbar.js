@@ -1,44 +1,7 @@
 // make top navbar
-const rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-
-const precissionScroll = top => {
-  window.scrollTo({
-    top,
-    behavior: 'smooth'
-  });
-}
-
-window.$docsify.plugins = [].concat((e, o) => {
-  e.afterEach((e, o) => { 
-    o((e = e))
-    // click on document
-    document.querySelectorAll('a').forEach(e => {
-      e.onclick = e => {
-        e.preventDefault()
-        const loc = location.hash.split('?')[0]+'?id='+e.path.find(e => { return e.id }).id
-        window.history.pushState({}, '', loc);
-        console.log("CLICKED")
-        // const rem = 5 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-        precissionScroll(e.pageY - 5 * rem)
-      }
-    })
-  })
-  e.doneEach((ex) => {
-    // and here async
-        // click on sidebar
-    window.addEventListener('hashchange', async e => {
-      const id = e.newURL.split("id=")[1]
-      const dom = document.getElementById(id)
-      // console.log('changed', e)
-      // console.log('id', id)
-      // console.log('dom:', dom)
-      // console.log(!dom?.pageY ? 'dom:' : dom.pageY)
-      console.log(ex)
-      
-    });
-  })
-}, window.$docsify.plugins)
-
+const addSpacers = () => { document.querySelectorAll('h1, h2, h3, h4').forEach( l => { l.style.cssText = "padding-top:5rem; margin-top:0;" }) }
+window.addEventListener('load', () => { addSpacers() })
+window.$docsify.plugins = [].concat(e => { e.afterEach((e, o) => { o((e = e)); addSpacers() })}, window.$docsify.plugins)
 window.addEventListener('load', () => {
   const nav = document.createElement("nav")
   nav.style.cssText = `
@@ -75,10 +38,7 @@ window.addEventListener('load', () => {
     padding:0 1rem;
   `
   const searchBar = document.querySelector(".search")
-  searchBar.style.cssText = `
-    flex:1;
-  `
-
+  searchBar.style.cssText = ` flex:1; `
 
   logoWithToggler.append(sidebarToggler)
   logoWithToggler.append(logo)
@@ -106,4 +66,3 @@ window.addEventListener('load', () => {
   aside.style.cssText = `padding-top:3rem;`
 
 })
-
