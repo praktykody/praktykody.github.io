@@ -24,6 +24,12 @@
 
   - [👀&nbsp;Przegląd frameworków CSS](frameworks_css.md)
 
+- JavaScript
+
+  - [👀&nbsp;Przegląd JS](js_overview.md)
+
+
+
 - Ćwiczenia
 
   - [HTML](ex_html.md)

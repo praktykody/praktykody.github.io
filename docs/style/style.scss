@@ -6,20 +6,6 @@
 }
 
 body {
-  // scroll-padding-top: 100px;
-  // main{
-  //   scroll-padding-top: 100px;
-  // }
-  // h1, h2{
-  //   scroll-margin-top: 5.2rem;
-  //   scroll-padding-top: 5.2rem;
-  // }
-
-
-  // .content{
-  //   padding-top:20px;
-  // }
-
   .prevNextButtons{
     display:flex;
     justify-content:space-between;
@@ -57,7 +43,7 @@ body {
       flex:1;
       max-width:100%;
     }
-    * :nth-child(2){
+    *:nth-child(2){
       text-align:center;
     }
   }
