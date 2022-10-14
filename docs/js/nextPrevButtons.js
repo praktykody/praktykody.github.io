@@ -27,17 +27,30 @@ const loadMenuItems = route => {
   }
 }
 
+const convertRemToPixels = rem => {    
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
+}
+
+const scrollToID = () => {
+  const id = decodeURI( location.hash.split( "id=" )[1] )
+  const scrollDOM = document.querySelector( '#' + id )
+  if( scrollDOM ){
+    return scrollTo({ top:scrollDOM.offsetTop - convertRemToPixels(3) })
+  }
+  return scrollTo({ top:0 })
+}
+
 const renderButtons = (e, o, arr) => {
-  let buttonField = `<div class="prevNextButtons">`
+  let buttonField = `<div class="prevNextButtons">`;
   buttonField += arr.prev?.href ? `<a href="${ arr.prev.href }"> <button class="prev">${ arr.prev.title }</button></a>` : `<a></a>`;
   buttonField += arr.next?.href ? `<a href="${ arr.next.href }"> <button class="next">${ arr.next.title }</button></a>` : `<a></a>`;
-  buttonField += `</div>`
+  buttonField += `</div>`;
   o((e = e + buttonField ))
+  scrollToID();
 }
 
 window.$docsify.plugins = [].concat((e, ox) => {
   e.afterEach( async (e, o) => { 
-    scrollTo({top:0})
     const arr = loadMenuItems(ox.route)
     if(!arr){
       const interval = setInterval(() => { 
