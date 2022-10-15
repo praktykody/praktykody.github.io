@@ -8,7 +8,7 @@ Rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie 
   </div>
   <div>
 
-  ![Version Control System Scheme](./images/version_control_systems_scheme.svg)
+  ![Version Control System Scheme](../images/version_control_systems_scheme.svg)
   </div>
 </div>
 
@@ -26,7 +26,7 @@ Pierwsze dwa punkty wyeliminowały wszystko prócz Monotone'a, a czwarty punkt w
 </div>
 <div>
 
-  ![Linus Torvalds](./images/linustorvalds.jpg)
+  ![Linus Torvalds](../images/linustorvalds.jpg)
   
   [Linus Torvalds on GitHub](https://github.com/torvalds)
 </div>
@@ -39,7 +39,7 @@ Pobierz instalkę ze strony
 [git-scm.com](https://git-scm.com/download/win)
 i przeprowadź instalację z domyślnymi ustawieniami, poza domyślnym edytorem, który możesz zmienić na VSC 🙃
 
-![GIT installation](./images/github_installation.webp)
+![GIT installation](../images/github_installation.webp)
 
 ## Rozwiązania oparte na technologii GIT
 
@@ -48,6 +48,6 @@ i przeprowadź instalację z domyślnymi ustawieniami, poza domyślnym edytorem,
     Jako rozproszony system kontroli wersji, Git nie wymaga odrębnej aplikacji serwerowej. Istnieją jednak pakiety rozszerzające oryginalne oprogramowanie, przede wszystkim o kontrolę dostępu, wsparcie dla zarządzania wieloma repozytoriami, czy interfejs WWW. Przykłady niektórych popularnych projektów to <b>GitHub, Bitbucket, GitLab, Git Daemon, Gitolite, Gerrit, Gitiles, Bonobo Git Server, Git Server.</b>
   </div>
   <div>
-    <img src="./images/octocat.webp" alt="GitHub Octocat">
+    <img src="../images/octocat.webp" alt="GitHub Octocat">
   </div>
 </div>

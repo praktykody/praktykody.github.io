@@ -8,7 +8,7 @@ wartościami.
 
 Do budowy wykorzystaj tagi : header, nav, main, article, section, footer
 
-![Ćwiczenie semantyczne](./images/html_semantic_exercise.webp)
+![Ćwiczenie semantyczne](../images/html_semantic_exercise.webp)
 
 [Gotowe? Przejdź dalej](/html_basic_tags?id=tagi-podstawowe)
 
@@ -30,5 +30,5 @@ Do efektu pracy ćwiczenia 1 dodaj tagi:
 Do tabelki możesz dodać emotikony które znajdziesz na stronie [emojipedia.org](https://emojipedia.org)
 Napis ***CONTENT*** wrzuć w komentarz
 
-![Ćwiczenie html basic](./images/html_basic_exercise.webp)
+![Ćwiczenie html basic](../images/html_basic_exercise.webp)
 

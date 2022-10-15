@@ -11,7 +11,7 @@ Najpopularniejszy front-endowy framework, traktujący strony mobilne jako priory
 
 Używa HTML5 i CSS, poprawia wygląd wielu elementów, opiera się na JS.
 
-![Trending CSS Frameworks](./images/frameworks_css_trends.webp)
+![Trending CSS Frameworks](../images/frameworks_css_trends.webp)
 
 Pomaga tworzyć strony szybciej i w RWD (Responsive Web Design)
 

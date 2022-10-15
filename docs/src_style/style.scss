@@ -7,6 +7,10 @@
 }
 
 body {
+  table{
+    display:table !important;
+  }
+
   .prevNextButtons{
     display:flex;
     justify-content:space-between;
@@ -44,12 +48,15 @@ body {
       flex:1;
       max-width:100%;
     }
-    > *:nth-child(2){
+    .center{
       text-align:center;
     }
   }
 
   @media screen and (max-width: 768px){
+    table{
+      display:block !important;
+    }
     #docsify-darklight-theme {
       right:10px;
       left:unset;

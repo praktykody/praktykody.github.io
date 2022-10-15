@@ -9,9 +9,9 @@ Z pośród wspieranych najpopularniejszych edytorów kodu wyróżniamy:
     <th>Visual Studio Code</th>
   </tr>
   <tr>
-    <td><img src="./images/code_editor_brackets.webp" alt="Brackets Logo"></td>
-    <td><img src="./images/code_editor_sublime_text.webp" alt="SublimeText Logo"></td>
-    <td><img src="./images/code_editor_vsc.webp" alt="VSC Logo"></td>
+    <th><img src="./images/code_editor_brackets.svg" alt="Brackets Logo"></th>
+    <th><img src="./images/code_editor_sublime_text.svg" alt="SublimeText Logo"></th>
+    <th><img src="./images/code_editor_vsc.svg" alt="VSC Logo"></th>
   </tr>
   <tr>
     <th><a href="https://brackets.io/" target="_blank">brackets.io</th>

@@ -51,4 +51,4 @@ Możemy otwierać sekcje headerami, a zamykać footerami
 ## &lt;noscript&gt;
 W tag &lt;noscript> wpisujemy alternatywną treść wyświetlaną w przeglądarkach nieobsługujących skryptów lub w przeglądarkach, w których użytkownik wyłącza obsługę skryptów. W przeciwnym razie przeglądarka ignoruje ten tag i jego zawartość. W HTML5 znacznik &lt;noscript&gt; można umieścić w elementach &lt;head&gt; i &lt;body&gt;.
 
-[Ćwiczenie 1](/ex_html?id=Ćwiczenia-1)
+[Ćwiczenie 1](/ex/html?id=Ćwiczenia-1)

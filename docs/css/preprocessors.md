@@ -1,4 +1,10 @@
 # Preprocesory CSS
+SASS - Syntactically Awesome Style Sheets (niesamowicie składniowe arkusze stylów)
+
+SCSS - Sassy Cascading Style Sheet (Impertynencki Kaskadowy Arkusz Stylów - tłum. autor) 
+
+impertynent *osoba zachowująca się wobec kogoś arogancko, obraźliwie* - sjp.pwn.pl
+
 ## Czym są
 Preprocesory CSS najczęściej określane są jako narzędzia, pozwalające nam na tworzenie oraz utrzymywanie arkuszy stylów CSS w sposób:
 - lepiej zorganizowany
@@ -11,21 +17,18 @@ Preprocesory CSS najczęściej określane są jako narzędzia, pozwalające nam 
 2. Mając do czynienia z naprawdę dużym zbiorem stylów dla całego serwisu możemy się zgubić, czy wpaść w konflikty z poprzednimi klasami. Bardzo ciężko jest czasami tego uniknąć.
 3. Męczy nas powtarzanie tego samego kodu cały czas. Przez mnogość znaków i selektorów kod jest nieczytelny.
 
-
 ## Działanie 
 Niestety pisząc kod CSS z użyciem preprocesorów, nie jest on rozumiany przez przeglądarki jak standardowy plik ze stylami CSS. Przez to nasz kod musimy skompilować do kodu CSS aby działał jak należy.
 
-![Complilators](./images/preprocesors_compilators.webp)
+![Complilators](../images/preprocesors_compilators.webp)
 
 ## Środowisko
-![Live Sass Compiler](./images/preprocesors_sass_compiler_vsc.webp)
+![Live Sass Compiler](../images/preprocesors_sass_compiler_vsc.webp)
 
-## SASS / SCSS NESTING - ZAGNIEŻDŻANIE
-SASS - Syntactically Awesome Style Sheets (niesamowicie składniowe arkusze stylów)
 
-SCSS - Sassy Cascading Style Sheet (Impertynencki Kaskadowy Arkusz Stylów - tłum. autor) 
-
-impertynent «osoba zachowująca się wobec kogoś arogancko, obraźliwie» - sjp.pwn.pl
+## Nesting
+<div class="standardWrapper">
+<div>
 
 ```css
 /* SCSS */
@@ -35,9 +38,7 @@ nav {
     padding: 0;
     list-style: none;
   }
-
   li { display: inline-block; }
-
   a {
     display: block;
     padding: 6px 12px;
@@ -45,6 +46,9 @@ nav {
   }
 }
 ```
+</div>
+<div>
+
 ```css
 /* SASS */
 nav
@@ -61,8 +65,11 @@ nav
     padding: 6px 12px
     text-decoration: none
 ```
+</div>
+<div>
 
 ```css
+/* CSS */
 nav ul {
   margin: 0;
   padding: 0;
@@ -77,6 +84,9 @@ nav a {
   text-decoration: none;
 }
 ```
+</div>
+</div>
+
 
 ## Zmienne
 ```css
@@ -130,4 +140,3 @@ aside[role="complementary"] {
 - LESS daje możliwość używania MIXINS tylko w określonych sytuacjach
 - SASS oferuje rozróżnianie liter, pętle, no i różne składnie (SCSS)
 - Początkowo LESS był wspierany przez framework Bootstrap, ale od wersji 4 wspierany jest SASS, który jest najpopularniejszym preprocesorem. 
-

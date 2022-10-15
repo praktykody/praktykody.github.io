@@ -1,4 +1,4 @@
-# PRZEGLĄD HTMLA 
+# HTML
 ## Powstanie HTML
 
 <div class="standardWrapper">
@@ -18,7 +18,7 @@
 </div>
 <div>
 
-  ![Tim Berners-Lee](./images/html_tim_berens_lee.webp)
+  ![Tim Berners-Lee](../images/html_tim_berens_lee.webp)
   
   [Tim Berners-Lee on GitHub](https://github.com/timbl)
 </div>
@@ -26,7 +26,7 @@
 
 ## Wyjątkowość HTML 
 <!-- ![Devices compatibile with HTML](./images/html_devices.webp) -->
-![Devices compatibile with HTML](./images/html_devices.svg)
+![Devices compatibile with HTML](../images/html_devices.svg)
 
 ## Składnia HTML
 ### Tag pojedynczy
@@ -119,6 +119,6 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
   </div>
   <div>
 
-  ![Pan Cyfrowy](./images/html_mr_digital.svg)
+  ![Pan Cyfrowy](../images/html_mr_digital.svg)
   </div>
 </div>

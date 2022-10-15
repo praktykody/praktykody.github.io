@@ -4,7 +4,7 @@ Wyrażenie regularne - wzorzec opisujący łańcuch symboli. Wyrażenia regularn
 [REGEX EDITOR](https://regexr.com/)
 
 
-![regex](./images/regex.png)
+![regex](../images/regex.png)
 
 ## Klasy znaków
 - [ABC] - zestaw znaków - dowolny znak w zestawie
@@ -49,4 +49,4 @@ Flag używamy po drugim backslashu w wyrażeniach /\w+/g
 - m - multiline - gdy flaga jest włączona, kotwice początku i końca ( ^ i $) będą dopasowywać początek i koniec wiersza zamiast początek i koniec całego ciągu
 
 ## Ćwiczenie REGEX
-<iframe src="/html/regex.html" style="min-height:50vh;"></iframe>
+<iframe src="/src_html/regex.html" style="min-height:50vh;"></iframe>

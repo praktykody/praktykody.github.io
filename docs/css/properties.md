@@ -12,7 +12,7 @@ element.style {
 </div>
 	<div>
 
-![Margin & padding difference](./images/css_margin_padding.webp)
+![Margin & padding difference](../images/css_margin_padding.webp)
 
 </div>
 </div>
@@ -28,7 +28,7 @@ element.style {
 }
 ```
 
-![CSS Displays](./images/css_displays.webp)
+![CSS Displays](../images/css_displays.webp)
 
 ### Display:flex
 ```html
@@ -55,7 +55,7 @@ element.style {
 }
 ```
 
-![Display Flex](./images/css_display_flex.webp)
+![Display Flex](../images/css_display_flex.webp)
 
 
 ## position
@@ -65,7 +65,7 @@ element.style {
 }
 
 ```
-![positions](./images/css_positions.gif)
+![positions](../images/css_positions.gif)
 
 
 
@@ -93,5 +93,5 @@ element.style {
 	box-sizing:border-box;
 }
 ```
-![box-sizing](./images/css_box_sizing.webp)
+![box-sizing](../images/css_box_sizing.webp)
 

@@ -154,5 +154,5 @@ Komentarze nie są widoczne w wyjściowym programie, jedynie w kodzie
 <!-- TO JEST KOMENTARZ HTML -->
 ```
 
-[Ćwiczenie 2](/ex_html?id=Ćwiczenie-2)
+[Ćwiczenie 2](/ex/html?id=Ćwiczenie-2)
 

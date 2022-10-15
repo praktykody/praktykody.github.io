@@ -58,7 +58,7 @@ Relatywne jednostki bazują na
 }
 ```
 
-![Percents example](./images/css_units_percent.webp)
+![Percents example](../images/css_units_percent.webp)
 
 ### Rzuty 
 - viewport width
@@ -70,7 +70,7 @@ Relatywne jednostki bazują na
     height:49vh;
 }
 ```
-![Viewports](./images/css_viewports.webp)
+![Viewports](../images/css_viewports.webp)
 
 ### Wielkości czcionek - REM
 ```html
@@ -113,7 +113,7 @@ Relatywne jednostki bazują na
 	font-size:2em;
 }
 ```
-![em units](./images/css_units_em.webp)
+![em units](../images/css_units_em.webp)
 
 
 
@@ -129,5 +129,5 @@ Relatywne jednostki bazują na
 	}	
 }
 ```
-![css media](./images/css_media.gif)
+![css media](../images/css_media.gif)
 

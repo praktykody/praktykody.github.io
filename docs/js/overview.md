@@ -9,7 +9,7 @@
 </div>
 <div>
 
-  ![Brendan Eich](./images/brendaneich.png)
+  ![Brendan Eich](../images/brendaneich.png)
 
   [Brendan Eich on GitHub](https://github.com/BrendanEich)
 </div>
@@ -19,7 +19,7 @@
 <div class="standardWrapper reverse">
 <div style="text-align:center;">
 
-  ![html logo](./images/html5_logo.svg)
+  ![html logo](../images/html5_logo.svg)
   
   **DEFINICJA ELEMENTÓW**
 
@@ -27,7 +27,7 @@
 </div>
 <div style="text-align:center;">
 
-  ![css logo](./images/css3_logo.svg)  
+  ![css logo](../images/css3_logo.svg)  
   
   **DEFINICJA WYGLĄDU**
 
@@ -35,7 +35,7 @@
 </div>
 <div style="text-align:center;">
 
-  ![JavaScript Logo](./images/js_logo.svg)  
+  ![JavaScript Logo](../images/js_logo.svg)  
 
   **DEFINICJA ZACHOWANIA**
 
@@ -71,4 +71,4 @@
 
 <span style="color:var(--red);">nazwaZmiennej</span> - wymyślasz ją na własną rękę - ważne żeby **określała czym jest wartość**
 
-<span style="color:var(--pink);">wartość</span> - może to być każdy poprawnie wpisany [typ danych](js_data_types.md)
+<span style="color:var(--pink);">wartość</span> - może to być każdy poprawnie wpisany [typ danych](js/data_types.md)

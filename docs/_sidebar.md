@@ -1,38 +1,43 @@
+<!-- - [Konfiguracja](code_editors.md) -->
 - Konfiguracja
 
-  - [🖊️&nbsp;Edytory kodu](code_editors.md)
-  - [👌&nbsp;&nbsp;GIT](git_overview.md)
-  - [🐙&nbsp;GitHub](github.md)
+  - [🖊️&nbsp;Edytory kodu](config/code_editors.md)
+  - [👌&nbsp;&nbsp;GIT](config/git_overview.md)
+  - [🐙&nbsp;GitHub](config/github.md)
 
-- HTML 
+- HTML
 
-  - [👀&nbsp;Przegląd HTML](html_overview.md)
-  - [🤖&nbsp;Tagi semantyczne](html_semantic_tags.md)
-  - [🏗️&nbsp;Tagi podstawowe](html_basic_tags.md)
+  - [👀&nbsp;Przegląd HTML](html/overview.md)
+  - [🤖&nbsp;Tagi semantyczne](html/semantic_tags.md)
+  - [🏗️&nbsp;Tagi podstawowe](html/basic_tags.md)
 
 - CSS 
 
-  - [👀&nbsp;Przegląd CSS](css_overview.md)
-  - [🥅&nbsp;Podstawowe właściwości](css_properties.md)
-  - [⚽️&nbsp;Jednostki](css_units.md)
-  - [💇&nbsp;Preprocesory CSS](preprocesors_overview.md)
-  - [🖼️&nbsp;Frameworki CSS](frameworks_css.md)
+  - [👀&nbsp;Przegląd CSS](css/overview.md)
+  - [🥅&nbsp;Podstawowe właściwości](css/properties.md)
+  - [⚽️&nbsp;Jednostki](css/units.md)
+  - [💇&nbsp;Preprocesory CSS](css/preprocessors.md)
+  - [🖼️&nbsp;Frameworki CSS](css/frameworks.md)
 
 - JavaScript
 
-  - [👀&nbsp;Przegląd JS](js_overview.md)
-  - [🗃️&nbsp;Typy danych](js_data_types.md)
-  - [💾&nbsp;Funkcje JS](js_functions.md)
-  - [🏠&nbsp;DOM: HTML ↔️ JS](js_dom.md)
-  - [✨&nbsp;Pozostałe](js_else.md)
+  - [👀&nbsp;Przegląd JS](js/overview.md)
+  - [🗃️&nbsp;Typy danych](js/data_types.md)
+  - [💾&nbsp;Funkcje JS](js/functions.md)
+  - [🏠&nbsp;DOM: HTML ↔️ JS](js/dom.md)
+  - [✨&nbsp;Pozostałe](js/else.md)
+  <!-- - [🏋🏻&nbsp;WORK WITH JS](js/maze.md) -->
 
 - Ćwiczenia
 
-  - [HTML](ex_html.md)
-  - [CSS](ex_css.md)
-  - [Preprocesory](ex_preprocesors.md)
-  - [JS](ex_js.md)
+  - [🏗️&nbsp;HTML](ex/html.md)
+  - [🥅&nbsp;CSS](ex/css.md)
+  - [💇&nbsp;Preprocesory](ex/preprocesors.md)
+  - [🗃️&nbsp;JS](ex/js.md)
+  - [🌽&nbsp;Labirynt](ex/maze.md)
+  - [☁️&nbsp;Pogodynka](ex/weather.md)
 
 - Narzędzia
 
-  - [REGEX](tools_regex.md)
+  - [🤯&nbsp;REGEX](tools/regex.md)
+  - [JSON](tools/json.md)

@@ -10,7 +10,7 @@
   </div>
   <div>
 
-  ![Håkon Wium Lie](./images/css_hakon_lie.webp)
+  ![Håkon Wium Lie](../images/css_hakon_lie.webp)
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 <div class="standardWrapper reverse">
 <div style="text-align:center;">
 
-  ![html logo](./images/html5_logo.svg)
+  ![html logo](../images/html5_logo.svg)
   
   **DEFINICJA ELEMENTÓW**
 
@@ -26,7 +26,7 @@
 </div>
 <div style="text-align:center;">
 
-  ![css logo](./images/css3_logo.svg)  
+  ![css logo](../images/css3_logo.svg)  
   
   **DEFINICJA WYGLĄDU**
 

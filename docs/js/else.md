@@ -35,7 +35,7 @@ console.log(currentSlide); // 0
 - wszystkie zmienne powinny być domyślnie deklarowane przy użyciu const
 - użyj let, jeśli zmienia się wartość zmiennej
 </div>
-<div>
+<div style="display:flex;justify-content:center;">
   <table>
     <tr>
       <th>keword</th>

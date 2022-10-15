@@ -7,7 +7,7 @@ var data1 = [
     Description: "Tu nauczysz się kodować HTML'a, poznasz historię i strukturę",
     WorkType: "łatwe",
     Time: " ~ 60 min",
-    Link: "/#/html_overview"
+    Link: "/#/html/overview"
   },
   {
     Name: "CSS",
@@ -15,7 +15,7 @@ var data1 = [
     Description: "Również historia i struktura cssa",
     WorkType: "łatwe",
     Time: " ~ 60 min",
-    Link: "/#/html_overview"
+    Link: "/#/html/overview"
   },
 ];
 
@@ -26,7 +26,7 @@ var data2 = [
     Description: "Informacje nt DOM",
     WorkType: "łatwe",
     Time: " ~ 60 min",
-    Link: "/#/html_overview"
+    Link: "/#/html/overview"
   },
   {
     Name: "Vue",
@@ -34,7 +34,7 @@ var data2 = [
     Description: "Przegląd oraz przykłady użycia",
     WorkType: "łatwe",
     Time: " ~ 60 min",
-    Link: "/#/html_overview"
+    Link: "/#/html/overview"
   },
 ];
 
