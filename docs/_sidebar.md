@@ -1,8 +1,7 @@
 - Konfiguracja
 
   - [🖊️&nbsp;Edytory kodu](code_editors.md)
-  <!-- - [👌&nbsp;&nbsp;Systemy kontroli wersji](version_control_systems.md) -->
-  - [👌&nbsp;&nbsp;Systemy kontroli wersji](git_overview.md)
+  - [👌&nbsp;&nbsp;GIT](git_overview.md)
   - [🐙&nbsp;GitHub](github.md)
 
 - HTML 
@@ -16,25 +15,24 @@
   - [👀&nbsp;Przegląd CSS](css_overview.md)
   - [🥅&nbsp;Podstawowe właściwości](css_properties.md)
   - [⚽️&nbsp;Jednostki](css_units.md)
-
-- Preprocesory
-
-  - [👀&nbsp;Przegląd preprocesorów](preprocesors_overview.md)
-
-- Frameworki CSS
-
-  - [👀&nbsp;Przegląd frameworków CSS](frameworks_css.md)
+  - [💇&nbsp;Preprocesory CSS](preprocesors_overview.md)
+  - [🖼️&nbsp;Frameworki CSS](frameworks_css.md)
 
 - JavaScript
 
   - [👀&nbsp;Przegląd JS](js_overview.md)
-  - [👀&nbsp;Typy danych](js_data_types.md)
-  - [👀&nbsp;Funkcje JS](js_functions.md)
-
-
+  - [🗃️&nbsp;Typy danych](js_data_types.md)
+  - [💾&nbsp;Funkcje JS](js_functions.md)
+  - [🏠&nbsp;DOM: HTML ↔️ JS](js_dom.md)
+  - [✨&nbsp;Pozostałe](js_else.md)
 
 - Ćwiczenia
 
   - [HTML](ex_html.md)
   - [CSS](ex_css.md)
   - [Preprocesory](ex_preprocesors.md)
+  - [JS](ex_js.md)
+
+- Narzędzia
+
+  - [REGEX](tools_regex.md)

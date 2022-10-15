@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ćwiczenia regex</title>
+  <style>
+    body{
+      margin:0;
+      display:grid;
+      place-items: center;
+      height:100vh;
+      background-color:rgb(153, 152, 151);
+    }
+    main{border:2px solid rgba(0, 0, 0, 0.473);background-color:rgb(214, 210, 210);padding:10px;}
+    h1{margin:10px;font-size:1.5em;}
+    h2{margin:5px;margin-top:15px;}
+    a{text-decoration: none;text-align:center;margin-bottom:15px;}
+    .content{
+      background-color:rgba(255, 255, 255, 0.801);
+      padding:10px;
+      padding-top:0;
+      display:flex;
+      flex-direction: column;
+    }
+    .content > div{
+      border:2px solid rgba(0, 0, 0, 0.205);
+      padding:5px;
+      margin-top:10px;
+
+    }
+    .content div{
+      display:flex;
+      justify-content: space-between;
+    }
+    .result{
+      display:flex;
+      gap:10px;      
+      padding-top:10px;
+    }
+    .result > * {
+      flex:1;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1></h1>
+    <div class="content">
+    </div>
+    <div class="result">
+      <input type="text" name="answer" placeholder="answer">
+      <button disabled>Next</button>
+    </div>
+  </main>
+  <script>
+    const exercises = {
+      template: [
+        {
+          name : "Zad1. Złap je wszystkie!",
+          values: ['abc', 'abcdef', 'abcdefg'],
+          results: ['abc', 'abcdef', 'abcdefg'],
+        },
+        {
+          name : "Zad2. Wyciągnij cyfry",
+          values: ['jas123', '412jadzia', 'michal2019'],
+          results: ['123', '412', '2019'],
+        },
+        
+
+      ],
+      init(){
+        this.h1 = document.querySelector("h1");
+        this.content = document.querySelector(".content");
+        this.answer = document.querySelector("input");
+        this.answer.addEventListener("keyup",this.checkAnswer);
+        this.button = document.querySelector("button");
+        this.button.addEventListener("click", ()=>{
+          this.answer.value = "";
+          this.exNr++;
+          if(this.exNr >= this.template.length){
+            this.answer.removeEventListener("keyup",this.checkAnswer);
+            this.h1.remove();
+            this.content.innerHTML = `
+              <h2>Skończyłeś, nieźle</h2>
+              <a href='#' onclick='location.reload()'>Spróbuj jeszcze raz</a>
+            `;
+            document.querySelector(".result").remove();
+          }else{
+            this.fillDOM(this.exNr);
+          }
+        })
+        document.addEventListener("keydown", e =>{
+          if(e.key == "Enter"){
+            exercises.button.click();
+          }
+        })
+        this.fillDOM();
+      },
+      fillDOM(exNr = 0){
+        this.exNr = exNr;
+        this.h1.innerText = this.template[exNr].name;
+        this.content.innerHTML = "";
+        for(const [index,value] of this.template[exNr].values.entries()){
+          const div = document.createElement("div");
+          div.innerHTML = ` <div>${value}</div>
+                            <div class="m${exNr}_${index}">❌</div>`;
+          this.content.append(div);
+        }
+      },
+      checkAnswer(e){
+        let isDone = true;
+        for(const [index,value] of exercises.template[exercises.exNr].values.entries()){
+          const matchingDOM = document.querySelector(".m"+exercises.exNr+"_"+index);
+          const re = new RegExp(this.value);
+          const check = value.match(re)?.[0] == exercises.template[exercises.exNr].results[index];
+          matchingDOM.innerText = check ? '✔️' : '❌';
+          if(!check){isDone = false;}
+        }
+        exercises.button.disabled = !isDone;
+      }
+    }
+    exercises.init();
+
+  </script>
+
+</body>
+</html>

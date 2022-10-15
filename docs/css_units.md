@@ -94,7 +94,7 @@ Relatywne jednostki bazują na
 	font-size:2rem;
 }
 ```
-n 
+
 ### Wielkości czcionek - EM
 ```html
 <div id="rodzic_em">

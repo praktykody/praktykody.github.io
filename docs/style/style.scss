@@ -3,6 +3,7 @@
   --green:#368f35;
   --red:#ba4343;
   --pink:#c221a7;
+  --yellow:#e3f031;
 }
 
 body {
@@ -43,7 +44,7 @@ body {
       flex:1;
       max-width:100%;
     }
-    *:nth-child(2){
+    > *:nth-child(2){
       text-align:center;
     }
   }

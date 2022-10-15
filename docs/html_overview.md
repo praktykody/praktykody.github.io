@@ -19,6 +19,7 @@
 <div>
 
   ![Tim Berners-Lee](./images/html_tim_berens_lee.webp)
+  
   [Tim Berners-Lee on GitHub](https://github.com/timbl)
 </div>
 </div>
