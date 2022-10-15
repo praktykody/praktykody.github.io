@@ -1,3 +1,5 @@
+console.log("topNavbar")
+
 // make top navbar
 const addSpacers = () => { 
   document.querySelectorAll('h1').forEach( l => { l.style.cssText = "padding-top:5rem; margin-top:0;" })
@@ -49,21 +51,25 @@ window.addEventListener('load', () => {
   nav.append(logoWithToggler)
   nav.append(searchBar)
 
-
-  const lightDarkButton = document.querySelector("#docsify-darklight-theme")
-  if(lightDarkButton){
-
-    lightDarkButton.style.cssText = `
-      position:relative;
-      top:unset;
-      display:flex;
-    `
-    lightDarkButton.addEventListener("click", () => {
-      "light" === t.defaultTheme ? d("dark") : d("light");
-    });
-  
-    nav.append(lightDarkButton)
-  }
+  let intervaled = 0;
+  const catchLightDarkButt = setInterval( () => {
+    const lightDarkButton = document.querySelector("#docsify-darklight-theme")
+    if(lightDarkButton){
+      lightDarkButton.style.cssText = `
+        position:relative;
+        top:unset;
+        display:flex;
+      `
+      lightDarkButton.addEventListener("click", () => {
+        "light" === t.defaultTheme ? d("dark") : d("light");
+      });
+    
+      nav.append(lightDarkButton)
+      clearInterval(catchLightDarkButt)
+    }
+    intervaled++;
+    if(intervaled > 10){clearInterval(catchLightDarkButt)}
+  },50)
   
   document.body.prepend(nav)
   const aside = document.querySelector('.sidebar');

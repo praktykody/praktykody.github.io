@@ -1,6 +1,6 @@
 # MAZE GAME
 
-<iframe src="src_html/maze.html" style="min-height:40vh;border:none;position:sticky;top:5rem;z-index:1;"></iframe>
+<iframe src="src_html/maze.html" style="min-height:40vh;border:none;z-index:1;"></iframe>
 
 Stwórz grę wg przykładu.
 

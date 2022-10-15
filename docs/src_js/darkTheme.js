@@ -1,3 +1,4 @@
+console.log("darkTheme")
 // Dark theme
 let t = {
   siteFont: "PT Sans",
@@ -49,8 +50,7 @@ window.$docsify.plugins = [].concat((e, o) => {
   } else for (var [r, l] of Object.entries(t)) "light" !== r && "dark" !== r && ((t[r] = l), document.documentElement.style.setProperty("--" + r, l));
   window.matchMedia("(prefers-color-scheme: dark)").matches ? (t.defaultTheme = "dark") : window.matchMedia("(prefers-color-scheme: light)").matches && (t.defaultTheme = "light");
   e.afterEach(function (e, o) {
-    const nav = document.querySelector('nav')
-    return nav ? o((e = e)) : o((e = '<div id="docsify-darklight-theme"><p>.</p></div>' + e));
+    o((e = '<div id="docsify-darklight-theme"><p>.</p></div>' + e));
   }),
   e.doneEach(function () {
     let e = localStorage.getItem("DARK_LIGHT_THEME");

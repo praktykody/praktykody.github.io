@@ -158,8 +158,8 @@ const game = {
     game.plane.querySelector('.time').innerHTML = game.time // wypełnij kafelek z czasem "nowym czasem"
     game.plane.querySelector('.start').addEventListener(isMobile ? 'touchstart' : 'click', game.start)
   },
-  start(){
-
+  start(e){
+    // e.preventDefault(); // stop scrolling on mobile
     game.plane.querySelector('.start').removeEventListener(isMobile ? 'touchstart' : 'click', game.start)
     game.plane.addEventListener(isMobile ? 'touchmove' : 'mousemove', game.checkMove)
     game.plane.addEventListener('touchend', game.release)

@@ -22,11 +22,10 @@
 
   <!-- Dark theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-darklight-theme@latest/dist/style.min.css" />
-  <script src="src_js/darkTheme.js" defer></script>
-
+  <!-- <script src="src_js/darkTheme.js" defer></script> -->
+  <script src="src_js/darkTheme.js"></script>
 
   <script>
-    
     // load roadmap only on main
     const loadRoadMap = () => {
       if("👨‍🏫 TAI Coders Codex" != document.querySelector("h1")?.innerText) { return }
@@ -38,8 +37,6 @@
     document.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', loadRoadMap);
     }, true)
-
-
   </script>
 
   <!-- Custom styles -->

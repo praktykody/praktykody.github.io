@@ -1,5 +1,5 @@
 # Document Object Model
-![dom tree](./images/dom_tree.png)
+![dom tree](../images/dom_tree.png)
 ## Edycja istniejącego już tagu w dokumencie:
 ```js
 // pobieranie elementu z dokumentu HTML'a
