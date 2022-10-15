@@ -14,21 +14,24 @@
   </div>
 </div>
 
-
-### Technologia 
-<div class="standardWrapper">
-  <div style="text-align:center;">
-
-  ![css logo](./images/css3_logo.svg)
-  
-  kolory, rozmiary, marginesy, kolor tła, cienie, kroje czcionek etc
-  </div>
-  <div style="text-align:center;">
+## Technologia 
+<div class="standardWrapper reverse">
+<div style="text-align:center;">
 
   ![html logo](./images/html5_logo.svg)
+  
+  **DEFINICJA ELEMENTÓW**
 
-  tekst, obrazy, przyciski, listy wyboru, hiperłącza etc
-  </div>
+  tekst, obrazy, przyciski, listy wyboru, hiperłącza, semantyka itd.
+</div>
+<div style="text-align:center;">
+
+  ![css logo](./images/css3_logo.svg)  
+  
+  **DEFINICJA WYGLĄDU**
+
+  kolory, rozmiary, marginesy, kolor tła, cienie, kroje czcionek itd.
+</div>
 </div>
 
 ## CSS w HTML

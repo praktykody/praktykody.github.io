@@ -1,7 +1,8 @@
 - Konfiguracja
 
   - [🖊️&nbsp;Edytory kodu](code_editors.md)
-  - [👌&nbsp;&nbsp;Systemy kontroli wersji](version_control_systems.md)
+  <!-- - [👌&nbsp;&nbsp;Systemy kontroli wersji](version_control_systems.md) -->
+  - [👌&nbsp;&nbsp;Systemy kontroli wersji](git_overview.md)
   - [🐙&nbsp;GitHub](github.md)
 
 - HTML 
@@ -27,6 +28,8 @@
 - JavaScript
 
   - [👀&nbsp;Przegląd JS](js_overview.md)
+  - [👀&nbsp;Typy danych](js_data_types.md)
+  - [👀&nbsp;Funkcje JS](js_functions.md)
 
 
 

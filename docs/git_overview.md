@@ -1,21 +1,20 @@
-# Systemy kontroli wersji
-## Czym są?
-(ang. version/revision control system) – oprogramowanie służące do śledzenia zmian głównie w kodzie źródłowym oraz pomocy programistom w łączeniu zmian dokonanych w plikach przez wiele osób w różnym czasie.
+# GIT - system kontroli wersji
+Rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie wspomagające rozwój jądra Linux. 
 
-Systemy kontroli wersji dzielą się na:
-  - lokalne, pozwalające na zapisanie danych jedynie na lokalnym komputerze (np. SCCS oraz RCS)
-  - scentralizowane, oparte na architekturze klient-serwer (np. CVS, Subversion)
-  - rozproszone, oparte na architekturze P2P(peer to perr - osoba do osoby) (np. BitKeeper, Code Co-op, Git, svk).
+## Systemy kontroli wersji
+<div class="standardWrapper">
+  <div>
+  (ang. version/revision control system) – oprogramowanie służące do śledzenia zmian głównie w kodzie źródłowym oraz pomocy programistom w łączeniu zmian dokonanych w plikach przez wiele osób w różnym czasie.
+  </div>
+  <div>
 
-![Version Control System Scheme](./images/version_control_systems_scheme.svg)
+  ![Version Control System Scheme](./images/version_control_systems_scheme.svg)
+  </div>
+</div>
 
-## GIT
-rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie wspomagające rozwój jądra Linux. Git stanowi wolne oprogramowanie i został opublikowany na licencji **GNU GPL w wersji 2**.
-- wolność uruchamiania programu w dowolnym celu (wolność 0)
-- wolność analizowania, jak program działa i dostosowywania go do swoich potrzeb (wolność 1)
-- wolność rozpowszechniania niezmodyfikowanej kopii programu (wolność 2)
-- wolność udoskonalania programu i publicznego rozpowszechniania własnych ulepszeń, dzięki czemu może z nich skorzystać cała społeczność (wolność 3)
-
+## Historia GIT'a
+<div class="standardWrapper">
+<div>
 Prace nad Gitem rozpoczęły się po tym, jak BitKeeper, używany wtedy do rozwoju Linuksa, przestał być darmowy dla projektów o otwartym kodzie źródłowym. Torvalds szukał rozproszonego systemu kontroli wersji, który mógłby być użyty zamiast BitKeepera, głównymi kryteriami wyboru były:
 
 1. Przykład CVS, czego nie robić.
@@ -24,6 +23,16 @@ Prace nad Gitem rozpoczęły się po tym, jak BitKeeper, używany wtedy do rozwo
 4. System powinien być szybki.
 
 Pierwsze dwa punkty wyeliminowały wszystko prócz Monotone'a, a czwarty punkt wyeliminował wszystko, więc Torvalds postanowił napisać własny system kontroli wersji.
+</div>
+<div>
+
+  ![Linus Torvalds](./images/linustorvalds.jpg)
+  
+  [Linus Torvalds on GitHub](https://github.com/torvalds)
+</div>
+</div>
+
+
 
 ## Instalacja GIT'a
 Pobierz instalkę ze strony

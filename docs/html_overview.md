@@ -2,23 +2,25 @@
 ## Powstanie HTML
 
 <div class="standardWrapper">
-  <div>
-    <ul>
-      <li>
-        W 1980 roku Tim Berners-Lee stworzył pierwszy hipertekstowy system informacyjny - ENQUIRE. Rewolucyjność pomysłu polegała na tym, że użytkownik, posługując się odnośnikami, mógł z jednej lokalizacji przeglądać dokumenty fizycznie znajdujące się w innych miejscach na świecie. 
-      </li>
-      <li>
-        W 1989 Robert Cailliau opracował dwa takie systemy, oparte o sieć internet. 
-      </li>
-      <li>
-        W 1990 roku obydwaj panowie stworzyli WorldWideWeb.  
-      </li>
-    </ul>
-    Struktura stron WWW jest oparta na plikach HTML, które to są plikami tekstowymi z rozszerzeniem .html lub .htm
-  </div>
-  <div>
-    <img src="./images/html_tim_berens_lee.webp" alt="Tim Berners-Lee">
-  </div>
+<div>
+  <ul>
+    <li>
+      W 1980 roku Tim Berners-Lee stworzył pierwszy hipertekstowy system informacyjny - ENQUIRE. Rewolucyjność pomysłu polegała na tym, że użytkownik, posługując się odnośnikami, mógł z jednej lokalizacji przeglądać dokumenty fizycznie znajdujące się w innych miejscach na świecie. 
+    </li>
+    <li>
+      W 1989 Robert Cailliau opracował dwa takie systemy, oparte o sieć internet. 
+    </li>
+    <li>
+      W 1990 roku obydwaj panowie stworzyli WorldWideWeb.  
+    </li>
+  </ul>
+  Struktura stron WWW jest oparta na plikach HTML, które to są plikami tekstowymi z rozszerzeniem .html lub .htm
+</div>
+<div>
+
+  ![Tim Berners-Lee](./images/html_tim_berens_lee.webp)
+  [Tim Berners-Lee on GitHub](https://github.com/timbl)
+</div>
 </div>
 
 ## Wyjątkowość HTML 
