@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{box-sizing: border-box;}
+    body{
+      margin:0;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh;
+    }
+    .gamePlane{
+      border:5px solid #aa6969;
+      position:relative;
+      width:90vw;
+      height:90vh;
+    }
+    .gamePlane .wall{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size:2rem;
+      font-weight: bold;
+    }
+    .modal {
+      border:10px solid blue;
+      position:fixed;
+      width:80vw;
+      height:80vh;
+      left:10vw;
+      top:10vh;
+      background:#aa6969;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      display:none;
+      text-align:center;
+      border-radius:10px;
+      font-size: .5rem;
+      /* font-size: clamp(3rem 2vh .5rem); */
+    }
+    .modal button {
+      padding:1rem 4rem;
+      border-radius:1rem;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="gamePlane"></div>
+  <div class="modal">
+    <h1></h1>
+    <button onclick="modal.hide()">OK</button>
+  </div>
+</body>
+</html>
+<script>
+let isMobile = navigator.userAgentData.mobile;
+const game = {
+  plane : document.querySelector('.gamePlane'),
+  map : [
+    [80, 0, 20, 20, 'time'],
+    [0,0,20,21, 'start'],
+    [10,20,20,11],
+    [20,30,20,11],
+    [30,40,20,11],
+    [40,50,20,11],
+    [50,60,20,11],
+    [60,70,30,11],
+    [80,80,20,21, 'meta']
+  ],
+  init(){
+    game.time = 5 // ustaw czas gry
+    game.plane.querySelector('.time').innerHTML = game.time // wypełnij kafelek z czasem "nowym czasem"
+    game.plane.querySelector('.start').addEventListener(isMobile ? 'touchstart' : 'click', game.start)
+  },
+  start(){
+
+    game.plane.querySelector('.start').removeEventListener(isMobile ? 'touchstart' : 'click', game.start)
+    game.plane.addEventListener(isMobile ? 'touchmove' : 'mousemove', game.checkMove)
+    game.plane.addEventListener('touchend', game.release)
+
+    game.interval = setInterval(() => {
+      game.time--
+      if(game.time < 0) { game.over(false) }
+      game.plane.querySelector('.time').innerHTML = game.time
+    }, 1000)
+  },
+  checkMove(e){
+    const x = isMobile ? e.touches[0].clientX : e.clientX;
+    const y = isMobile ? e.touches[0].clientY : e.clientY;
+
+    let underHover = document.elementFromPoint(x, y).classList;
+    underHover = underHover[underHover.length-1]
+    if( underHover == 'wall' || underHover == 'start' ) { return }
+    if( underHover == 'meta' ) { return game.over( true ) }
+    game.over( false )
+
+
+  },
+  release(){ game.over(false) },
+  over(result){
+    clearInterval(game.interval)
+    game.plane.removeEventListener('touchend', game.release)
+    game.plane.removeEventListener(isMobile ? 'touchmove' : 'mousemove', game.checkMove)
+    game.init();
+    if(result){ return modal.show('WYGRANA!', 'green')}
+    return modal.show('PRZEGRANA!', 'red')
+  },
+  makeWall(x, y, w, h, type = 'wall') {  
+    const color = type == 'start' ? 'blue' : type == 'meta' ? 'orange' : 'green';
+    const wall = document.createElement('div')
+    wall.className = type == 'wall' ? type : 'wall ' + type;
+    wall.style.cssText = `
+      background:${color};
+      width:${w}%;
+      height:${h}%;
+      left:${x}%;
+      top:${y}%;
+      position:absolute;
+    `
+    game.plane.append(wall)
+  }
+}
+
+game.map.forEach( wall => game.makeWall(...wall))
+window.onresize = () => { location.reload() }
+
+// KOMUNIKATY 
+const modal = {
+  dom : document.querySelector(".modal"),
+  h1 : document.querySelector(".modal h1"),
+  show(text, color = '#aa6969') { 
+    modal.dom.style.backgroundColor = color
+    modal.dom.style.display = "flex";
+    modal.h1.innerHTML = text
+  },
+  hide(){ modal.dom.style.display = "none" }
+}
+// inicuj nową grę
+// modal.init()
+if(isMobile){
+  modal.show('DOTKNIJ NIEBIESKIEGO KAFELKA, ABY ROZPOCZĄĆ GRĘ <br/> PRZECIĄGNIJ PACLEC NA POMARAŃCZOWY, ABY WYGRAĆ')
+}else{
+  modal.show('KLIKNIJ NA NIEBIESKI KAFELEK, ABY ROZPOCZĄĆ GRĘ <br/> PRZESUŃ KURSOR NA POMARAŃCZOWY, ABY WYGRAĆ')
+}
+game.init()
+</script>

@@ -8,4 +8,4 @@
   - Instagram
   - Mail
 
-![Preprocesors exercise](../images/ex/preprocesors.webp)
+![Preprocesors exercise](../images/ex_preprocesors.webp)
