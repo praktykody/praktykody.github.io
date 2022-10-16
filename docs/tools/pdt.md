@@ -1,7 +1,6 @@
 # SZABLONY
 DESIGN STRON WWW
 
-
 ## Formaty szablonów
 Szablony stron to warstwowe obrazki stworzone w formatach:
 *.psd - szablon programu photoshop

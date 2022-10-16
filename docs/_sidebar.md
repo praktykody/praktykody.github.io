@@ -35,6 +35,7 @@
   - [💇&nbsp;Preprocesory](ex/preprocesors.md)
   - [🗃️&nbsp;JS](ex/js.md)
   - [🌽&nbsp;Labirynt](ex/maze.md)
+  - [🏃‍♂️&nbsp;Jumping Game](ex/jumping_game.md)
   - [☁️&nbsp;Pogodynka](ex/weather.md)
 
 - Narzędzia
