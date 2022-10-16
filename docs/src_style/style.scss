@@ -30,14 +30,31 @@ body {
       border:none;
       display:flex;
       align-items: center;
-      &:hover{
+      &:hover {
         background-color: var(--textColor);
+        &.next::after, &.prev::before{
+          background-color: var(--textColor);
+        }
       }
+      position:relative;
+      &.next::after, &.prev::before{
+        position:absolute;
+        background-color: var(--toogleBackground);
+        height:100%;
+        // right:-.8rem;
+        font-size:1.2rem;
+        display:flex;
+        align-items: center;
+      }
+
       &.next::after{
-        content: ">";
+        right:-.8rem;
+        // content: "➡️";
+        content: "➡️";
       }
       &.prev::before{
-        content: "<";
+        left:-.8rem;
+        content: "⬅️";
       }
     }
   }
@@ -68,8 +85,6 @@ body {
     #docsify-darklight-theme {
       right:10px;
       left:unset;
-      // border:3px dashed yellow !important;
-      // min-width:2rem;
     }
     .standardWrapper{
       flex-direction: column-reverse;
