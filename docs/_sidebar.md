@@ -26,7 +26,7 @@
   - [💾&nbsp;Funkcje JS](js/functions.md)
   - [🏠&nbsp;DOM: HTML ↔️ JS](js/dom.md)
   - [✨&nbsp;Pozostałe](js/else.md)
-  <!-- - [🏋🏻&nbsp;WORK WITH JS](js/maze.md) -->
+  - [🖼️&nbsp;Frameworki JS](js/frameworks/overview.md)
 
 - Ćwiczenia
 

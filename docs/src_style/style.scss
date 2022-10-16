@@ -99,6 +99,11 @@ body {
   }
 
   .exampleTagsContainer{
+    // &:not(.upperLabel){
+    //   // font-family: 'Courier New', Courier, monospace;
+    //   font-family: var(--codeFontFamily);
+    // }
+    font-weight: bolder;
     margin-top:5rem;
     display:flex;
     justify-content:center;
