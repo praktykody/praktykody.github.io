@@ -1,5 +1,6 @@
 # Co jeszcze w JS?
 
+
 ## Warunki (conditions)
 
 ```js
@@ -10,6 +11,20 @@ if(direction == "left"){
 }else{
   console.log("direction nie jest left");
 }
+
+
+
+if(wysokosc > 180){
+    return "koszykarz";
+}else{
+    return "liliput"
+}
+
+
+wysokosc > 180 ? "koszykarz" : "liliput";
+
+
+// SWITCH !!!
 ```
 
 ## Wydarzenia (events)
@@ -28,6 +43,11 @@ console.log(currentSlide); // 0
 ```
 
 ## Deklaracje zmiennych
+**ECMAScript** – stworzona przez ECMA ustandaryzowana specyfikacja skryptowego języka programowania, której najbardziej znane implementacje to JavaScript, JScript i ActionScript. Specyfikacja ta oznaczona jest jako ECMA-262 i ISO/IEC 16262.
+
+Źródło: https://pl.wikipedia.org/wiki/ECMAScript
+
+
 <div class="standardWrapper">
 <div>W zasadzie możemy stosować się do 3 prostych reguł:
 
