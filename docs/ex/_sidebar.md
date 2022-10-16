@@ -12,6 +12,4 @@
   - [🌽&nbsp;Labirynt](ex/maze.md)
   - [☁️&nbsp;Pogodynka](ex/weather.md)
 
-
-
 - <a href="#/tools/regex" style="font-weight: 700;font-size:17px;"> Narzędzia </a>

@@ -1,8 +1,15 @@
 const loadMenuItems = route => {
-  const domArr = document.querySelectorAll('.sidebar-nav > ul > li > ul > li > a');
-  console.log(location)
-  // const domArr = document.querySelectorAll('.sidebar-nav > ul > li  > a');
+  // const domArr = document.querySelectorAll('.sidebar-nav > ul > li > ul > li > a');
+  // const domArr = document.querySelectorAll('.sidebar-nav > ul > li > ul > li  a');
+  // console.log(location)
+  // const domArr = document.querySelectorAll('.sidebar-nav > ul  > li > p > a');
+  const domArr = document.querySelectorAll('.sidebar-nav > ul > li > ul > li > a, .sidebar-nav > ul  > li > p > a');
+
   const allLinks = Array.from(domArr);
+
+  // allLinks.forEach( e => { console.log( e.innerHTML ) } )
+  console.log(allLinks)
+
   let linksList = []
   let key = 'prev'
   for(const [index, link] of allLinks.entries()){
@@ -43,26 +50,38 @@ const scrollToID = () => {
 }
 
 const renderButtons = (e, o, arr) => {
-  let buttonField = `<div class="prevNextButtons">`;
-  buttonField += arr.prev?.href ? `<a href="${ arr.prev.href }"> <button class="prev">${ arr.prev.title }</button></a>` : `<a></a>`;
-  buttonField += arr.next?.href ? `<a href="${ arr.next.href }"> <button class="next">${ arr.next.title }</button></a>` : `<a></a>`;
-  buttonField += `</div>`;
-  o((e = e + buttonField ))
+  // let buttonField = `<div class="prevNextButtons">`;
+  // buttonField += arr.prev?.href ? `<a href="${ arr.prev.href }"> <button class="prev">${ arr.prev.title }</button></a>` : `<a></a>`;
+  // buttonField += arr.next?.href ? `<a href="${ arr.next.href }"> <button class="next">${ arr.next.title }</button></a>` : `<a></a>`;
+  // buttonField += `</div>`;
+  let buttonField = document.createElement('div');
+  buttonField.className = "prevNextButtons"
+  // let buttonField.innerHTML = `<div class="prevNextButtons">`;
+  buttonField.innerHTML = arr.prev?.href ? `<a href="${ arr.prev.href }"> <button class="prev">${ arr.prev.title }</button></a>` : `<a></a>`;
+  buttonField.innerHTML += arr.next?.href ? `<a href="${ arr.next.href }"> <button class="next">${ arr.next.title }</button></a>` : `<a></a>`;
+  // buttonField += `</div>`;
+  document.querySelector("#main").append(buttonField)
+  // o((e = e + "noelo" ))
   scrollToID();
 }
 
 window.$docsify.plugins = [].concat((e, ox) => {
-  e.afterEach( async (e, o) => { 
+  // e.afterEach( async (e, o) => { 
+  // e.doneEach( async (e, o) => { 
+  e.doneEach( async (e, o) => { 
     const arr = loadMenuItems(ox.route)
-    if(!arr){
-      let fuse = 0;
-      const interval = setInterval(() => { 
-        fuse++
-        const arr = loadMenuItems(ox.route)
-        if(arr || fuse > 10){ clearInterval(interval); renderButtons(e,o,arr) }
-      },100)
-    }else{
+    o((e = e))
+    // o((e = e + buttonField ))
+    // console.log("ARR: ", arr)
+    // if(!arr){
+    //   let fuse = 0;
+    //   const interval = setInterval(() => { 
+    //     fuse++
+    //     const arr = loadMenuItems(ox.route)
+    //     if(arr || fuse > 10){ clearInterval(interval); renderButtons(e,o,arr) }
+    //   },100)
+    // }else{
       renderButtons(e,o,arr)
-    }
+    // }
   })
 }, window.$docsify.plugins)
