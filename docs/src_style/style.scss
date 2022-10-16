@@ -68,6 +68,8 @@ body {
     #docsify-darklight-theme {
       right:10px;
       left:unset;
+      // border:3px dashed yellow !important;
+      // min-width:2rem;
     }
     .standardWrapper{
       flex-direction: column-reverse;
@@ -78,7 +80,7 @@ body {
   }
 
   #docsify-darklight-theme{
-      display:none;
+    display:none;
   }
 
   .exampleTagsContainer{
@@ -118,12 +120,31 @@ body {
   /* sidebar */
   .search{
     margin:0 !important;
+    padding:0 !important; 
     .input-wrap{
-      margin:0 !important;
-      display:flex;
-      justify-content: center;
+      margin:0 1rem 0 .5rem !important;
+      position:relative;
       input{
         margin:0;
+        width:100% !important;
+      }
+      .clear-button{
+        position:absolute;
+        right:0;
+        width:30px;
+        height:100%;
+        align-items: center;
+        svg{
+        display:flex;
+        align-items: center;
+          transform: scale(1);
+          height:28px;
+          position:absolute;
+          width:28px;
+        }
+        &.show{
+          display:flex;
+        }
       }
     }
   }
