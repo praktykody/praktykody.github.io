@@ -6,5 +6,6 @@
 <!-- - <a href="#/tools/regex" style="font-weight: 700;font-size:17px;"> Narzędzia </a> -->
 - Narzędzia
 
+  - [✍️&nbsp;Page Design Template](tools/pdt.md)
+  - [📦&nbsp;JSON](tools/json.md)
   - [🤯&nbsp;REGEX](tools/regex.md)
-  <!-- - [JSON](tools/json.md) -->
