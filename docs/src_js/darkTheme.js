@@ -1,4 +1,3 @@
-console.log("darkTheme")
 // Dark theme
 let t = {
   siteFont: "PT Sans",

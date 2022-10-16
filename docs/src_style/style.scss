@@ -120,6 +120,8 @@ body {
     margin:0 !important;
     .input-wrap{
       margin:0 !important;
+      display:flex;
+      justify-content: center;
       input{
         margin:0;
       }

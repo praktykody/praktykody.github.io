@@ -1,5 +1,7 @@
 const loadMenuItems = route => {
   const domArr = document.querySelectorAll('.sidebar-nav > ul > li > ul > li > a');
+  console.log(location)
+  // const domArr = document.querySelectorAll('.sidebar-nav > ul > li  > a');
   const allLinks = Array.from(domArr);
   let linksList = []
   let key = 'prev'
@@ -16,8 +18,8 @@ const loadMenuItems = route => {
   if(linksList.length == 1 || linksList.length == 2) { 
     return {
       [key]: {
-        href : linksList[0].href,
-        title : linksList[0].title,
+        href : linksList[0]?.href,
+        title : linksList[0]?.title,
       }
     }
   }
@@ -53,9 +55,11 @@ window.$docsify.plugins = [].concat((e, ox) => {
   e.afterEach( async (e, o) => { 
     const arr = loadMenuItems(ox.route)
     if(!arr){
+      let fuse = 0;
       const interval = setInterval(() => { 
+        fuse++
         const arr = loadMenuItems(ox.route)
-        if(arr){ clearInterval(interval); renderButtons(e,o,arr) }
+        if(arr || fuse > 10){ clearInterval(interval); renderButtons(e,o,arr) }
       },100)
     }else{
       renderButtons(e,o,arr)

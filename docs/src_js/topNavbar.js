@@ -1,5 +1,3 @@
-console.log("topNavbar")
-
 // make top navbar
 const addSpacers = () => { 
   document.querySelectorAll('h1').forEach( l => { l.style.cssText = "padding-top:5rem; margin-top:0;" })
