@@ -9,7 +9,9 @@
   - [💾&nbsp;Funkcje JS](js/functions.md)
   - [🏠&nbsp;DOM: HTML ↔️ JS](js/dom.md)
   - [✨&nbsp;Pozostałe](js/else.md)
+  - [🛸&nbsp;OOP](js/oop.md)
   - [🖼️&nbsp;Frameworki JS](js/frameworks/overview.md)
+  - [👽&nbsp;NodeJS](js/nodejs.md)
 
 - <a href="#/ex/html" style="font-weight: 700;font-size:17px;"> Ćwiczenia </a>
 - <a href="#/tools/regex" style="font-weight: 700;font-size:17px;"> Narzędzia </a>

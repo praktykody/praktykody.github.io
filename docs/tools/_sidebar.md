@@ -9,3 +9,5 @@
   - [✍️&nbsp;Page Design Template](tools/pdt.md)
   - [📦&nbsp;JSON](tools/json.md)
   - [🤯&nbsp;REGEX](tools/regex.md)
+  - [👨‍🚀&nbsp;AJAX](tools/ajax.md)
+  - [🤳&nbsp;PWA](tools/pwa.md)

@@ -26,7 +26,9 @@
   - [💾&nbsp;Funkcje JS](js/functions.md)
   - [🏠&nbsp;DOM: HTML ↔️ JS](js/dom.md)
   - [✨&nbsp;Pozostałe](js/else.md)
+  - [🛸&nbsp;OOP](js/oop.md)
   - [🖼️&nbsp;Frameworki JS](js/frameworks/overview.md)
+  - [👽&nbsp;NodeJS](js/nodejs.md)
 
 - Ćwiczenia
 
@@ -43,3 +45,9 @@
   - [✍️&nbsp;Page Design Template](tools/pdt.md)
   - [📦&nbsp;JSON](tools/json.md)
   - [🤯&nbsp;REGEX](tools/regex.md)
+  - [👨‍🚀&nbsp;AJAX](tools/ajax.md)
+  - [🤳&nbsp;PWA](tools/pwa.md)
+
+- SEO
+
+  - [📈&nbsp;SEO](seo.md)
