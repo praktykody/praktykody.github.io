@@ -1,3 +1,3 @@
 # Vue
 
-soon ...
+![Vue logo](../../images/logo_vue.svg)
