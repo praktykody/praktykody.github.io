@@ -121,4 +121,10 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
 
   ![Pan Cyfrowy](../images/html_mr_digital.svg)
   </div>
+
+
+## Dobieranie czcionek i ikonki
+https://fonts.google.com/
+
+
 </div>
