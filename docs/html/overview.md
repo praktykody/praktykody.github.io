@@ -1,4 +1,5 @@
 # HTML
+HyperText Markup Language
 ## Powstanie HTML
 
 <div class="standardWrapper">
@@ -29,7 +30,6 @@
 ![Devices compatibile with HTML](../images/html_devices.svg)
 
 ## Składnia HTML
-### Tag pojedynczy
 **HTML - (ang. HyperText Markup Language)** – hipertekstowy* język znaczników.
 Język opisowy oparty na znacznikach (tagach) opisujący zawartość strony internetowej.
 
@@ -72,6 +72,7 @@ Rezultat:
   </div>
 </div>
 
+### Tag pojedynczy
 <div class="exampleTagsContainer">
   <div class="exampleTag withUpperLabel">
     <div class="upperLabel">znacznik pojedynczy (samodzielny)</div>
@@ -122,9 +123,10 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
   ![Pan Cyfrowy](../images/html_mr_digital.svg)
   </div>
 
+</div>
+
 
 ## Dobieranie czcionek i ikonki
 https://fonts.google.com/
 
 
-</div>
