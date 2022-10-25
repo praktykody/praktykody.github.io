@@ -22,8 +22,8 @@ możesz pobrać te aktualizacje.
 4. Stwórz plik *readme.md* i wpisz do niego treść
 5. Otwórz terminal w VSC ( CTRL + ` )
 6. Skonfiguruj swoje konto git:
-
 ```git
 git config --global user.name [TWÓJ_USERNAME]
 git config --global user.email [TWÓJ_EMAIL]
 ```
+7. Kliknij na kontrolę źródła (3 ikonka na lewej belce), "publish to github" -> public repository -> OK, a następnie autoryzuj się.
