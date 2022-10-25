@@ -17,12 +17,11 @@ Rozproszony system kontroli wersji. Stworzył go Linus Torvalds jako narzędzie 
 <div>
 Prace nad Gitem rozpoczęły się po tym, jak BitKeeper, używany wtedy do rozwoju Linuksa, przestał być darmowy dla projektów o otwartym kodzie źródłowym. Torvalds szukał rozproszonego systemu kontroli wersji, który mógłby być użyty zamiast BitKeepera, głównymi kryteriami wyboru były:
 
-1. Przykład CVS, czego nie robić.
-2. System powinien być rozproszony.
-3. System powinien być chroniony przed błędami w repozytorium (przypadkowymi, jak awaria twardego dysku, jak i złośliwymi, wprowadzonymi przez kogoś).
-4. System powinien być szybki.
+1. System powinien być rozproszony.
+2. System powinien być chroniony przed błędami w repozytorium (przypadkowymi, jak awaria twardego dysku, jak i złośliwymi, wprowadzonymi przez kogoś).
+3. System powinien być szybki.
 
-Pierwsze dwa punkty wyeliminowały wszystko prócz Monotone'a, a czwarty punkt wyeliminował wszystko, więc Torvalds postanowił napisać własny system kontroli wersji.
+Pierwszy punkt wyeliminował wszystko prócz Monotone'a, a trzeci punkt wyeliminował wszystko, więc Torvalds postanowił napisać własny system kontroli wersji.
 </div>
 <div>
 
@@ -45,7 +44,14 @@ i przeprowadź instalację z domyślnymi ustawieniami, poza domyślnym edytorem,
 
 <div class="standardWrapper">
   <div>
-    Jako rozproszony system kontroli wersji, Git nie wymaga odrębnej aplikacji serwerowej. Istnieją jednak pakiety rozszerzające oryginalne oprogramowanie, przede wszystkim o kontrolę dostępu, wsparcie dla zarządzania wieloma repozytoriami, czy interfejs WWW. Przykłady niektórych popularnych projektów to <b>GitHub, Bitbucket, GitLab, Git Daemon, Gitolite, Gerrit, Gitiles, Bonobo Git Server, Git Server.</b>
+    Jako rozproszony system kontroli wersji, Git nie wymaga odrębnej aplikacji serwerowej. Istnieją jednak pakiety rozszerzające oryginalne oprogramowanie, przede wszystkim o kontrolę dostępu, wsparcie dla zarządzania wieloma repozytoriami, czy interfejs WWW. Przykłady niektórych popularnych projektów to 
+    <ul>
+      <li>GitHub</li>
+      <li>Bitbucket</li>
+      <li>GitLab</li>
+      <li>Git Daemon</li>
+      <li>Gitolite</li>
+    </ul>
   </div>
   <div>
     <img src="../images/octocat.webp" alt="GitHub Octocat">

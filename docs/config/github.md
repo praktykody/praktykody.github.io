@@ -13,4 +13,17 @@ momencie. Jeśli ktoś wprowadził zmiany w “master” podczas pracy nad gał�
 możesz pobrać te aktualizacje.
 
 ## Połącz VSC z GIT i GitHub
+<!-- 1. Upewnij się, że VSC nie był włączony przed GITem ( profilaktycznie możesz zrestartować VSC) -->
+1. Wyłącz VSC
+2. Swórz folder USERNAME.github.io
+3. Otwórz folder Visualem 
+    - prawym na folder i otórz za pomocą VSC, 
+    - albo otwieramy VSC, CTRL + K + O i z listy wybieramy folder
+4. Stwórz plik *readme.md* i wpisz do niego treść
+5. Otwórz terminal w VSC ( CTRL + ` )
+6. Skonfiguruj swoje konto git:
 
+```git
+git config --global user.name [TWÓJ_USERNAME]
+git config --global user.email [TWÓJ_EMAIL]
+```
