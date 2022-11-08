@@ -101,6 +101,9 @@ możemy użyć kilku klas na jeden tag:
 
 ```
 
+## Dobieranie czcionek i ikonki
+https://fonts.google.com/
+
 ### Identyfikatory
 <!-- TODO: ZROBIĆ -->
 ### Tagi

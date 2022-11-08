@@ -125,8 +125,3 @@ Jeśli chcesz pisać w innym standardze - przejrzyj
 
 </div>
 
-
-## Dobieranie czcionek i ikonki
-https://fonts.google.com/
-
-

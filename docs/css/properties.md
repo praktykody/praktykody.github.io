@@ -10,7 +10,7 @@ element.style {
 }
 ```
 </div>
-	<div>
+<div>
 
 ![Margin & padding difference](../images/css_margin_padding.webp)
 
@@ -31,6 +31,8 @@ element.style {
 ![CSS Displays](../images/css_displays.webp)
 
 ### Display:flex
+<div class="code">
+
 ```html
 <div class="dflex">
 	<div>1</div>
@@ -38,6 +40,7 @@ element.style {
 	<div>3</div>
 </div>
 ```
+
 ```css
 .dflex{
 	background-color:green;
@@ -54,9 +57,49 @@ element.style {
 	padding: 10% 0 10% 0;
 }
 ```
+</div>
 
-![Display Flex](../images/css_display_flex.webp)
+<script>
+	window.addEventListener('load', () => {
 
+		
+		document.querySelector('.code').style.border = "2px dashed red;"
+
+	})
+</script>
+
+
+<style>
+	.flex{
+		background-color:green;
+		width:100%;
+		display:flex;
+		justify-content: center;
+	}
+	.flex div{
+		text-align: center;
+		width:30%;
+		border: 3px solid #000;
+		background-color:#eee;
+		margin:5px;
+		padding: 10% 0 10% 0;
+	}
+</style>
+<div class="container">
+	<div class="flex">
+		<div>
+			1
+		</div>
+		<div>
+			2
+		</div>
+		<div>
+			3
+		</div>
+	</div>
+</div>
+
+[Flexbox Froggy](https://flexboxfroggy.com/)
 
 ## position
 ```css

@@ -36,14 +36,10 @@
 
 
 ## Relatywne (względne)
-- Procenty (%)
-- Wielkości czcionek (em i rem)
-- Wymiary rzutu (vw i vh)
+- [%] Procenty (wielkości rodziców)
+- [em, rem] Zadeklarowane wielkości czcionek
+- [vw, vh] Wymiary rzutu - płaszczyzny strony
 
-Relatywne jednostki bazują na
-- Wielkości rodziców (%)
-- Zadeklarowanych wielkościach czcionek (em, rem)
-- Wielkościach rzutni - płaszczyzny strony (vw, vh, vmin, vmax)
 
 ### Procenty
 ```css
@@ -85,7 +81,7 @@ Relatywne jednostki bazują na
 ```
 ```css
 :root{
-	font-size:5px;
+  ...
 }
 #rodzic_rem{
 	font-size: 15px;
@@ -123,7 +119,7 @@ Relatywne jednostki bazują na
 	width:50%;
 	height:50%;
 }
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
 	.divL,.divR{
 		width:100%;
 	}	
