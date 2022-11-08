@@ -7,6 +7,33 @@
 
 Znaczniki semantyczne tworzą nową warstwę strukturalną, która podpowiada robotom jak interpretować zawartość witryny przez co mają wpływ na pozycjonowanie witryny w wyszukiwarkach.
 
+## &lt;h1&gt; [...] &lt;h6&gt;
+Tagi h*, to nagłówki (ang. heading). Posługujemy się nimi, aby zatytułować konkretne bloki tekstu oraz nadać im hierarchię. 
+Nagłówków mamy 6 (od największego):
+
+<div class="standardWrapper">
+  <div>
+
+```html
+<h1>HEADING 1</h1>
+<h2>HEADING 2</h2>
+<h3>HEADING 3</h3>
+<h4>HEADING 4</h4>
+<h5>HEADING 5</h5>
+<h6>HEADING 6</h6>
+```
+  </div>
+  <div>
+
+<h1>HEADING 1</h1>
+<h2>HEADING 2</h2>
+<h3>HEADING 3</h3>
+<h4>HEADING 4</h4>
+<h5>HEADING 5</h5>
+<h6>HEADING 6</h6>
+  </div>
+</div>
+
 ## &lt;header&gt;
 Służy do określenia zawartości wstępnej, wprowadzającej treść do poprzedniego znacznika semantycznego (np sekcji, artykułu,stopki), albo jako wstęp do podstrony (kiedy jest wstępem do body). Headery mogą zawierać też elementy nawigacyjne.
 - Może być ich wiele na stronie 

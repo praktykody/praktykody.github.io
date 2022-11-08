@@ -11,7 +11,6 @@ run :
 docsify serve docs
 ```
 ###  TODO
-- wrzucić nagłówki h1 - h6 do tagów semantycznych
 - zamiast rysunków przykłady
 - align intemms w flexie
 

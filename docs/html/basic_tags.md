@@ -94,33 +94,6 @@ Img jest “wyjątkowym” znacznikiem pojedynczym. Wynika to z faktu, że wstaw
   <img src=”scieżka_do_pliku.format” alt=”Tekst alternatywny” width=”200”  />
 ```
 
-## &lt;h1&gt; [...] &lt;h6&gt;
-Tagi h*, to nagłówki (ang. heading). Posługujemy się nimi, aby zatytułować konkretne bloki tekstu oraz nadać im hierarchię. 
-Nagłówków mamy 6 (od największego):
-
-<div class="standardWrapper">
-  <div>
-
-```html
-<h1>HEADING 1</h1>
-<h2>HEADING 2</h2>
-<h3>HEADING 3</h3>
-<h4>HEADING 4</h4>
-<h5>HEADING 5</h5>
-<h6>HEADING 6</h6>
-```
-  </div>
-  <div>
-
-<h1>HEADING 1</h1>
-<h2>HEADING 2</h2>
-<h3>HEADING 3</h3>
-<h4>HEADING 4</h4>
-<h5>HEADING 5</h5>
-<h6>HEADING 6</h6>
-  </div>
-</div>
-
 ## &lt;form&gt;
 Znacznik form pozwala na stworzenie formularza.
 Formularzy używamy do pozyskania informacji od użytkownika. 
