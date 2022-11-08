@@ -47,7 +47,6 @@ Osadzamy go w sekcji head pliku HTML tagiem link:
 ## Struktura CSS
 Arkusz stylów CSS to lista dyrektyw ustalających w jaki sposób ma zostać wyświetlana przez przeglądarkę internetową zawartość wybranego elementu HTML.
 
-
 <div class="standardWrapper reverse">
   <div class="exampleTagsContainer">
     <div class="exampleTag">
@@ -101,11 +100,39 @@ możemy użyć kilku klas na jeden tag:
 
 ```
 
+### Identyfikatory
+Czym się różnią od klas?
+- Identyfikatory silniej związują selektory 
+- Możesz użyć jednego identyfikatora na stronę
+
+```html
+<div id=”contact”></div>
+```
+```css
+#contact{
+	color:black;
+}
+
+```
+
+## Zmienne
+```css
+:root{
+  --background-color:#000;
+  --foreground-color:#fff;
+}
+
+.parent{
+  background-color: var(--background-color);
+  border-color: var(--foreground-color);
+}
+
+.child{
+  background-color: var(--foreground-color);
+}
+```
+
+
 ## Dobieranie czcionek i ikonki
 https://fonts.google.com/
-
-### Identyfikatory
-<!-- TODO: ZROBIĆ -->
-### Tagi
-<!-- TODO: ZROBIĆ -->
 

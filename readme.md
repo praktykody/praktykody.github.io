@@ -11,11 +11,9 @@ run :
 docsify serve docs
 ```
 ###  TODO
-- jednostki - zamiast rysunków przykłady
-- align intemms w flexie
-- print options to portfolio
-- zmienne w css
 - wrzucić nagłówki h1 - h6 do tagów semantycznych
+- zamiast rysunków przykłady
+- align intemms w flexie
 
 ### 1001apps
 - simplify git clone
