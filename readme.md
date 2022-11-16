@@ -16,7 +16,3 @@ docsify serve docs
 
 ### 1001apps
 - simplify git clone
-
-
-### ADDITIONAL 
-- debug OPERA PRESERVE LOG

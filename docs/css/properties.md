@@ -102,15 +102,123 @@ element.style {
 [Flexbox Froggy](https://flexboxfroggy.com/)
 
 ## position
+```html
+<div class="static">
+	STATIC
+</div>
+
+<div class="fixed">
+	FIXED
+</div>
+
+<div class="sticky">
+	STICKY
+</div>
+
+
+<div class="relative">
+	RELATIVE
+
+	<div class="absolute">
+		ABSOLUTE
+	</div>
+
+</div>
+```
+
 ```css
-.element{
-	position:static|sticky|absolute|relative|fixed;
+div{
+	border:2px dashed red;
 }
 
+.static{
+	position:static;
+}
+
+.fixed{
+	position: fixed;
+	bottom:10px;
+}
+
+.sticky{
+	position:sticky;
+	top:10px;
+}
+
+.absolute{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+
+.relative{
+	border:2px dashed blue;
+	height:50vh;
+	position:relative;
+}
 ```
-![positions](../images/css_positions.gif)
 
 
+<style>
+.positions {
+	background-color:var(--codeBackgroundColor);
+	overflow-y:scroll;
+	height:300px;
+}
+.positions div{
+	border:2px dashed red;
+}
+
+.positions .static{
+	position:static;
+}
+
+.positions .fixed{
+	position: fixed;
+	bottom:10px;
+}
+
+.positions .sticky{
+	position:sticky;
+	top:10px;
+}
+
+.positions .absolute{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+
+.positions .relative{
+	border:2px dashed blue;
+	height:500px;
+	position:relative;
+}
+
+</style>
+<!-- <div style='background-color:var(--codeBackgroundColor);'> -->
+<div class='positions'>
+
+<div class="static">
+	STATIC
+</div>
+
+<div class="fixed">
+	FIXED
+</div>
+
+<div class="sticky">
+	STICKY
+</div>
+
+
+<div class="relative">
+	RELATIVE
+	<div class="absolute">
+		ABSOLUTE
+	</div>
+</div>
+</div>
 
 ## box-sizing*
 ```html
