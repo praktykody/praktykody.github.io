@@ -1,7 +1,7 @@
-# 👨‍🏫 TAI Coders Codex
+# <i class="logo"></i> Praktykody Codex
 Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 
-będziemy kodzić appki jak te [te](https://taicoders.github.io/1001apps/)
+będziemy kodzić appki jak te [te](https://praktykody.github.io/1001apps/)
 
 <button onclick="loadRoadMap()" id="refreshRoadMap">rozwiń rozkład jazdy</button>
  
@@ -20,6 +20,10 @@ będziemy kodzić appki jak te [te](https://taicoders.github.io/1001apps/)
 [Edytory kodu - zaczynamy!](/code_editors)
 
 <style>
+h1 .anchor span{
+  display:flex;
+  align-items:center;
+}
 
 ul.roadmap{
   display:grid;

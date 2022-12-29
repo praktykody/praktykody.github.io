@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
     align-item:center;
   ` 
   const logo = document.createElement('a')
-  logo.innerHTML = '<div>👨‍🏫 TAI Coders</div>'
+  logo.innerHTML = '<div style="display:flex;align-items:center;"><i class="logo"></i>Praktykody</div>'
   logo.href = '/#'
   logo.style.cssText = `
     cursor:pointer;

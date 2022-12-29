@@ -1,7 +1,7 @@
-# TAI Coders Codex
+# Praktykody Codex
 Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 
-będziemy kodzić appki jak te [te](https://taicoders.github.io/1001apps/)
+będziemy kodzić appki jak te [te](https://praktykody.github.io/1001apps/)
 
 dokumentacja stoi na 
 https://docsify.js.org/#/more-pages
@@ -16,3 +16,8 @@ docsify serve docs
 
 ### 1001apps
 - simplify git clone
+
+
+### run 
+cd docs
+docsify serve

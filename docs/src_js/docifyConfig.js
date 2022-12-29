@@ -1,5 +1,5 @@
 window.$docsify = {
-  url: 'https://taicoders.github.io/',
+  url: 'https://praktykody.github.io/',
   loadSidebar: true,
   subMaxLevel: 2,
   executeScript: true,

@@ -172,3 +172,12 @@ body {
     background-color: transparent!important;
   }
 }
+
+.logo{
+  width:2em;
+  height:2em;
+  display:inline-block;
+  background-image: url('/images/logo.svg');
+  background-size: cover;
+  background-position: center;
+}
