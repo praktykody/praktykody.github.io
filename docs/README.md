@@ -1,8 +1,6 @@
 # <i class="logo"></i> Praktykody Codex
 Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 
-<!-- będziemy kodzić appki jak te [te](https://praktykody.github.io/1001apps/) -->
-
 <button onclick="loadRoadMap()" id="refreshRoadMap">rozwiń rozkład jazdy</button>
  
 <h2 id="stage1" class="roadmap-header">Basic</h2>
@@ -15,7 +13,6 @@ Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 <ul class="roadmap" id="roadmap-stage3"></ul> -->
 
 [roadmap source](https://codepen.io/NomadRazor/details/RXWeVz)
-
 
 [Edytory kodu - zaczynamy!](/code_editors)
 
