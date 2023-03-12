@@ -44,7 +44,7 @@ Język opisowy oparty na znacznikach (tagach) opisujący zawartość strony inte
   </div>
   <div class="exampleTag withUpperLabel">
     <div class="upperLabel">znacznik zamykający</div>
-    <span style="color:var(--red);">&lt;\</span><span style="color:var(--blue);">a</span><span style="color:var(--red);">></span>
+    <span style="color:var(--red);">&lt;/</span><span style="color:var(--blue);">a</span><span style="color:var(--red);">></span>
   </div>
 </div>
 

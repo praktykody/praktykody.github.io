@@ -1,20 +1,22 @@
 # <i class="logo"></i> Praktykody Codex
 Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 
-<button onclick="loadRoadMap()" id="refreshRoadMap">rozwiń rozkład jazdy</button>
- 
+<!-- <button onclick="loadRoadMap()" id="refreshRoadMap">rozwiń rozkład jazdy</button> -->
+<!--  
 <h2 id="stage1" class="roadmap-header">Basic</h2>
 <ul class="roadmap" id="roadmap-stage1"></ul>
 
 <h2 id="stage2" class="roadmap-header">Intermediate</h2>
-<ul class="roadmap" id="roadmap-stage2"></ul>
+<ul class="roadmap" id="roadmap-stage2"></ul> -->
 
 <!-- <h2 id="stage3" class="roadmap-header">Advanced</h2>
 <ul class="roadmap" id="roadmap-stage3"></ul> -->
+<!-- 
+[roadmap source](https://codepen.io/NomadRazor/details/RXWeVz) -->
 
-[roadmap source](https://codepen.io/NomadRazor/details/RXWeVz)
+[Discord]("https://discord.gg/xuSDukXA")
 
-[Edytory kodu - zaczynamy!](/code_editors)
+[Edytory kodu](/code_editors)
 
 <style>
 h1 .anchor span{

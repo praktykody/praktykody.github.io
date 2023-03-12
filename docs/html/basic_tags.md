@@ -111,8 +111,8 @@ Wewnątrz formularzy używamy znaczników input z odpowiednimi parametrami (w za
   </div>
   <div>
     <form action=”result.html” method=”post|get”>
-      <input type=”text” name=”firstName” /><br />
-      <input type =”submit” />
+      <input type="text" name=”firstName” /><br />
+      <input type ="submit" />
     </form>
   </div>
 </div>

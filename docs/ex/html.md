@@ -10,7 +10,9 @@ Do budowy wykorzystaj tagi : header, nav, main, article, section, footer
 
 ![Ćwiczenie semantyczne](../images/html_semantic_exercise.webp)
 
-[Gotowe? Przejdź dalej](/html_basic_tags?id=tagi-podstawowe)
+[Gotowe? Przejdź dalej](/html/basic_tags?id=tagi-podstawowe)
+
+https://apietryga-ideal-rotary-phone-v6vpg6j66wgcpr94-3000.preview.app.github.dev/#/html/basic_tags?id=tagi-podstawowe
 
 
 ## Ćwiczenie 2

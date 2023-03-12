@@ -9,8 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:build": "markdown-docs build docs-src docs",
-    "docs:dev": "markdown-docs dev docs-src"
+    "docs:dev": "markdown-docs dev docs-src",
+    "dev": "docsify serve"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "apietryga",
+  "license": "ISC",
+  "dependencies": {
+    "docsify": "^4.13.0"
+  }
 }
