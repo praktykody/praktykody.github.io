@@ -16,6 +16,11 @@ npm i markdown-docs -g
 run : 
 ```bash
 docsify serve docs
+
+# or TESTING
+
+npm run dev
+
 ```
 ###  TODO
 - zamiast rysunków przykłady

@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs:build": "markdown-docs build docs-src docs",
     "docs:dev": "markdown-docs dev docs-src",
-    "dev": "docsify serve"
+    "dev": "cd docs && docsify serve"
   },
   "author": "apietryga",
   "license": "ISC",
