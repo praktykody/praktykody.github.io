@@ -1,0 +1,315 @@
+{
+    "pl": {
+        "title": "Portfolio PL",
+        "subtitle": "Antek Pietryga",
+        "more": "wi\u0119cej",
+        "menu": [
+            "o mnie",
+            "do\u015bwiadczenie",
+            "projekty",
+            "kontakt"
+        ],
+        "inprint": {
+            "imi\u0119 i nazwisko": "Antoni Pietryga",
+            "data urodzenia": "29.01.1996",
+            "waga": "69kg",
+            "wzrost": "182cm",
+            "alma mater": "Uniwersytet Ekonomiczny w Katowicach"
+        },
+        "about": {
+            "title": "wi\u0119cej o mnie",
+            "content": "Witam serdecznie,\r\njestem entuzjast\u0105 technologii. Hobbystycznie zajmuje si\u0119 programowaniem, IoT i sporo prototypuj\u0119. W przysz\u0142o\u015bci chcia\u0142bym produkowa\u0107 elektronik\u0119 u\u017cytkow\u0105, st\u0105d moje zami\u0142owanie do tworzenia r\u00f3\u017cnych urz\u0105dze\u0144. Dotychczas przez moje r\u0119ce przewin\u0119\u0142y si\u0119 m. in. interaktywne lustra, sto\u0142y, zdalne gniazdka do w\u0142\u0105czania z aplikacji, a tak\u017ce z komend g\u0142osowych. Jestem w trakcie pracy nad kilkoma ciekawymi rozwi\u0105zaniami do domu jak np. \u0142\u00f3\u017cko rozk\u0142adane (wysuwaj\u0105ce si\u0119 ze \u015bciany) na programowalne komendy, samochodzik poruszaj\u0105cy si\u0119 za pomoc\u0105 technologii VR, fotolustro czytaj\u0105ce gesty i wykrywaj\u0105ce twarze i par\u0119 innych. Dodatkowo jestem fanem motoryzacji, w kt\u00f3rej r\u00f3wnie\u017c debiutuj\u0119 tw\u00f3rczo. \r\n\r\nStworzy\u0142em t\u0105 stron\u0119, aby publikowa\u0107 moje dotychczasowe dzia\u0142ania, dzi\u0119ki czemu b\u0119d\u0119 m\u00f3g\u0142 pozyska\u0107 wsp\u00f3lnik\u00f3w do moich w\u0142asnych projekt\u00f3w.\r\n\r\nPrzyjmuj\u0119 r\u00f3wnie\u017c zlecenia programistyczne, graficzne, IoT oraz szkoleniowe.\r\n\r\n\u017bycz\u0119 mi\u0142ego przegl\u0105dania strony i zapraszam do kontaktu\r\nPozdrawiam\r\nAP  "
+        },
+        "experience": [
+            {
+                "title": "Nazwa firmy",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "OPIS"
+            },
+            {
+                "title": "Nazwa firmy",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "OPIS",
+                "link": "http:\/\/example.com"
+            },
+            {
+                "title": "Nazwa firmy",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "OPIS",
+                "link": "example.com"
+            },
+            {
+                "title": "Nazwa firmy",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "OPIS",
+                "link": "example.com"
+            },
+            {
+                "title": "Nazwa firmy",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "OPIS",
+                "link": "example.com"
+            },
+            {
+                "title": "Nazwa firmy",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "OPIS",
+                "link": "example.com"
+            }
+        ],
+        "projects": [
+            {
+                "title": "Nazwa projektu",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD",
+                "img": "anadar.jpg",
+                "desc": "OPIS",
+                "link": "example.com"
+            },
+            {
+                "title": "Nazwa projektu",
+                "img": "uflash_big.jpg"
+            },
+            {
+                "title": "Nazwa projektu",
+                "category": "Kategoria",
+                "date": "YYY-MM-DD",
+                "img": "anadar.jpg",
+                "desc": "OPIS",
+                "link": "example.com"
+            },
+            {
+                "title": "Nazwa projektu",
+                "img": "uflash_big.jpg"
+            }
+        ],
+        "contact": {
+            "message": "Masz propozycj\u0119 wsp\u00f3\u0142pracy? <br \/> Napisz do mnie:",
+            "links": [
+                [
+                    "facebook-messenger",
+                    "http:\/\/messenger.com"
+                ],
+                [
+                    "email",
+                    "http:\/\/gmail.com"
+                ]
+            ]
+        }
+    },
+    "us": {
+        "title": "Portfolio PL",
+        "subtitle": "Antek Pietryga",
+        "more": "more",
+        "menu": [
+            "about me",
+            "experience",
+            "projects",
+            "contact"
+        ],
+        "inprint": {
+            "name and surname": "Antoni Pietryga",
+            "date of birth": "29.01.1996",
+            "weight": "69kg",
+            "height": "182cm",
+            "alma mater": "University of Economics in Katowice"
+        },
+        "about": {
+            "more about me": "I am a hacker for a few things I will write about when I finish composing this portfolio. \n ELO!"
+        },
+        "experience": [
+            {
+                "title": "Company name",
+                "category": "Category",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "DESCRIPTION"
+            },
+            {
+                "title": "Company name",
+                "category": "Category",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "DESCRIPTION",
+                "link": "http:\/\/example.com"
+            },
+            {
+                "title": "Company name",
+                "category": "Category",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "DESCRIPTION",
+                "link": "http:\/\/example.com"
+            },
+            {
+                "title": "Company name",
+                "category": "Category",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "DESCRIPTION",
+                "link": "http:\/\/example.com"
+            },
+            {
+                "title": "Company name",
+                "category": "Category",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "DESCRIPTION",
+                "link": "http:\/\/example.com"
+            },
+            {
+                "title": "Company name",
+                "category": "Category",
+                "date": "YYY-MM-DD - YYY-DD-MM",
+                "desc": "DESCRIPTION",
+                "link": "http:\/\/example.com"
+            }
+        ],
+        "projects": [
+            {
+                "title": "Project name",
+                "category": "Category",
+                "date": "YYYY-MM-DD",
+                "img": "anadar.jpg",
+                "desc": "DESCRIPTION",
+                "link": "example.com"
+            },
+            {
+                "title": "Project name",
+                "img": "uflash_big.jpg"
+            },
+            {
+                "title": "Project name",
+                "category": "Category",
+                "date": "YYYY-MM-DD",
+                "img": "anadar.jpg",
+                "desc": "DESCRIPTION",
+                "link": "example.com"
+            },
+            {
+                "title": "Project name",
+                "img": "uflash_big.jpg"
+            }
+        ],
+        "contact": {
+            "message": "Do you have a cooperation offer? <br \/> Write to me:",
+            "links": [
+                [
+                    "facebook-messenger",
+                    "http:\/\/messenger.com"
+                ],
+                [
+                    "email",
+                    "http:\/\/gmail.com"
+                ]
+            ]
+        }
+    },
+    "cz": {
+        "title": "Portfolio CZ",
+        "podtitul": "Antek Pietryga",
+        "more": "v\u00edc",
+        "menu": [
+            "about me",
+            "experience",
+            "projects",
+            "contact"
+        ],
+        "inprint": {
+            "jm\u00e9no a p\u0159\u00edjmen\u00ed": "Antoni Pietryga",
+            "datum narozen\u00ed": "29.01.1996",
+            "weight": "69kg",
+            "v\u00fd\u0161ka": "182 cm",
+            "alma mater": "Vysok\u00e1 \u0161kola ekonomick\u00e1 v Katovic\u00edch"
+        },
+        "about": {
+            "v\u00edce o mn\u011b": "Jsem hacker pro p\u00e1r v\u011bc\u00ed, o kter\u00fdch budu ps\u00e1t, a\u017e dokon\u010d\u00edm sestavov\u00e1n\u00ed tohoto portfolia. \n ELO!"
+        },
+        "Zku\u0161enosti": [
+            {
+                "title": "N\u00e1zev spole\u010dnosti",
+                "Kategorie": "kategorie",
+                "date": "RRRR-MM-DD - RRRR-DD-MM",
+                "Podrobnosti": "popis"
+            },
+            {
+                "title": "N\u00e1zev spole\u010dnosti",
+                "Kategorie": "kategorie",
+                "date": "RRRR-MM-DD - RRRR-DD-MM",
+                "Podrobnosti": "popis",
+                "Button": "http:\/\/example.com"
+            },
+            {
+                "title": "N\u00e1zev spole\u010dnosti",
+                "Kategorie": "kategorie",
+                "date": "RRRR-MM-DD - RRRR-DD-MM",
+                "Podrobnosti": "popis",
+                "Button": "example.com"
+            },
+            {
+                "title": "N\u00e1zev spole\u010dnosti",
+                "Kategorie": "kategorie",
+                "date": "RRRR-MM-DD - RRRR-DD-MM",
+                "Podrobnosti": "popis",
+                "Button": "example.com"
+            },
+            {
+                "title": "N\u00e1zev spole\u010dnosti",
+                "Kategorie": "kategorie",
+                "date": "RRRR-MM-DD - RRRR-DD-MM",
+                "Podrobnosti": "popis",
+                "Button": "example.com"
+            },
+            {
+                "title": "N\u00e1zev spole\u010dnosti",
+                "Kategorie": "kategorie",
+                "date": "RRRR-MM-DD - RRRR-DD-MM",
+                "Podrobnosti": "popis",
+                "Button": "example.com"
+            }
+        ],
+        "projekty": [
+            {
+                "title": "N\u00e1zev projektu",
+                "kategorie": "kategorie",
+                "date": "YYYY-MM-DD",
+                "img": "anadar.jpg",
+                "podrobnosti": "popis",
+                "link": "example.com"
+            },
+            {
+                "title": "N\u00e1zev projektu",
+                "Img": "uflash_big.jpg"
+            },
+            {
+                "title": "N\u00e1zev projektu",
+                "Kategorie": "kategorie",
+                "Date": "YYYY-MM-DD",
+                "Img": "anadar.jpg",
+                "Podrobnosti": "popis",
+                "Button": "example.com"
+            },
+            {
+                "title": "N\u00e1zev projektu",
+                "Img": "uflash_big.jpg"
+            }
+        ],
+        "contact": {
+            "message": "M\u00e1te nab\u00eddku spolupr\u00e1ce? <br \/> Napi\u0161te mi:",
+            "Odkazy": [
+                [
+                    "facebook-messenger",
+                    "http:\/\/messenger.com"
+                ],
+                [
+                    "e-mail",
+                    "http:\/\/gmail.com"
+                ]
+            ]
+        }
+    },
+    "hu": {
+        "title": "Portfolio HU"
+    }
+}

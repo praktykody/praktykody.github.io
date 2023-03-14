@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="jquery-3.4.1.min.js"></script>
+
+    </head>
+    <body>
+        <input type="text" id="login" />
+        <br />
+        <input type="text" id="haslo" />
+<script>
+    $("#login").on("keypress",function(){
+        let regex = new RegExp("^[a-zA-Z0-9]+$");
+        // dopasowuje obiekt do wzorca      
+        // caret^ i dollar oznaczają, że cała linia 
+        // jest brana pod uwagę    
+        let key = String.fromCharCode(event.charCode);
+           if(!regex.test(key)){
+                console.log("wywal błąd");
+            }else{
+                console.log("wszystko ok");
+            }
+    })
+    $("#haslo").on("blur",function(){
+        var passw = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[$&+,:;=?@#|'<>.^*()%!-]).{8,40}$/;        
+       // \d to [0-9], 
+       // ?=* dopasowuje przyrostek, ale wyklucza to z 
+       // całego ciągu        
+        var inputpass = document.getElementById("haslo");
+        if(inputpass.value.match(passw)) { 
+            console.log('OK');
+        }else{ 
+            console.log('ERROR');
+        }
+    })
+</script>
+    </body>
+</html>

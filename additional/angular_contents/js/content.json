@@ -1,0 +1,194 @@
+{
+    "pl": {
+        "title": "Portfolio PL",
+        "subtitle": "Antek Pietryga",
+        "menu": [
+            "o mnie",
+            "do\u015bwiadczenie",
+            "projekty",
+            "kontakt"
+        ],
+        "inprint": [
+            [
+                "Imi\u0119 i nazwisko",
+                "Antoni Pietryga"
+            ],
+            [
+                "data urodzenia ",
+                "29.01.1996"
+            ],
+            [
+                "waga",
+                "69kg"
+            ],
+            [
+                "wzrost",
+                "182cm"
+            ],
+            [
+                "alma mater",
+                "Uniwersytet Ekonomiczny w Katowicach"
+            ]
+        ],
+        "about": {
+            "title": "Wi\u0119cej o mnie",
+            "content": "Witam serdecznie,\r\njestem entuzjast\u0105 technologii. Hobbystycznie zajmuje si\u0119 programowaniem, IoT i sporo prototypuj\u0119. W przysz\u0142o\u015bci chcia\u0142bym produkowa\u0107 elektronik\u0119 u\u017cytkow\u0105, st\u0105d moje zami\u0142owanie do tworzenia r\u00f3\u017cnych urz\u0105dze\u0144. Dotychczas przez moje r\u0119ce przewin\u0119\u0142y si\u0119 m. in. interaktywne lustra, sto\u0142y, zdalne gniazdka do w\u0142\u0105czania z aplikacji, a tak\u017ce z komend g\u0142osowych. Jestem w trakcie pracy nad kilkoma ciekawymi rozwi\u0105zaniami do domu jak np. \u0142\u00f3\u017cko rozk\u0142adane (wysuwaj\u0105ce si\u0119 ze \u015bciany) na programowalne komendy, samochodzik poruszaj\u0105cy si\u0119 za pomoc\u0105 technologii VR, fotolustro czytaj\u0105ce gesty i wykrywaj\u0105ce twarze i par\u0119 innych. Dodatkowo jestem fanem motoryzacji, w kt\u00f3rej r\u00f3wnie\u017c debiutuj\u0119 tw\u00f3rczo. \r\n\r\nStworzy\u0142em t\u0105 stron\u0119, aby publikowa\u0107 moje dotychczasowe dzia\u0142ania, dzi\u0119ki czemu b\u0119d\u0119 m\u00f3g\u0142 pozyska\u0107 wsp\u00f3lnik\u00f3w do moich w\u0142asnych projekt\u00f3w.\r\n\r\nPrzyjmuj\u0119 r\u00f3wnie\u017c zlecenia programistyczne, graficzne, IoT oraz szkoleniowe.\r\n\r\n\u017bycz\u0119 mi\u0142ego przegl\u0105dania strony i zapraszam do kontaktu\r\nPozdrawiam\r\nAP  "
+        },
+        "expTitle": "do\u015bwiadczenie komercyjne",
+        "prTitle": "Projekty",
+        "contact": {
+            "message": "Masz propozycj\u0119 wsp\u00f3\u0142pracy? <br \/> Napisz do mnie:",
+            "links": [
+                [
+                    "facebook-messenger",
+                    "https:\/\/www.messenger.com\/t\/antoni.pietryga"
+                ],
+                [
+                    "email",
+                    "http:\/\/gmail.com"
+                ]
+            ]
+        },
+        "experience": [
+            {
+                "title": "YanoMebel",
+                "category": "Front-End",
+                "date": "2014-03-13",
+                "desc": "Przebudowa template strony WordPress + dodanie 4 opcji j\u0119zykowych z w\u0142asnym t\u0142umaczeniem."
+            },
+            {
+                "title": "lastofit",
+                "category": "Kategoria",
+                "date": "",
+                "desc": "OPIS"
+            }
+        ],
+        "projects": [
+            {
+                "title": "1",
+                "category": "Kategoria1",
+                "date": "2020-05-14",
+                "img": "uflash.jpg",
+                "link": "http:\/\/uflash.pl",
+                "desc": "OPIS1"
+            },
+            {
+                "title": "2",
+                "category": "asdada",
+                "date": "",
+                "img": "anadar.jpg",
+                "link": "dasd",
+                "desc": "asdasda"
+            },
+            {
+                "title": "3",
+                "category": "sadasd",
+                "date": "",
+                "img": "anadar.jpg",
+                "link": "asd",
+                "desc": "dasdasdasd"
+            },
+            {
+                "title": "Nowy 1 ",
+                "category": ":D",
+                "date": "2020-05-15",
+                "img": "uflash.jpg",
+                "link": "te\u017c",
+                "desc": "LOLZ"
+            }
+        ]
+    },
+    "us": {
+        "title": "Portfolio US",
+        "subtitle": "Antek Pietryga",
+        "menu": [
+            "About me",
+            "experience",
+            "projects",
+            "contact"
+        ],
+        "about": {
+            "title": "More about me",
+            "content": "Hey, I'm cool. \r\n\r\n\r\n\r\nReally. "
+        },
+        "expTitle": "Commercial experience",
+        "contact": {
+            "message": "Wanna make buisness with me?",
+            "links": [
+                [
+                    "facebook-messenger",
+                    "https:\/\/www.messenger.com\/t\/antoni.pietryga"
+                ],
+                [
+                    "email",
+                    "http:\/\/gmail.com"
+                ]
+            ]
+        },
+        "inprint": [
+            [
+                "imi\u0119 i nazwisko",
+                "Antoni Pietryga"
+            ],
+            [
+                "data urodzenia",
+                "29.01.1996"
+            ],
+            [
+                "asdas",
+                "69kg"
+            ],
+            [
+                "wzrost",
+                "182cm"
+            ],
+            [
+                "alma mater",
+                "Uniwersytet Ekonomiczny w Katowicach"
+            ]
+        ],
+        "projects": [
+            {
+                "title": "1",
+                "category": "Kategoria1",
+                "date": "2020-05-14",
+                "img": "uflash.jpg",
+                "link": "http:\/\/uflash.pl",
+                "desc": "OPIS1"
+            },
+            {
+                "title": "2",
+                "category": "asdada",
+                "date": "",
+                "img": "anadar.jpg",
+                "link": "dasd",
+                "desc": "asdasda"
+            },
+            {
+                "title": "3",
+                "category": "sadasd",
+                "date": "",
+                "img": "anadar.jpg",
+                "link": "asd",
+                "desc": "dasdasdasd"
+            },
+            {
+                "title": "Nowy 1 ",
+                "category": ":D",
+                "date": "2020-05-15",
+                "img": "nima",
+                "link": "te\u017c",
+                "desc": "LOLZ"
+            }
+        ],
+        "prTitle": "Projects",
+        "experience": [
+            {
+                "title": "Here we go",
+                "category": "Here we go",
+                "date": "",
+                "desc": "Here we go"
+            }
+        ]
+    }
+}

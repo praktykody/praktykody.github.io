@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <style>
+            .bigDiv{
+                height:300px;
+                background-color: brown;
+                position:relative;
+            }
+        </style>
+    </head>
+<body ng-app="appka" ng-controller="kontroler">
+<div id="showPlane">
+    <div ng-mousemove="pokazCords($event)" class="bigDiv"></div>
+    <p>KOORDYNATY: {{x + ', ' + y}}</p>
+</div>
+<script>
+var app = angular.module('appka', []);ś
+app.controller('kontroler', function($scope) {
+    $scope.pokazCords = function(myE) {
+        $scope.x = myE.clientX;
+        $scope.y = myE.clientY;
+        var div = document.createElement("div");
+        div.style.position = "absolute";
+        div.style.width = "20px";
+        div.style.height = "20px";
+        div.style.border = "1px solid #000";
+        div.style.marginTop = ($scope.y)-350+"px";
+        div.style.marginLeft = $scope.x+"px";
+        div.style.backgroundColor = "yellow";
+        document.getElementById("showPlane").appendChild(div);
+    }
+});
+</script> 
+
+</body>
+</html>

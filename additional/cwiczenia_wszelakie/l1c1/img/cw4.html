@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+    <style>
+             .subtitle{
+             border:10px dashed red;
+             display: flex;
+             justify-content: space-around
+             }
+             .gif{
+                 width: 20%;
+                 height: 150px;
+                 border: 2px dashed red;
+                 display: flex;
+             }
+             .gif img{
+                 height: 100%;
+             }
+                .content{
+                    border: 10px dashed green;
+                    display: flex;
+                } 
+                .content div{
+                    width: 50%;}
+                .containert .container{
+                    border: 2px dashed red;
+                    height: 400px;
+                    margin: 2.5%;
+                    display: flex;
+                }
+                .container div{
+                    border: 5px dashed pink;
+                    widows: 50%;
+                    display: flex ;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .displaygif img{
+                max-width: windth 100%;
+                max-height: 100%;
+                }
+                .fonter{
+               background-color: rgb(173, 144, 141);
+               border:10px dashed rgb(117, 32, 6);
+               padding: 5%;
+               text-align: center;
+                }
+                .left img{
+                    max-width: 100%;
+                    max-width: 100%;
+                }
+            </style>
+        </head>
+        <body>
+        <div class="title">Przygody Pana Cyfrowego</div>
+    <div class="subtitle">
+        <div class="gif"><img src="gada.gif" alt=""></div>
+        <div class="gif"><img src="siada.gif" alt=""></div>
+        <div class="gif"><img src="wstaje.gif" alt=""></div>
+        <div class="gif"><img src="intro.gif" alt=""></div>
+    </div>
+    <div class="content">
+        <div class="left"><img src="gada.gif" alt=""></div>
+    <div class="right">Pan Cyfrowy gada</div>
+    </div>
+    </body>
+    <footer>Wilka</footer>
+    <script>
+ let chopekinfo =[
+    {
+        src:"gada.gif",
+        desc:"Pan Cyfrowy gada"
+    },
+    
+    {
+        src:"siada.gif",
+        desc:"Pan Cyfrowy gada"
+    },
+    
+    {
+        src:"wstaje.gif",
+        desc:"Pan Cyfrowy gada"
+    },
+    
+    {
+        src:"intro.gif",
+        desc:"Pan Cyfrowy gada"
+    },
+ ]
+
+
+$(".gif").click(function(){
+    let id=$(this).index();
+    console.log(chopekinfo[id].src);
+    console.log(chopekinfo[id].desc);
+  })
+    </script>
+    </body>
+    </html>

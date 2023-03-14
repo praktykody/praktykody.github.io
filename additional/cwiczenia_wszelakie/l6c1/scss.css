@@ -1,0 +1,23 @@
+body {
+  font: 100% #2b28dd;
+  color: #2b28dd;
+  background-color: #e95353;
+}
+
+article section {
+  border: 10px solid #2b28dd;
+}
+
+article section span {
+  border: 5px solid #3fa736;
+}
+
+article section p {
+  color: #e95353;
+  background-color: #3fa736;
+}
+
+article section .spanned {
+  font-size: 50px;
+}
+/*# sourceMappingURL=scss.css.map */

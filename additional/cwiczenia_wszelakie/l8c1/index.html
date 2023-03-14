@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<body>
+	</body>
+<script>
+	function setBarierki(w,h,t,l){
+		var div = document.createElement("div");
+		div.className = "barierka";
+		div.style.backgroundColor = "red";
+		div.style.border = "1px solid #000";
+		div.style.position = "fixed";
+		div.style.width = w+"px"; 
+		div.style.height = h+"px";
+		div.style.marginTop = t+"px";
+		div.style.marginLeft = l+"px";
+		document.body.appendChild(div);
+	}
+
+	// width|height|top|left
+	var barierki_setup = [
+		[300,20,0,0],
+		[200,20,100,0],
+		[20,200,100,200],
+		[20,300,0,300]
+	];
+
+	for(x = 0; x < barierki_setup.length; x++){
+		setBarierki(barierki_setup[x][0],barierki_setup[x][1],barierki_setup[x][2],barierki_setup[x][3]);
+	}
+
+	var barierki = document.getElementsByClassName("barierka");
+	for(x = 0; x < barierki.length; x++){
+		barierki[x].addEventListener("mouseover",uwalil);		
+	}
+
+	function uwalil(){
+		console.log("eee!");
+		clearInterval(interwal);
+}
+
+	interwal = setInterval(function(){
+		console.log("teraz");
+	},1000);
+	clearInterval(interwal);
+
+
+</script>
+</html>

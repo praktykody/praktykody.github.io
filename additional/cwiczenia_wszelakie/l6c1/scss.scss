@@ -1,0 +1,29 @@
+$czcionka:    Helvetica, sans-serif;
+$kolor_glowny: rgb(43, 40, 221);
+$kolor_poboczny: rgb(63, 167, 54);
+$kolor_tla: rgb(233, 83, 83);
+
+body {
+	font: 100% $kolor_glowny;
+	color: $kolor_glowny;
+	background-color: $kolor_tla;
+}
+
+article{
+	section{
+		border:10px solid $kolor_glowny;
+		
+		span{
+			border:5px solid $kolor_poboczny;	
+		}
+		p{
+			color:$kolor_tla;
+			background-color: $kolor_poboczny;
+		}
+		.spanned{
+			font-size:50px;
+		}
+	}
+
+
+}
