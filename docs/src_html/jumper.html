@@ -73,203 +73,139 @@
     <h3>by Antek</h3>
   </footer>
 <script>
-var player;
-var przeszkody = [];
-var myScore;
-var gamePlane;
-
-// function startGame(){
-//     // gamePlane.start();
-//     player = new Component(10, 60, 150, 240,"player");
-//     myScore = new Component("30px","Consolas",480,30,"text")
-// }
-// function restartGame() {
-//     document.querySelector(".gameInfo").style.display = "none";
-//     gamePlane.clear();
-//     player = {};
-//     przeszkody = [];
-//     myScore = {};
-//     document.querySelector("canvas").innerHTML = "";
-//     startGame();
-// }
-// var gamePlane={
-//     canvas: document.createElement("canvas"),
-    // ctx: document.createElement("canvas").context,
-    // start: function(){
-        // this.canvas.width = 640;
-        // this.canvas.height = 300;
-        // this.frameNo = 0;
-        // // this.context= this.canvas.getContext("2d");
-        // this.ctx= this.canvas.getContext("2d");
-        // this.interval = setInterval (updategamePlane, 10);
-        // document.querySelector(".game").appendChild(this.canvas);
-        // window.addEventListener("keydown", function(e){
-        //     gamePlane.key = e.keyCode;
-        // })
-    // },
-    // clear: function() {
-    //     // this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
-    //     this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
-    // },
-    // stop: function(){
-    //     clearInterval(this.interval);
-    //     var gameInfo = document.querySelector(".gameInfo");
-    //     gameInfo.innerHTML = "<button onclick='restartGame()'>AGAIN!</button>";
-    //     gameInfo.style.display = "flex";
-    // }
-// }
-
-class Component {
-  constructor(width, height, x, y, type){
-    this.type = type;
-    this.width = width;
-    this.height = height;
-    this.x = x;
-    this.y = y;
-    this.speedY = 0;
-    this.jumpScale = 2;
-    this.jumpH = 100;
-    this.jumping = false;
-    this.cyle = 0;
-  }
-  crashWith( other ){
-    if( this.x + this.width < other.x     // myright < otherleft
-    ||  this.y + this.height < other.y    //  mybottom < othertop
-    ||  this.x > other.x + other.width    //  myleft > otherright
-    ||  this.y > other.y + other.height){ //  mytop > otherbottom
-      return false
-    }
-    return true
-  }
-  newPos(){
-    const bottom = gamePlane.canvas.height - this.height;
-    if(this.y <= bottom - this.jumpH){
-      this.speedY = player.jumpScale;
-    }
-    if(this.y >= bottom && this.speedY == player.jumpScale){
+  class Component {
+    constructor(width, height, x, y, type){
+      this.type = type;
+      this.width = width;
+      this.height = height;
+      this.x = x;
+      this.y = y;
       this.speedY = 0;
+      this.jumpScale = 2;
+      this.jumpH = 100;
       this.jumping = false;
+      this.cyle = 0;
     }
-    this.y += this.speedY;
-  }
-  update(){
-    if( this.type == "player" ){
-      gamePlane.ctx.drawImage(playerIMG,
-        this.cyle * singleW, 0, singleW, playerIMG.height,
-        this.x - 15, this.y, singleW, this.height)
-      if( everyInterval(5) && this.jumping == false ){
-        this.cyle = ( this.cyle + 1 ) % 8;
+    crashWith( other ){
+      if( this.x + this.width < other.x     // myright < otherleft
+      ||  this.y + this.height < other.y    //  mybottom < othertop
+      ||  this.x > other.x + other.width    //  myleft > otherright
+      ||  this.y > other.y + other.height){ //  mytop > otherbottom
+        return false
       }
-    }else if( this.type == "przeszkody" ){
-      gamePlane.ctx.drawImage(obstacleIMG,
-        0, 0, obstacleIMG.width, obstacleIMG.height,
-        this.x-7.5, this.y, obstacleIMG.width, this.height)
-    }else if(this.type == "text"){
-      gamePlane.ctx.font = this.width + " " + this.height;
-      gamePlane.ctx.fillText(this.text, this.x, this.y);
+      return true
     }
-  }
-}
-
-class Game {
-  constructor(){
-    this.canvas = document.createElement("canvas")
-    this.canvas.width = 640;
-    this.canvas.height = 300;
-    this.frameNo = 0;
-    // this.context= this.canvas.getContext("2d");
-    this.ctx= this.canvas.getContext("2d");
-    this.interval = setInterval (updategamePlane, 10);
-    document.querySelector(".game").appendChild(this.canvas);
-    // window.addEventListener("keydown", function(e){
-    window.addEventListener("keydown", e => {
-        gamePlane.key = e.keyCode;
-    })
-
-
-  }
-    // clear: function() {
-  clear(){
-    // this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
-    this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
-  }
-  // stop: function(){
-  stop(){
-    clearInterval(this.interval);
-    var gameInfo = document.querySelector(".gameInfo");
-    // gameInfo.innerHTML = "<button onclick='restartGame()'>AGAIN!</button>";
-    gameInfo.innerHTML = "<button onclick='gamePlane.restartGame()'>AGAIN!</button>";
-    gameInfo.style.display = "flex";
-  }
-
-  // function restartGame() {
-  restartGame(){
-    document.querySelector(".gameInfo").style.display = "none";
-    gamePlane.clear();
-    player = {};
-    przeszkody = [];
-    myScore = {};
-    document.querySelector("canvas").innerHTML = "";
-    startGame();
-  }
-
-
-
-}
-
-function everyInterval(n){
-    if((gamePlane.frameNo/n) % 1 == 0){return true;}
-    return false;
-}
-function updategamePlane(){
-    gamePlane.clear(); 
-    gamePlane.frameNo++;
-    var x,y;
-    for(i = 0; i < przeszkody.length; i++){
-        if(player.crashWith(przeszkody[i])){
-            gamePlane.stop();
+    newPos(){
+      const bottom = gamePlane.canvas.height - this.height;
+      if(this.y <= bottom - this.jumpH){
+        this.speedY = player.jumpScale;
+      }
+      if(this.y >= bottom && this.speedY == player.jumpScale){
+        this.speedY = 0;
+        this.jumping = false;
+      }
+      this.y += this.speedY;
+    }
+    update(){
+      if( this.type == "player" ){
+        gamePlane.ctx.drawImage(playerIMG,
+          this.cyle * singleW, 0, singleW, playerIMG.height,
+          this.x - 15, this.y, singleW, this.height)
+        if( everyInterval(5) && this.jumping == false ){
+          this.cyle = ( this.cyle + 1 ) % 8;
         }
+      }else if( this.type == "przeszkody" ){
+        gamePlane.ctx.drawImage(obstacleIMG,
+          0, 0, obstacleIMG.width, obstacleIMG.height,
+          this.x-7.5, this.y, obstacleIMG.width, this.height)
+      }else if(this.type == "text"){
+        gamePlane.ctx.font = this.width + " " + this.height;
+        gamePlane.ctx.fillText(this.text, this.x, this.y);
+      }
     }
-    if(gamePlane.frameNo == 1 || everyInterval(200)){
-        x = gamePlane.canvas.width;
-        minHeight = 30;
-        maxHeight = 65;
-        height = Math.random()*(maxHeight-minHeight)+minHeight;
-        y = gamePlane.canvas.height - height;
-        przeszkody.push(new Component( 10, height, x, y, "przeszkody"));
+  }
+  class Game {
+    constructor(){
+      this.canvas = document.createElement("canvas")
+      this.canvas.width = 640;
+      this.canvas.height = 300;
+      this.frameNo = 0;
+      this.ctx= this.canvas.getContext("2d");
+      this.interval = setInterval (this.updategamePlane, 10);
+      document.querySelector(".game").appendChild(this.canvas);
+      window.addEventListener("keydown", e => {
+        gamePlane.key = e.keyCode;
+      })
     }
-    for(i = 0; i < przeszkody.length; i++){
-        przeszkody[i].x = przeszkody[i].x-2;
-        przeszkody[i].update();
+    clear(){
+      this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
     }
-    if(gamePlane.key && gamePlane.key == 38 && player.jumping == false){
-        gamePlane.key = false;
-        player.speedY = -player.jumpScale;
-        player.jumping = true;
-        player.cyle = 9;
+    stop(){
+      clearInterval(this.interval);
+      var gameInfo = document.querySelector(".gameInfo");
+      gameInfo.innerHTML = "<button onclick='gamePlane.restartGame()'>AGAIN!</button>";
+      gameInfo.style.display = "flex";
     }
-    myScore.text = "SCORE:"+Math.floor(gamePlane.frameNo/100);
-    myScore.update(); 
-    player.newPos();
-    player.update(); 
-    console.log("loop")
-}
-
-
-
-const playerIMG = new Image()
-const obstacleIMG = new Image()
-let singleW
-window.addEventListener('load', () => {
+    restartGame(){
+      document.querySelector(".gameInfo").style.display = "none";
+      gamePlane.clear();
+      player = {};
+      przeszkody = [];
+      myScore = {};
+      document.querySelector("canvas").innerHTML = "";
+    }
+    updategamePlane(){
+      gamePlane.clear(); 
+      gamePlane.frameNo++;
+      var x,y;
+      for(let i = 0; i < przeszkody.length; i++){
+          if(player.crashWith(przeszkody[i])){
+              gamePlane.stop();
+          }
+      }
+      if(gamePlane.frameNo == 1 || everyInterval(200)){
+          x = gamePlane.canvas.width;
+          const minHeight = 30;
+          const maxHeight = 65;
+          const height = Math.random()*(maxHeight-minHeight)+minHeight;
+          y = gamePlane.canvas.height - height;
+          przeszkody.push(new Component( 10, height, x, y, "przeszkody"));
+      }
+      for(let i = 0; i < przeszkody.length; i++){
+          przeszkody[i].x = przeszkody[i].x-2;
+          przeszkody[i].update();
+      }
+      if(gamePlane.key && gamePlane.key == 38 && player.jumping == false){
+          gamePlane.key = false;
+          player.speedY = -player.jumpScale;
+          player.jumping = true;
+          player.cyle = 9;
+      }
+      myScore.text = "SCORE:"+Math.floor(gamePlane.frameNo/100);
+      myScore.update(); 
+      player.newPos();
+      player.update(); 
+      console.log("loop")
+    }  
+  }
+  function everyInterval(n){
+      if((gamePlane.frameNo/n) % 1 == 0){return true;}
+      return false;
+  }
+  function startGame(){
+    gamePlane = new Game()
+    player = new Component(10, 60, 150, 240,"player")
+    myScore = new Component("30px","Consolas",480,30,"text")
+  }
+  let player, myScore, gamePlane, singleW, przeszkody = [];
+  const playerIMG = new Image()
+  const obstacleIMG = new Image()
+  window.addEventListener('load', () => {
   playerIMG.src = '/images/js_game_jumping_man.png'
   playerIMG.addEventListener("load", e => {
     singleW = playerIMG.width / 10
     obstacleIMG.src = '/images/przeszkoda.png'
-    obstacleIMG.addEventListener("load", e => {
-      gamePlane = new Game()
-      player = new Component(10, 60, 150, 240,"player")
-      myScore = new Component("30px","Consolas",480,30,"text")
-    })
+    obstacleIMG.addEventListener("load", startGame)
   })
 })
 </script>
