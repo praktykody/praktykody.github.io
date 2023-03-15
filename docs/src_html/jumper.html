@@ -76,53 +76,51 @@
 var player;
 var przeszkody = [];
 var myScore;
+var gamePlane;
 
-
-function startGame(){
-    gamePlane.start();
-    player = new Component(10, 60, "js_game_jumping_man.png", 150, 240,"player");
-    myScore = new Component("30px","Consolas","black",480,30,"text")
-}
-function restartGame() {
-    document.querySelector(".gameInfo").style.display = "none";
-    gamePlane.clear();
-    player = {};
-    przeszkody = [];
-    myScore = {};
-    document.querySelector("canvas").innerHTML = "";
-    startGame();
-}
-var gamePlane={
-    canvas: document.createElement("canvas"),
+// function startGame(){
+//     // gamePlane.start();
+//     player = new Component(10, 60, 150, 240,"player");
+//     myScore = new Component("30px","Consolas",480,30,"text")
+// }
+// function restartGame() {
+//     document.querySelector(".gameInfo").style.display = "none";
+//     gamePlane.clear();
+//     player = {};
+//     przeszkody = [];
+//     myScore = {};
+//     document.querySelector("canvas").innerHTML = "";
+//     startGame();
+// }
+// var gamePlane={
+//     canvas: document.createElement("canvas"),
     // ctx: document.createElement("canvas").context,
-    start: function(){
-        this.canvas.width = 640;
-        this.canvas.height = 300;
-        this.frameNo = 0;
-        // this.context= this.canvas.getContext("2d");
-        this.ctx= this.canvas.getContext("2d");
-        this.interval = setInterval (updategamePlane, 10);
-        document.querySelector(".game").appendChild(this.canvas);
-        window.addEventListener("keydown", function(e){
-            gamePlane.key = e.keyCode;
-        })
-    },
-    clear: function() {
-        // this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
-        this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
-    },
-    stop: function(){
-        clearInterval(this.interval);
-        var gameInfo = document.querySelector(".gameInfo");
-        gameInfo.innerHTML = "<button onclick='restartGame()'>AGAIN!</button>";
-        gameInfo.style.display = "flex";
-    }
-}
+    // start: function(){
+        // this.canvas.width = 640;
+        // this.canvas.height = 300;
+        // this.frameNo = 0;
+        // // this.context= this.canvas.getContext("2d");
+        // this.ctx= this.canvas.getContext("2d");
+        // this.interval = setInterval (updategamePlane, 10);
+        // document.querySelector(".game").appendChild(this.canvas);
+        // window.addEventListener("keydown", function(e){
+        //     gamePlane.key = e.keyCode;
+        // })
+    // },
+    // clear: function() {
+    //     // this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
+    //     this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
+    // },
+    // stop: function(){
+    //     clearInterval(this.interval);
+    //     var gameInfo = document.querySelector(".gameInfo");
+    //     gameInfo.innerHTML = "<button onclick='restartGame()'>AGAIN!</button>";
+    //     gameInfo.style.display = "flex";
+    // }
+// }
 
-// class GameElement {
 class Component {
-  constructor(width, height, color, x, y, type){
-// function compontent(width, height, color, x, y, type){
+  constructor(width, height, x, y, type){
     this.type = type;
     this.width = width;
     this.height = height;
@@ -132,47 +130,17 @@ class Component {
     this.jumpScale = 2;
     this.jumpH = 100;
     this.jumping = false;
-    // this.newPos = function(){
-    //     bottom = gamePlane.canvas.height - this.height;
-    //     if(this.y <= bottom - this.jumpH){
-    //         this.speedY = player.jumpScale;
-    //     }
-    //     if(this.y >= bottom && this.speedY == player.jumpScale){
-    //         this.speedY = 0;
-    //         this.jumping = false;
-    //     }
-    //     this.y += this.speedY;
-    // }
     this.cyle = 0;
-    // this.update = function(){
-    //   if( this.type == "player" ){
-    //     gamePlane.ctx.drawImage(playerIMG,
-    //       this.cyle * singleW, 0, singleW, playerIMG.height,
-    //       this.x - 15, this.y, singleW, this.height)
-    //     if( everyInterval(5) && this.jumping == false ){
-    //       this.cyle = ( this.cyle + 1 ) % 8;
-    //     }
-    //   }else if( this.type == "przeszkody" ){
-    //     gamePlane.ctx.drawImage(obstacleIMG,
-    //       0, 0, obstacleIMG.width, obstacleIMG.height,
-    //       this.x-7.5, this.y, obstacleIMG.width, this.height)
-    //   }else if(this.type == "text"){
-    //     gamePlane.ctx.font = this.width + " " + this.height;
-    //     gamePlane.ctx.fillStyle = color;
-    //     gamePlane.ctx.fillText(this.text, this.x, this.y);
-    //   }
-    // }
-    // this.crashWith = other => {
-    //   if( this.x + this.width < other.x     // myright < otherleft
-    //   ||  this.y + this.height < other.y    //  mybottom < othertop
-    //   ||  this.x > other.x + other.width    //  myleft > otherright
-    //   ||  this.y > other.y + other.height){ //  mytop > otherbottom
-    //     return false
-    //   }
-    //   return true
-    // }
   }
-  
+  crashWith( other ){
+    if( this.x + this.width < other.x     // myright < otherleft
+    ||  this.y + this.height < other.y    //  mybottom < othertop
+    ||  this.x > other.x + other.width    //  myleft > otherright
+    ||  this.y > other.y + other.height){ //  mytop > otherbottom
+      return false
+    }
+    return true
+  }
   newPos(){
     const bottom = gamePlane.canvas.height - this.height;
     if(this.y <= bottom - this.jumpH){
@@ -184,8 +152,6 @@ class Component {
     }
     this.y += this.speedY;
   }
-
-  // this.update = function(){
   update(){
     if( this.type == "player" ){
       gamePlane.ctx.drawImage(playerIMG,
@@ -200,20 +166,57 @@ class Component {
         this.x-7.5, this.y, obstacleIMG.width, this.height)
     }else if(this.type == "text"){
       gamePlane.ctx.font = this.width + " " + this.height;
-      // gamePlane.ctx.fillStyle = color;
       gamePlane.ctx.fillText(this.text, this.x, this.y);
     }
   }
-  crashWith( other ){
-    if( this.x + this.width < other.x     // myright < otherleft
-    ||  this.y + this.height < other.y    //  mybottom < othertop
-    ||  this.x > other.x + other.width    //  myleft > otherright
-    ||  this.y > other.y + other.height){ //  mytop > otherbottom
-      return false
-    }
-    return true
-  }
 }
+
+class Game {
+  constructor(){
+    this.canvas = document.createElement("canvas")
+    this.canvas.width = 640;
+    this.canvas.height = 300;
+    this.frameNo = 0;
+    // this.context= this.canvas.getContext("2d");
+    this.ctx= this.canvas.getContext("2d");
+    this.interval = setInterval (updategamePlane, 10);
+    document.querySelector(".game").appendChild(this.canvas);
+    // window.addEventListener("keydown", function(e){
+    window.addEventListener("keydown", e => {
+        gamePlane.key = e.keyCode;
+    })
+
+
+  }
+    // clear: function() {
+  clear(){
+    // this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
+    this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
+  }
+  // stop: function(){
+  stop(){
+    clearInterval(this.interval);
+    var gameInfo = document.querySelector(".gameInfo");
+    // gameInfo.innerHTML = "<button onclick='restartGame()'>AGAIN!</button>";
+    gameInfo.innerHTML = "<button onclick='gamePlane.restartGame()'>AGAIN!</button>";
+    gameInfo.style.display = "flex";
+  }
+
+  // function restartGame() {
+  restartGame(){
+    document.querySelector(".gameInfo").style.display = "none";
+    gamePlane.clear();
+    player = {};
+    przeszkody = [];
+    myScore = {};
+    document.querySelector("canvas").innerHTML = "";
+    startGame();
+  }
+
+
+
+}
+
 function everyInterval(n){
     if((gamePlane.frameNo/n) % 1 == 0){return true;}
     return false;
@@ -233,8 +236,7 @@ function updategamePlane(){
         maxHeight = 65;
         height = Math.random()*(maxHeight-minHeight)+minHeight;
         y = gamePlane.canvas.height - height;
-        // przeszkody.push(new compontent(10,height,"przeszkoda.png",x,y,"przeszkody"));
-        przeszkody.push(new Component(10,height,"przeszkoda.png",x,y,"przeszkody"));
+        przeszkody.push(new Component( 10, height, x, y, "przeszkody"));
     }
     for(i = 0; i < przeszkody.length; i++){
         przeszkody[i].x = przeszkody[i].x-2;
@@ -254,23 +256,22 @@ function updategamePlane(){
 }
 
 
+
 const playerIMG = new Image()
 const obstacleIMG = new Image()
-
-let singleW;
-
+let singleW
 window.addEventListener('load', () => {
   playerIMG.src = '/images/js_game_jumping_man.png'
-  obstacleIMG.src = '/images/przeszkoda.png'
   playerIMG.addEventListener("load", e => {
     singleW = playerIMG.width / 10
+    obstacleIMG.src = '/images/przeszkoda.png'
     obstacleIMG.addEventListener("load", e => {
-      startGame()
-    });
-  });
+      gamePlane = new Game()
+      player = new Component(10, 60, 150, 240,"player")
+      myScore = new Component("30px","Consolas",480,30,"text")
+    })
+  })
 })
-
-
 </script>
 </body>
 </html>
