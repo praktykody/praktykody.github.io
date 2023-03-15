@@ -1,5 +1,8 @@
 # Jumping game
-![js logo](../images/js_game.png)
+
+<iframe src="src_html/jumper.html" style="min-height:40vh;border:none;z-index:1;"></iframe>
+
+<!-- ![js logo](../images/js_game.png) -->
 
 ## Canvas
 
