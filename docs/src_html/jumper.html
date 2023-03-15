@@ -5,73 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jumper</title>
   <style>
-    *{
-      box-sizing:border-box;
-    }
-    html,
-    body{
-      margin:0;
-      width:100%;
-      height:100%;
-    }
-    body{
-      background-color:rgb(92, 0, 0);
-      border:5px dashed #fff;
+    *{ box-sizing:border-box }
+    html, body{
+      background: linear-gradient(to bottom, #fff, rgb(16, 143, 175));
       display:flex;
       flex-direction: column;
+      height:100%;
       justify-content:space-between;
-      color:#fff;
-    }
-    canvas{
-      width:100%;
-      border:2px dashed #fff;
-      background-color:rgb(206, 199, 199);
-    }
-    h1,h3{
       margin:0;
-      padding:2%;
-
     }
-    header{
-      text-align:center;
-    }
-    footer{
-      text-align:right;
-    }
-    main{
+    body .game canvas{
+      bottom:-15px;
       position:relative;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
-      padding:0 15%;
+      width:100%;
     }
-    .gameInfo{
-      position:absolute;
-      left:0;
-      top:0;
-      background-color:rgba(199, 199, 199, 0.418);
-      width:70%;
-      height:100%;
-      left:15%;
-      display:flex;
-      flex-direction: column;
-      justify-content: center;
+    body .gameInfo{
       align-items: center;
       display:none;
-      color:#000;
+      height:100%;
+      justify-content: center;
+      left:0;
+      position:absolute;
+      top:0;
+      width:100%;
+      z-index:1;
+    }
+    body .gameInfo button{
+      cursor:pointer;
+      padding:1rem 2rem;
+    }
+    body footer{
+      flex:1;
+      text-align:right;
+      background: rgb(95, 88, 85);
     }
   </style>
 </head>
-<!-- <body onload="startGame()" onclick="gamePlane.key = 38"> -->
 <body onclick="gamePlane.key = 38">
-  <header>
-  </header>
   <main class="game">
     <div class="gameInfo"></div>
   </main>
-  <footer>
-    <h3>by Antek</h3>
-  </footer>
+  <footer></footer>
 <script>
   class Component {
     constructor(width, height, x, y, type){
@@ -152,7 +126,8 @@
       player = {};
       przeszkody = [];
       myScore = {};
-      document.querySelector("canvas").innerHTML = "";
+      document.querySelector("canvas").remove();
+      startGame()
     }
     updategamePlane(){
       gamePlane.clear(); 
@@ -201,13 +176,13 @@
   const playerIMG = new Image()
   const obstacleIMG = new Image()
   window.addEventListener('load', () => {
-  playerIMG.src = '/images/js_game_jumping_man.png'
-  playerIMG.addEventListener("load", e => {
-    singleW = playerIMG.width / 10
-    obstacleIMG.src = '/images/przeszkoda.png'
-    obstacleIMG.addEventListener("load", startGame)
+    playerIMG.src = '/images/js_game_jumping_man.png'
+    playerIMG.addEventListener("load", e => {
+      singleW = playerIMG.width / 10
+      obstacleIMG.src = '/images/przeszkoda.png'
+      obstacleIMG.addEventListener("load", startGame)
+    })
   })
-})
 </script>
 </body>
 </html>
