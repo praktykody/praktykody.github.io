@@ -77,26 +77,11 @@ var player;
 var przeszkody = [];
 var myScore;
 
-const playerIMG = new Image()
-const obstacleIMG = new Image()
-
-window.addEventListener('load', () => {
-  playerIMG.src = '/images/js_game_jumping_man.png'
-  obstacleIMG.src = '/images/przeszkoda.png'
-  playerIMG.addEventListener("load", e => {
-    obstacleIMG.addEventListener("load", e => {
-      startGame()
-    });
-  });
-})
-
 
 function startGame(){
     gamePlane.start();
-    // player = new compontent(10, 60, "player.png", 150, 240,"player");
-    player = new compontent(10, 60, "js_game_jumping_man.png", 150, 240,"player");
-    myScore = new compontent("30px","Consolas","black",480,30,"text")
-    // return console.log({ player })
+    player = new Component(10, 60, "js_game_jumping_man.png", 150, 240,"player");
+    myScore = new Component("30px","Consolas","black",480,30,"text")
 }
 function restartGame() {
     document.querySelector(".gameInfo").style.display = "none";
@@ -109,11 +94,13 @@ function restartGame() {
 }
 var gamePlane={
     canvas: document.createElement("canvas"),
+    // ctx: document.createElement("canvas").context,
     start: function(){
         this.canvas.width = 640;
         this.canvas.height = 300;
         this.frameNo = 0;
-        this.context= this.canvas.getContext("2d");
+        // this.context= this.canvas.getContext("2d");
+        this.ctx= this.canvas.getContext("2d");
         this.interval = setInterval (updategamePlane, 10);
         document.querySelector(".game").appendChild(this.canvas);
         window.addEventListener("keydown", function(e){
@@ -121,7 +108,8 @@ var gamePlane={
         })
     },
     clear: function() {
-        this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
+        // this.context.clearRect(0,0, this.canvas.width, this.canvas.height);
+        this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
     },
     stop: function(){
         clearInterval(this.interval);
@@ -130,7 +118,11 @@ var gamePlane={
         gameInfo.style.display = "flex";
     }
 }
-function compontent(width, height, color, x, y, type){
+
+// class GameElement {
+class Component {
+  constructor(width, height, color, x, y, type){
+// function compontent(width, height, color, x, y, type){
     this.type = type;
     this.width = width;
     this.height = height;
@@ -140,65 +132,87 @@ function compontent(width, height, color, x, y, type){
     this.jumpScale = 2;
     this.jumpH = 100;
     this.jumping = false;
-    this.newPos = function(){
-        bottom = gamePlane.canvas.height - this.height;
-        if(this.y <= bottom - this.jumpH){
-            this.speedY = player.jumpScale;
-        }
-        if(this.y >= bottom && this.speedY == player.jumpScale){
-            this.speedY = 0;
-            this.jumping = false;
-        }
-        this.y += this.speedY;
-    }
+    // this.newPos = function(){
+    //     bottom = gamePlane.canvas.height - this.height;
+    //     if(this.y <= bottom - this.jumpH){
+    //         this.speedY = player.jumpScale;
+    //     }
+    //     if(this.y >= bottom && this.speedY == player.jumpScale){
+    //         this.speedY = 0;
+    //         this.jumping = false;
+    //     }
+    //     this.y += this.speedY;
+    // }
     this.cyle = 0;
-    this.update = function(){
-        c = gamePlane.context;
-        if(this.type == "player"){
-
-            var singleW = playerIMG.width/10;
-
-            c.drawImage(playerIMG,
-                this.cyle * singleW, 0, singleW, playerIMG.height,
-                this.x-15, this.y, singleW, this.height);
-            if(everyInterval(5) && this.jumping == false){
-                this.cyle = (this.cyle + 1) % 8;
-            }
-        }else if(this.type == "przeszkody"){
-            // var img = document.createElement("img");
-            // img.src = path + color;
-            // c.drawImage(img,
-                // 0, 0, img.width, img.height,
-                // this.x-7.5, this.y, img.width, this.height);
-            c.drawImage(obstacleIMG,
-                0, 0, obstacleIMG.width, obstacleIMG.height,
-                this.x-7.5, this.y, obstacleIMG.width, this.height);
-
-        }else if(this.type == "text"){
-            c.font = this.width + " " + this.height;
-            c.fillStyle = color;
-            c.fillText(this.text, this.x, this.y);
-        }
+    // this.update = function(){
+    //   if( this.type == "player" ){
+    //     gamePlane.ctx.drawImage(playerIMG,
+    //       this.cyle * singleW, 0, singleW, playerIMG.height,
+    //       this.x - 15, this.y, singleW, this.height)
+    //     if( everyInterval(5) && this.jumping == false ){
+    //       this.cyle = ( this.cyle + 1 ) % 8;
+    //     }
+    //   }else if( this.type == "przeszkody" ){
+    //     gamePlane.ctx.drawImage(obstacleIMG,
+    //       0, 0, obstacleIMG.width, obstacleIMG.height,
+    //       this.x-7.5, this.y, obstacleIMG.width, this.height)
+    //   }else if(this.type == "text"){
+    //     gamePlane.ctx.font = this.width + " " + this.height;
+    //     gamePlane.ctx.fillStyle = color;
+    //     gamePlane.ctx.fillText(this.text, this.x, this.y);
+    //   }
+    // }
+    // this.crashWith = other => {
+    //   if( this.x + this.width < other.x     // myright < otherleft
+    //   ||  this.y + this.height < other.y    //  mybottom < othertop
+    //   ||  this.x > other.x + other.width    //  myleft > otherright
+    //   ||  this.y > other.y + other.height){ //  mytop > otherbottom
+    //     return false
+    //   }
+    //   return true
+    // }
+  }
+  
+  newPos(){
+    const bottom = gamePlane.canvas.height - this.height;
+    if(this.y <= bottom - this.jumpH){
+      this.speedY = player.jumpScale;
     }
-    this.crashWith = function(other){
-        var crash = true;
-        var myleft = this.x;
-        var myright = this.x + this.width;
-        var mytop = this.y;
-        var mybottom = this.y + this.height;
-        var otherleft = other.x;
-        var otherright = other.x + other.width;
-        var othertop = other.y;
-        var otherbottom = other.y + other.height;
-        if(myright < otherleft ||
-            mybottom < othertop||
-            myleft > otherright||
-            mytop > otherbottom
-        ){
-            crash = false;
-        }
-        return crash;
+    if(this.y >= bottom && this.speedY == player.jumpScale){
+      this.speedY = 0;
+      this.jumping = false;
     }
+    this.y += this.speedY;
+  }
+
+  // this.update = function(){
+  update(){
+    if( this.type == "player" ){
+      gamePlane.ctx.drawImage(playerIMG,
+        this.cyle * singleW, 0, singleW, playerIMG.height,
+        this.x - 15, this.y, singleW, this.height)
+      if( everyInterval(5) && this.jumping == false ){
+        this.cyle = ( this.cyle + 1 ) % 8;
+      }
+    }else if( this.type == "przeszkody" ){
+      gamePlane.ctx.drawImage(obstacleIMG,
+        0, 0, obstacleIMG.width, obstacleIMG.height,
+        this.x-7.5, this.y, obstacleIMG.width, this.height)
+    }else if(this.type == "text"){
+      gamePlane.ctx.font = this.width + " " + this.height;
+      // gamePlane.ctx.fillStyle = color;
+      gamePlane.ctx.fillText(this.text, this.x, this.y);
+    }
+  }
+  crashWith( other ){
+    if( this.x + this.width < other.x     // myright < otherleft
+    ||  this.y + this.height < other.y    //  mybottom < othertop
+    ||  this.x > other.x + other.width    //  myleft > otherright
+    ||  this.y > other.y + other.height){ //  mytop > otherbottom
+      return false
+    }
+    return true
+  }
 }
 function everyInterval(n){
     if((gamePlane.frameNo/n) % 1 == 0){return true;}
@@ -219,7 +233,8 @@ function updategamePlane(){
         maxHeight = 65;
         height = Math.random()*(maxHeight-minHeight)+minHeight;
         y = gamePlane.canvas.height - height;
-        przeszkody.push(new compontent(10,height,"przeszkoda.png",x,y,"przeszkody"));
+        // przeszkody.push(new compontent(10,height,"przeszkoda.png",x,y,"przeszkody"));
+        przeszkody.push(new Component(10,height,"przeszkoda.png",x,y,"przeszkody"));
     }
     for(i = 0; i < przeszkody.length; i++){
         przeszkody[i].x = przeszkody[i].x-2;
@@ -237,6 +252,25 @@ function updategamePlane(){
     player.update(); 
     console.log("loop")
 }
+
+
+const playerIMG = new Image()
+const obstacleIMG = new Image()
+
+let singleW;
+
+window.addEventListener('load', () => {
+  playerIMG.src = '/images/js_game_jumping_man.png'
+  obstacleIMG.src = '/images/przeszkoda.png'
+  playerIMG.addEventListener("load", e => {
+    singleW = playerIMG.width / 10
+    obstacleIMG.addEventListener("load", e => {
+      startGame()
+    });
+  });
+})
+
+
 </script>
 </body>
 </html>
