@@ -62,7 +62,8 @@
     }
   </style>
 </head>
-<body onload="startGame()" onclick="gamePlane.key = 38">
+<!-- <body onload="startGame()" onclick="gamePlane.key = 38"> -->
+<body onclick="gamePlane.key = 38">
   <header>
   </header>
   <main class="game">
@@ -75,8 +76,21 @@
 var player;
 var przeszkody = [];
 var myScore;
-// var myScore = { };
-const path = "/images/"
+
+const playerIMG = new Image()
+const obstacleIMG = new Image()
+
+window.addEventListener('load', () => {
+  playerIMG.src = '/images/js_game_jumping_man.png'
+  obstacleIMG.src = '/images/przeszkoda.png'
+  playerIMG.addEventListener("load", e => {
+    obstacleIMG.addEventListener("load", e => {
+      startGame()
+    });
+  });
+})
+
+
 function startGame(){
     gamePlane.start();
     // player = new compontent(10, 60, "player.png", 150, 240,"player");
@@ -141,21 +155,24 @@ function compontent(width, height, color, x, y, type){
     this.update = function(){
         c = gamePlane.context;
         if(this.type == "player"){
-            var img = document.createElement("img");
-            img.src = path + color;
-            var singleW = img.width/10;
-            c.drawImage(img,
-                this.cyle * singleW, 0, singleW, img.height,
+
+            var singleW = playerIMG.width/10;
+
+            c.drawImage(playerIMG,
+                this.cyle * singleW, 0, singleW, playerIMG.height,
                 this.x-15, this.y, singleW, this.height);
             if(everyInterval(5) && this.jumping == false){
                 this.cyle = (this.cyle + 1) % 8;
             }
         }else if(this.type == "przeszkody"){
-            var img = document.createElement("img");
-            img.src = path + color;
-            c.drawImage(img,
-                0, 0, img.width, img.height,
-                this.x-7.5, this.y, img.width, this.height);
+            // var img = document.createElement("img");
+            // img.src = path + color;
+            // c.drawImage(img,
+                // 0, 0, img.width, img.height,
+                // this.x-7.5, this.y, img.width, this.height);
+            c.drawImage(obstacleIMG,
+                0, 0, obstacleIMG.width, obstacleIMG.height,
+                this.x-7.5, this.y, obstacleIMG.width, this.height);
 
         }else if(this.type == "text"){
             c.font = this.width + " " + this.height;
