@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pogodynka</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+	<style>
+		* {
+			-webkit-box-sizing: border-box;
+							box-sizing: border-box;
+		}
+
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		html .loader,
+		body .loader {
+			height: 80%;
+		}
+
+		html .mainContainer,
+		body .mainContainer {
+			background-color: green;
+			background-image: url("/images/angular_weather_background.jpg");
+			background-size: cover;
+			width: 100vw;
+			height: 100vh;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+							flex-direction: column;
+			-webkit-box-pack: center;
+					-ms-flex-pack: center;
+							justify-content: center;
+		}
+
+		html .mainContainer header,
+		body .mainContainer header {
+			background-color: #fff;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			padding: 2%;
+		}
+
+		html .mainContainer header h1, html .mainContainer header h6,
+		body .mainContainer header h1,
+		body .mainContainer header h6 {
+			margin: 0;
+			text-align: center;
+		}
+
+		html .mainContainer .cities,
+		body .mainContainer .cities {
+			width: 30%;
+			position: absolute;
+			top: 0;
+			background-color: #fff;
+		}
+
+		html .mainContainer .cities input[type=text],
+		body .mainContainer .cities input[type=text] {
+			width: 100%;
+		}
+
+		html .mainContainer .cities ul,
+		body .mainContainer .cities ul {
+			display: none;
+			margin: 0;
+			padding: 0;
+			position: relative;
+			z-index: 1;
+			background-color: #fff;
+			max-height: 50vh;
+			overflow-y: auto;
+		}
+
+		html .mainContainer .cities ul li,
+		body .mainContainer .cities ul li {
+			border: 1px dashed #000;
+			padding: 1%;
+			list-style-type: none;
+			cursor: pointer;
+		}
+
+		html .mainContainer .cities ul li:hover,
+		body .mainContainer .cities ul li:hover {
+			background-color: #cccccc;
+		}
+
+		html .mainContainer .showWth,
+		body .mainContainer .showWth {
+			background-color: #e6e6e6;
+			width: 50%;
+			margin-left: 25%;
+			text-align: center;
+			padding: 2%;
+			position: relative;
+		}
+
+		html .mainContainer .showWth .displayDay,
+		body .mainContainer .showWth .displayDay {
+			border: 1px dashed #000;
+		}
+
+		html .mainContainer .showWth .displayDay h2,
+		body .mainContainer .showWth .displayDay h2 {
+			margin: 0;
+		}
+
+		html .mainContainer .showWth .displayDay img,
+		body .mainContainer .showWth .displayDay img {
+			width: 20%;
+		}
+
+		html .mainContainer .showWth .displayDay .group,
+		body .mainContainer .showWth .displayDay .group {
+			border-top: 1px dashed #000;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: space-evenly;
+					-ms-flex-pack: space-evenly;
+							justify-content: space-evenly;
+		}
+
+		html .mainContainer .showWth .disableView,
+		body .mainContainer .showWth .disableView {
+			background-color: #e6e6e6;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-align: center;
+					-ms-flex-align: center;
+							align-items: center;
+			-webkit-box-pack: center;
+					-ms-flex-pack: center;
+							justify-content: center;
+		}
+
+		html .mainContainer .showWth .otherDays,
+		body .mainContainer .showWth .otherDays {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+		}
+
+		html .mainContainer .showWth .otherDays .singleDay,
+		body .mainContainer .showWth .otherDays .singleDay {
+			cursor: pointer;
+			padding: 2%;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+					-ms-flex-direction: column;
+							flex-direction: column;
+			-webkit-box-pack: center;
+					-ms-flex-pack: center;
+							justify-content: center;
+			-webkit-box-align: center;
+					-ms-flex-align: center;
+							align-items: center;
+			border: 1px dashed #000;
+			border-top: none;
+			border-left: none;
+		}
+
+		html .mainContainer .showWth .otherDays .singleDay:nth-child(1),
+		body .mainContainer .showWth .otherDays .singleDay:nth-child(1) {
+			border-left: 1px dashed #000;
+		}
+
+		html .mainContainer .showWth .otherDays .singleDay img,
+		body .mainContainer .showWth .otherDays .singleDay img {
+			width: 80%;
+		}
+
+		html .mainContainer .showWth .otherDays .singleDay h4,
+		body .mainContainer .showWth .otherDays .singleDay h4 {
+			margin: 0;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.showWth {
+				width: 100% !important;
+				margin-left: 0 !important;
+			}
+		}
+	</style>
+</head>
+<body data-ng-app="myApp">
+	<div class='mainContainer' data-ng-controller="weather">
+		<header>
+			<h1>POGODA</h1>
+			<p>Powered by 
+				<a href="https://www.metaweather.com/" target="_blank">MetaWeather.com</a>
+			</p>
+		</header>
+	<nav class="cities">
+		<input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />        
+		<ul class="searchList">
+			<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
+				{{c.title}}
+			</li>
+		</ul>
+	</nav>
+	<main class="showWth">
+		<div class="displayDay">	
+			<h2>{{weather.title}}</h2>
+			<!--
+			<div>{{day[currDay].applicable_date}}</div>
+			-->
+			<img src="https://www.metaweather.com/static/img/weather/{{day[currDay].weather_state_abbr}}.svg" />
+			<div class="group">
+				<div>{{day[currDay].the_temp| number:1}}°C</div>
+				<div>{{day[currDay].air_pressure}} hPa</div>
+			</div>
+			<div class="group">
+				<div>{{day[currDay].max_temp|number:2}}°C</div>
+				<div>{{day[currDay].min_temp|number:2}}°C</div>
+				<div>{{day[currDay].predictability}}%</div>
+			</div>
+			<div class="group">
+				<div>{{day[currDay].wind_direction|number:2}}</div>
+				<div>{{day[currDay].wind_direction_compass}}</div>			
+				<div>{{day[currDay].wind_speed|number:2}} mph</div>
+			</div>
+		</div>
+		<div class="otherDays">
+							<div class="singleDay" data-ng-repeat="d in day" data-ng-click="$parent.currDay = $index">
+									<img src="https://www.metaweather.com/static/img/weather/{{d.weather_state_abbr}}.svg" />
+									<h4>{{d.the_temp| number:0}}°C</h4>     
+			</div>
+		</div>
+		<div class="disableView">Wybierz miasto.</div>
+			</main>
+	</div>
+<script>
+		var app = angular.module("myApp", []);
+var sl = document.querySelector(".searchList");
+var dV = document.querySelector(".disableView");
+app.controller('weather', function($scope, $http, $filter){        
+	$scope.getCities = function(str){
+		sl.style.display = "block";
+						$http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query="+str).then(function(response){
+			$scope.cities = response.data;
+		});
+	}
+	$scope.getWeather = function(id,city){
+		$scope.searchCity = city;
+		sl.style.display = "none";
+		dV.style.display = "flex";
+		// dV.innerHTML = "<img src='loading.gif' class='loader' />";
+		dV.innerHTML = `
+		<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+			<path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+				<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/>
+			</path>
+		</svg>`;
+		$http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/"+id).then(function(response){
+			dV.style.display = "none";
+			$scope.weather = response.data;
+			let day = response.data.consolidated_weather;
+			$scope.day = day;
+			$scope.currDay = 0;
+		});
+	}
+});
+</script>
+</body>
+</html>
