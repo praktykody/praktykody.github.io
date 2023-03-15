@@ -19,7 +19,7 @@ Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 [Edytory kodu](/code_editors)
 
 <style>
-h1 .anchor span{
+/* h1 .anchor span{
   display:flex;
   align-items:center;
 }
@@ -116,7 +116,6 @@ ul.roadmap > li:nth-child(even) .date-placeholder{
   padding:0;
   margin:0px 20px;
   overflow:hidden;
-  /* color:#fff; */
   transition: .4s;
 }
 
@@ -169,22 +168,18 @@ ul.roadmap > li:nth-child(even) .date-placeholder{
   padding:5px 10px;
   margin:5px 5px;
   background:#3994F5;
-  /* color:#f1f2f3; */
   border-radius:1em;
 }
 
 .date-placeholder{
   display:block;
   align-self:center;
-  /* color:#888; */
   letter-spacing:3px;
   font-size:22px;
   font-weight:700;
   
 }
 
-
-/* h1#stage1{ */
 .roadmap-header{
   padding:1rem;
   margin:0 !important;
@@ -194,33 +189,25 @@ ul.roadmap > li:nth-child(even) .date-placeholder{
   background: #DB5151;
 }
 
-/* h1#stage2{ */
 .roadmap-header#stage2{
   background: #51B7DB;
 }
 
-/* h1#stage1 ~ ul.roadmap > li:before{ */
 .roadmap-header#stage1 ~ ul.roadmap > li:before{
   border:5px #DB5151 solid;
 }
 
-/* h1#stage1 ~ ul.roadmap > li:after{ */
 .roadmap-header#stage1 ~ ul.roadmap > li:after{
   background: #DB5151;
 }
 
-/* h1#stage2 ~ ul.roadmap > li:before{ */
 .roadmap-header#stage2 ~ ul.roadmap > li:before{
   border:5px #51B7DB solid;
 }
 
-/* h1#stage2 ~ ul.roadmap > li:after{ */
 .roadmap-header#stage2 ~ ul.roadmap > li:after{
   background: #51B7DB;
 }
-
-/*timeline*/
-
 
 ul.timeline{
   display:flex;
@@ -234,7 +221,6 @@ ul.timeline{
 ul.timeline > li{
   display:flex;
   position:relative;
-  /* color:#f1f2f3; */
   padding:5px 10px;
 }
 
@@ -253,10 +239,6 @@ ul.timeline > li:before{
   border:3px #ddd solid;
   box-shadow:inset 0 0 4px 1px #333;
   transition: .8s;
-}
-ul.timeline > li[checked]:after{
-  /*background:#328128;*/
-  
 }
 ul.timeline > li[checked]:before{
   background:#29C00B;
@@ -286,5 +268,5 @@ ul.timeline > li:after{
 
 ul.timeline > li:last-child:after{
   display:none;
-}
+} */
 </style>
