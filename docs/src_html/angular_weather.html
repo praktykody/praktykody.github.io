@@ -250,18 +250,20 @@
 			</main>
 	</div>
 <script>
-var app = angular.module("myApp", []);
+const app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
 var dV = document.querySelector(".disableView");
 app.controller('weather', function($scope, $http, $filter){        
 	$scope.getCities = function(str){
-		sl.style.display = "block";
-		// $http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query="+str)
-		$http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query="+str)
-		.then(function(response){
-			cosnole.log({ response })
+		console.log({ str })
+		// sl.style.display = "block";
+		// $http.get("http://api.openweathermap.org/geo/1.0/direct?&appid={API key}&q=Katowice")
+		// .then(function(response){
+			const response = { data: [{ "name": "Katowice", "lat": 50.2598987, "lon": 19.0215852, "country": "PL" }] }
+			console.log({ response })
 			$scope.cities = response.data;
-		});
+		// })
+
 	}
 	$scope.getWeather = function(id,city){
 		$scope.searchCity = city;
