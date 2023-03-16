@@ -15,9 +15,12 @@ Pełną listę API od OpenWeather znajdziesz [tutaj](https://openweathermap.org/
 
   ```http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}```
 
-  - [One Call API](https://openweathermap.org/api/one-call-3) - subiektywnie wygląda opcję która "najszerzej" zbiera informacje o pogodzie
+  <!-- - [One Call API](https://openweathermap.org/api/one-call-3) - subiektywnie wygląda opcję która "najszerzej" zbiera informacje o pogodzie
 
-  ```https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}```
+  ```https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}``` -->
+  - [5 day weather forecast](https://openweathermap.org/forecast5) - subiektywnie wygląda opcję która "najszerzej" zbiera informacje o pogodzie za darmo
+
+  ```api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}```
 
 ### Angular APP
 

@@ -221,12 +221,14 @@
 	<main class="showWth">
 		<div class="displayDay">	
 			<h2>{{weather.title}}</h2>
+			<!-- DAY: {{ day[currDay] }} -->
 			<!--
 			<div>{{day[currDay].applicable_date}}</div>
 			-->
 			<img src="https://www.metaweather.com/static/img/weather/{{day[currDay].weather_state_abbr}}.svg" />
 			<div class="group">
-				<div>{{day[currDay].the_temp| number:1}}°C</div>
+				<!-- <div>{{day[currDay].the_temp| number:1}}°C</div> -->
+				<div>{{day[currDay].main.temp| number:1}}°C</div>
 				<div>{{day[currDay].air_pressure}} hPa</div>
 			</div>
 			<div class="group">
@@ -243,7 +245,8 @@
 		<div class="otherDays">
 							<div class="singleDay" data-ng-repeat="d in day" data-ng-click="$parent.currDay = $index">
 									<img src="https://www.metaweather.com/static/img/weather/{{d.weather_state_abbr}}.svg" />
-									<h4>{{d.the_temp| number:0}}°C</h4>     
+									<!-- <h4>{{d.the_temp| number:0}}°C</h4>      -->
+									<h4>{{d.temp| number:0}}°C</h4>     
 			</div>
 		</div>
 		<div class="disableView">Wybierz miasto.</div>
@@ -256,7 +259,7 @@ var dV = document.querySelector(".disableView");
 app.controller('weather', function($scope, $http, $filter){        
 	$scope.getCities = function(str){
 		console.log({ str })
-		// sl.style.display = "block";
+		sl.style.display = "block";
 		// $http.get("http://api.openweathermap.org/geo/1.0/direct?&appid={API key}&q=Katowice")
 		// .then(function(response){
 			const response = { data: [{ "name": "Katowice", "lat": 50.2598987, "lon": 19.0215852, "country": "PL" }] }
@@ -269,7 +272,7 @@ app.controller('weather', function($scope, $http, $filter){
 		$scope.searchCity = city;
 		sl.style.display = "none";
 		dV.style.display = "flex";
-		// dV.innerHTML = "<img src='loading.gif' class='loader' />";
+
 		dV.innerHTML = `
 		<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 			width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
@@ -277,13 +280,150 @@ app.controller('weather', function($scope, $http, $filter){
 				<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/>
 			</path>
 		</svg>`;
-		$http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/"+id).then(function(response){
+
+		// $http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/"+id)
+		// $http.get("https://api.openweathermap.org/data/2.5/forecast?lat=50.2598987&lon=19.0215852&appid={API key}")
+		// .then(function(response){
+			const response = {
+				data : {
+					"cod": "200",
+					"message": 0,
+					"cnt": 40,
+					"list": [
+						{
+							"dt": 1679011200,
+							"main": {
+								"temp": 272.73,
+								"feels_like": 270.35,
+								"temp_min": 272.73,
+								"temp_max": 274.44,
+								"pressure": 1025,
+								"sea_level": 1025,
+								"grnd_level": 992,
+								"humidity": 76,
+								"temp_kf": -1.71
+							},
+							"weather": [
+								{
+									"id": 800,
+									"main": "Clear",
+									"description": "clear sky",
+									"icon": "01n"
+								}
+							],
+							"clouds": {
+								"all": 9
+							},
+							"wind": {
+								"speed": 1.89,
+								"deg": 137,
+								"gust": 2.99
+							},
+							"visibility": 10000,
+							"pop": 0,
+							"sys": {
+								"pod": "n"
+							},
+							"dt_txt": "2023-03-17 00:00:00"
+						},
+						{
+							"dt": 1679022000,
+							"main": {
+								"temp": 273.26,
+								"feels_like": 270.49,
+								"temp_min": 273.26,
+								"temp_max": 273.95,
+								"pressure": 1025,
+								"sea_level": 1025,
+								"grnd_level": 991,
+								"humidity": 69,
+								"temp_kf": -0.69
+							},
+							"weather": [
+								{
+									"id": 802,
+									"main": "Clouds",
+									"description": "scattered clouds",
+									"icon": "03n"
+								}
+							],
+							"clouds": {
+								"all": 41
+							},
+							"wind": {
+								"speed": 2.28,
+								"deg": 131,
+								"gust": 4.66
+							},
+							"visibility": 10000,
+							"pop": 0,
+							"sys": {
+								"pod": "n"
+							},
+							"dt_txt": "2023-03-17 03:00:00"
+						},
+						{
+						"dt": 1679032800,
+						"main": {
+							"temp": 274.39,
+							"feels_like": 272.04,
+							"temp_min": 274.39,
+							"temp_max": 274.39,
+							"pressure": 1025,
+							"sea_level": 1025,
+							"grnd_level": 992,
+							"humidity": 60,
+							"temp_kf": 0
+						},
+						"weather": [
+							{
+								"id": 803,
+								"main": "Clouds",
+								"description": "broken clouds",
+								"icon": "04d"
+							}
+						],
+						"clouds": {
+							"all": 60
+						},
+						"wind": {
+							"speed": 2.08,
+							"deg": 137,
+							"gust": 4.95
+						},
+						"visibility": 10000,
+						"pop": 0,
+						"sys": {
+							"pod": "d"
+						},
+						"dt_txt": "2023-03-17 06:00:00"
+						},
+					],
+					"city": {
+						"id": 3096472,
+						"name": "Katowice",
+						"coord": {
+						"lat": 50.2599,
+						"lon": 19.0216
+					},
+					"country": "PL",
+					"population": 317316,
+					"timezone": 3600,
+					"sunrise": 1678942596,
+					"sunset": 1678985332
+					}
+				}
+			}
 			dV.style.display = "none";
 			$scope.weather = response.data;
-			let day = response.data.consolidated_weather;
-			$scope.day = day;
+			// let day = response.data.consolidated_weather;
+			// let day = response.data.list;
+			// $scope.day = day;
+			$scope.day = response.data.list;
 			$scope.currDay = 0;
-		});
+		// });
+
+
 	}
 });
 </script>
