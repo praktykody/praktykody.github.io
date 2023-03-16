@@ -207,7 +207,7 @@
 		<header>
 			<h1>POGODA</h1>
 			<p>Powered by 
-				<a href="https://www.metaweather.com/" target="_blank">MetaWeather.com</a>
+				<a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
 			</p>
 		</header>
 	<nav class="cities">
@@ -250,13 +250,16 @@
 			</main>
 	</div>
 <script>
-		var app = angular.module("myApp", []);
+var app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
 var dV = document.querySelector(".disableView");
 app.controller('weather', function($scope, $http, $filter){        
 	$scope.getCities = function(str){
 		sl.style.display = "block";
-						$http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query="+str).then(function(response){
+		// $http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query="+str)
+		$http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query="+str)
+		.then(function(response){
+			cosnole.log({ response })
 			$scope.cities = response.data;
 		});
 	}
