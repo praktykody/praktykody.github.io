@@ -80,3 +80,6 @@ Po podmiance {API  key} na wygenerowany API KEY w kroku 1, odpowiedź serwera (r
 ```
 
 W ten sposób otrzymaliśmy nazwy miejscowości w różnych językach, kraj i województwo, ale najważniejszą informacją dla nas jest *lat* i *lon* czyli długość i szerokość geograficzna, które są wymagane do pobrania pogody w odpowiednim rejonie. 
+
+STOPNIE CELSJUSZA:
+&units=metric
