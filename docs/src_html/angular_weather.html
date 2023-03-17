@@ -210,53 +210,60 @@
 				<a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
 			</p>
 		</header>
-	<nav class="cities">
-		<input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />        
-		<ul class="searchList">
-			<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
-				{{c.title}}
-			</li>
-		</ul>
-	</nav>
-	<main class="showWth">
-		<div class="displayDay">	
-			<h2>{{weather.title}}</h2>
-			<!-- DAY: {{ day[currDay] }} -->
-			<!--
-			<div>{{day[currDay].applicable_date}}</div>
-			-->
-			<img src="https://www.metaweather.com/static/img/weather/{{day[currDay].weather_state_abbr}}.svg" />
-			<div class="group">
-				<!-- <div>{{day[currDay].the_temp| number:1}}°C</div> -->
-				<div>{{day[currDay].main.temp| number:1}}°C</div>
-				<div>{{day[currDay].air_pressure}} hPa</div>
+		<nav class="cities">
+			<div class="search">
+				<!-- <input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />  -->
+				<input type="text" data-ng-model="searchCity" placeholder="Szukaj" /> 
+				<button data-ng-click="getCities(searchCity)" >Search</button>     
 			</div>
-			<div class="group">
-				<div>{{day[currDay].max_temp|number:2}}°C</div>
-				<div>{{day[currDay].min_temp|number:2}}°C</div>
-				<div>{{day[currDay].predictability}}%</div>
+			<ul class="searchList">
+				<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
+					{{c.title}}
+				</li>
+			</ul>
+		</nav>
+		<main class="showWth">
+			<div class="displayDay">	
+				<h2>{{weather.title}}</h2>
+				<!-- DAY: {{ day[currDay] }} -->
+				<!--
+				<div>{{day[currDay].applicable_date}}</div>
+				-->
+				<img src="https://www.metaweather.com/static/img/weather/{{day[currDay].weather_state_abbr}}.svg" />
+				<div class="group">
+					<!-- <div>{{day[currDay].the_temp| number:1}}°C</div> -->
+					<div>{{day[currDay].main.temp| number:1}}°C</div>
+					<div>{{day[currDay].air_pressure}} hPa</div>
+				</div>
+				<div class="group">
+					<div>{{day[currDay].max_temp|number:2}}°C</div>
+					<div>{{day[currDay].min_temp|number:2}}°C</div>
+					<div>{{day[currDay].predictability}}%</div>
+				</div>
+				<div class="group">
+					<div>{{day[currDay].wind_direction|number:2}}</div>
+					<div>{{day[currDay].wind_direction_compass}}</div>			
+					<div>{{day[currDay].wind_speed|number:2}} mph</div>
+				</div>
 			</div>
-			<div class="group">
-				<div>{{day[currDay].wind_direction|number:2}}</div>
-				<div>{{day[currDay].wind_direction_compass}}</div>			
-				<div>{{day[currDay].wind_speed|number:2}} mph</div>
+			<div class="otherDays">
+				<div class="singleDay" data-ng-repeat="d in day" data-ng-click="$parent.currDay = $index">
+						<img src="https://www.metaweather.com/static/img/weather/{{d.weather_state_abbr}}.svg" />
+						<!-- <h4>{{d.the_temp| number:0}}°C</h4>      -->
+						<h4>{{d.temp| number:0}}°C</h4>     
+				</div>
 			</div>
-		</div>
-		<div class="otherDays">
-							<div class="singleDay" data-ng-repeat="d in day" data-ng-click="$parent.currDay = $index">
-									<img src="https://www.metaweather.com/static/img/weather/{{d.weather_state_abbr}}.svg" />
-									<!-- <h4>{{d.the_temp| number:0}}°C</h4>      -->
-									<h4>{{d.temp| number:0}}°C</h4>     
-			</div>
-		</div>
-		<div class="disableView">Wybierz miasto.</div>
-			</main>
+			<div class="disableView">Wybierz miasto.</div>
+		</main>
 	</div>
 <script>
 const app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
 var dV = document.querySelector(".disableView");
-app.controller('weather', function($scope, $http, $filter){        
+app.controller('weather', function($scope, $http, $filter){    
+	console.log({$scope})
+	// $scope ...{}
+	$scope.searchCity = "Katowice"    
 	$scope.getCities = function(str){
 		console.log({ str })
 		sl.style.display = "block";
