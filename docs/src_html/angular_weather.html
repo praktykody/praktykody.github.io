@@ -201,6 +201,26 @@
 			}
 		}
 	</style>
+
+	<style>
+		.cities .search{
+			/* border:2px dashed red; */
+			display:flex;
+		}
+		.sunInfo{
+			display: flex;
+		}
+		.list{
+			border:2px dashed red;
+			display:flex;
+			overflow-x: scroll;
+		}
+		.list > div {
+			border:2px dashed blue;
+		}
+
+
+	</style>
 </head>
 <body data-ng-app="myApp">
 	<div class='mainContainer' data-ng-controller="weather">
@@ -214,24 +234,45 @@
 			<div class="search">
 				<!-- <input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />  -->
 				<input type="text" data-ng-model="searchCity" placeholder="Szukaj" /> 
-				<button data-ng-click="getCities(searchCity)" >Search</button>     
+				<button data-ng-click="getCities(searchCity)"> Search </button>     
 			</div>
-			<ul class="searchList">
+			<!-- <ul class="searchList">
 				<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
 					{{c.title}}
 				</li>
-			</ul>
+			</ul> -->
+			<!-- <h2>{{ city.name }}</h2> -->
 		</nav>
 		<main class="showWth">
 			<div class="displayDay">	
-				<h2>{{weather.title}}</h2>
+				<!-- <h2>{{weather.title}}</h2> -->
+				<h2>{{ weather.city.name }}</h2>
+				<div class="sunInfo">
+					<p>
+						SUNRISE {{ weather.city.sunrise }}
+					</p>
+					<p>
+						SUNSET {{ weather.city.sunset }}
+						<!-- SUNSET {{ new Date(weather.city.sunset).toLocaleString }} -->
+					</p>
+				</div>
+				<div class="list">
+					<div data-ng-repeat="l in weather.list">
+						<div>{{ l.dt_txt }}</div>
+						<div>{{ l.main.feels_like }}</div>
+						<div>{{ l.main.temp }}</div>
+						<div>{{ l.weather.icon }}</div>
+						<!-- <div>{{ l.main. }}</div> -->
+						<!-- {{ l.dt }} -->
+					</div>
+				</div>
 				<!-- DAY: {{ day[currDay] }} -->
 				<!--
 				<div>{{day[currDay].applicable_date}}</div>
 				-->
-				<img src="https://www.metaweather.com/static/img/weather/{{day[currDay].weather_state_abbr}}.svg" />
-				<div class="group">
-					<!-- <div>{{day[currDay].the_temp| number:1}}°C</div> -->
+				<!-- <img src="https://www.metaweather.com/static/img/weather/{{day[currDay].weather_state_abbr}}.svg" /> -->
+				<!-- <div class="group">
+					<div>{{day[currDay].the_temp| number:1}}°C</div>
 					<div>{{day[currDay].main.temp| number:1}}°C</div>
 					<div>{{day[currDay].air_pressure}} hPa</div>
 				</div>
@@ -245,14 +286,14 @@
 					<div>{{day[currDay].wind_direction_compass}}</div>			
 					<div>{{day[currDay].wind_speed|number:2}} mph</div>
 				</div>
-			</div>
-			<div class="otherDays">
+			</div> -->
+			<!-- <div class="otherDays">
 				<div class="singleDay" data-ng-repeat="d in day" data-ng-click="$parent.currDay = $index">
 						<img src="https://www.metaweather.com/static/img/weather/{{d.weather_state_abbr}}.svg" />
-						<!-- <h4>{{d.the_temp| number:0}}°C</h4>      -->
+						<h4>{{d.the_temp| number:0}}°C</h4>     
 						<h4>{{d.temp| number:0}}°C</h4>     
 				</div>
-			</div>
+			</div> -->
 			<div class="disableView">Wybierz miasto.</div>
 		</main>
 	</div>
@@ -261,9 +302,6 @@ const app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
 var dV = document.querySelector(".disableView");
 app.controller('weather', function($scope, $http, $filter){    
-	console.log({$scope})
-	// $scope ...{}
-	$scope.searchCity = "Katowice"    
 	$scope.getCities = function(str){
 		console.log({ str })
 		sl.style.display = "block";
@@ -277,7 +315,7 @@ app.controller('weather', function($scope, $http, $filter){
 	}
 	$scope.getWeather = function(id,city){
 		$scope.searchCity = city;
-		sl.style.display = "none";
+		// sl.style.display = "none";
 		dV.style.display = "flex";
 
 		dV.innerHTML = `
@@ -288,150 +326,151 @@ app.controller('weather', function($scope, $http, $filter){
 			</path>
 		</svg>`;
 
-		// $http.get("https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/"+id)
 		// $http.get("https://api.openweathermap.org/data/2.5/forecast?lat=50.2598987&lon=19.0215852&appid={API key}")
 		// .then(function(response){
-			const response = {
-				data : {
-					"cod": "200",
-					"message": 0,
-					"cnt": 40,
-					"list": [
-						{
-							"dt": 1679011200,
-							"main": {
-								"temp": 272.73,
-								"feels_like": 270.35,
-								"temp_min": 272.73,
-								"temp_max": 274.44,
-								"pressure": 1025,
-								"sea_level": 1025,
-								"grnd_level": 992,
-								"humidity": 76,
-								"temp_kf": -1.71
-							},
-							"weather": [
-								{
-									"id": 800,
-									"main": "Clear",
-									"description": "clear sky",
-									"icon": "01n"
-								}
-							],
-							"clouds": {
-								"all": 9
-							},
-							"wind": {
-								"speed": 1.89,
-								"deg": 137,
-								"gust": 2.99
-							},
-							"visibility": 10000,
-							"pop": 0,
-							"sys": {
-								"pod": "n"
-							},
-							"dt_txt": "2023-03-17 00:00:00"
-						},
-						{
-							"dt": 1679022000,
-							"main": {
-								"temp": 273.26,
-								"feels_like": 270.49,
-								"temp_min": 273.26,
-								"temp_max": 273.95,
-								"pressure": 1025,
-								"sea_level": 1025,
-								"grnd_level": 991,
-								"humidity": 69,
-								"temp_kf": -0.69
-							},
-							"weather": [
-								{
-									"id": 802,
-									"main": "Clouds",
-									"description": "scattered clouds",
-									"icon": "03n"
-								}
-							],
-							"clouds": {
-								"all": 41
-							},
-							"wind": {
-								"speed": 2.28,
-								"deg": 131,
-								"gust": 4.66
-							},
-							"visibility": 10000,
-							"pop": 0,
-							"sys": {
-								"pod": "n"
-							},
-							"dt_txt": "2023-03-17 03:00:00"
-						},
-						{
-						"dt": 1679032800,
+		const response = {
+			data : {
+				"cod": "200",
+				"message": 0,
+				"cnt": 40,
+				"list": [
+					{
+						"dt": 1679011200,
 						"main": {
-							"temp": 274.39,
-							"feels_like": 272.04,
-							"temp_min": 274.39,
-							"temp_max": 274.39,
+							"temp": 272.73,
+							"feels_like": 270.35,
+							"temp_min": 272.73,
+							"temp_max": 274.44,
 							"pressure": 1025,
 							"sea_level": 1025,
 							"grnd_level": 992,
-							"humidity": 60,
-							"temp_kf": 0
+							"humidity": 76,
+							"temp_kf": -1.71
 						},
 						"weather": [
 							{
-								"id": 803,
-								"main": "Clouds",
-								"description": "broken clouds",
-								"icon": "04d"
+								"id": 800,
+								"main": "Clear",
+								"description": "clear sky",
+								"icon": "01n"
 							}
 						],
 						"clouds": {
-							"all": 60
+							"all": 9
 						},
 						"wind": {
-							"speed": 2.08,
+							"speed": 1.89,
 							"deg": 137,
-							"gust": 4.95
+							"gust": 2.99
 						},
 						"visibility": 10000,
 						"pop": 0,
 						"sys": {
-							"pod": "d"
+							"pod": "n"
 						},
-						"dt_txt": "2023-03-17 06:00:00"
-						},
-					],
-					"city": {
-						"id": 3096472,
-						"name": "Katowice",
-						"coord": {
-						"lat": 50.2599,
-						"lon": 19.0216
+						"dt_txt": "2023-03-17 00:00:00"
 					},
-					"country": "PL",
-					"population": 317316,
-					"timezone": 3600,
-					"sunrise": 1678942596,
-					"sunset": 1678985332
-					}
+					{
+						"dt": 1679022000,
+						"main": {
+							"temp": 273.26,
+							"feels_like": 270.49,
+							"temp_min": 273.26,
+							"temp_max": 273.95,
+							"pressure": 1025,
+							"sea_level": 1025,
+							"grnd_level": 991,
+							"humidity": 69,
+							"temp_kf": -0.69
+						},
+						"weather": [
+							{
+								"id": 802,
+								"main": "Clouds",
+								"description": "scattered clouds",
+								"icon": "03n"
+							}
+						],
+						"clouds": {
+							"all": 41
+						},
+						"wind": {
+							"speed": 2.28,
+							"deg": 131,
+							"gust": 4.66
+						},
+						"visibility": 10000,
+						"pop": 0,
+						"sys": {
+							"pod": "n"
+						},
+						"dt_txt": "2023-03-17 03:00:00"
+					},
+					{
+					"dt": 1679032800,
+					"main": {
+						"temp": 274.39,
+						"feels_like": 272.04,
+						"temp_min": 274.39,
+						"temp_max": 274.39,
+						"pressure": 1025,
+						"sea_level": 1025,
+						"grnd_level": 992,
+						"humidity": 60,
+						"temp_kf": 0
+					},
+					"weather": [
+						{
+							"id": 803,
+							"main": "Clouds",
+							"description": "broken clouds",
+							"icon": "04d"
+						}
+					],
+					"clouds": {
+						"all": 60
+					},
+					"wind": {
+						"speed": 2.08,
+						"deg": 137,
+						"gust": 4.95
+					},
+					"visibility": 10000,
+					"pop": 0,
+					"sys": {
+						"pod": "d"
+					},
+					"dt_txt": "2023-03-17 06:00:00"
+					},
+				],
+				"city": {
+					"id": 3096472,
+					"name": "Katowice",
+					"coord": {
+					"lat": 50.2599,
+					"lon": 19.0216
+				},
+				"country": "PL",
+				"population": 317316,
+				"timezone": 3600,
+				"sunrise": 1678942596,
+				"sunset": 1678985332
 				}
 			}
-			dV.style.display = "none";
-			$scope.weather = response.data;
-			// let day = response.data.consolidated_weather;
-			// let day = response.data.list;
-			// $scope.day = day;
-			$scope.day = response.data.list;
-			$scope.currDay = 0;
-		// });
+		}
+		dV.style.display = "none";
+		$scope.weather = response.data;
+		console.log('scope: ', $scope.weather)
+		// let day = response.data.consolidated_weather;
+		// let day = response.data.list;
+		// $scope.day = day;
+		$scope.day = response.data.list;
+		$scope.currDay = 0;
+	// });
 
 
 	}
+	$scope.getWeather(1,'Katowice')
 });
 </script>
 </body>
