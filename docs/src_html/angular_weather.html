@@ -6,7 +6,7 @@
 	<title>Pogodynka</title>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
 	<style>
-		* {
+		/* * {
 			-webkit-box-sizing: border-box;
 							box-sizing: border-box;
 		}
@@ -199,18 +199,33 @@
 				width: 100% !important;
 				margin-left: 0 !important;
 			}
-		}
+		} */
 	</style>
 
 	<style>
-		.cities .search{
-			/* border:2px dashed red; */
-			display:flex;
+		:root{
+			/* --primary: #fff; */
+			--light-primary: #fff;
+			--light-secondary: #eee;
 		}
-		.sunInfo{
+		* {
+			box-sizing: border-box;
+		}
+		html,
+		body {
+			/* width:100vw; */
+			height:100vh;
+		}
+		body {
+			margin:0;
+			border:2px dashed red;
+			background-image: url("/images/angular_weather_background.jpg");
+			background-size: cover;
+		}
+		.sunInfo {
 			display: flex;
 		}
-		.list{
+		.list {
 			border:2px dashed red;
 			display:flex;
 			overflow-x: scroll;
@@ -220,16 +235,59 @@
 		}
 
 
+		.mainContainer {
+			/* border:2px dashed blue; */
+			display: flex;
+			/* background: #fff; */
+			/* background: var(--primary); */
+			background: var(--light-primary);
+			justify-content: space-between;
+			padding:.5rem;
+		}
+		.mainContainer > header {
+			/* border:2px dashed #000; */
+			text-align: right;
+			/* padding:2rem 1rem; */
+			/* padding:2rem; */
+			padding:1.5rem;
+		}
+		.mainContainer > header h1,
+		.mainContainer > header p {
+			margin: 0;
+		}
+		/* .mainContainer .cities {
+			border:2px dashed pink;
+		} */
+		.mainContainer .cities .search {
+			/* border:2px dashed red; */
+			padding:.3rem;
+			/* border-radius: .5rem; */
+			/* border-radius: 1rem; */
+			display:flex;
+			/* border:2px dashed yellow; */
+			/* background: #eee; */
+			background: var(--light-secondary);
+		}
+		.mainContainer .cities .search input {
+			background: transparent;
+			border:none;
+			padding:.5rem 0 .5rem .5rem;
+
+
+		}
+		.mainContainer .cities .search input:focus {
+			outline: 0;
+		}
+		.mainContainer .cities .search button {
+			/* border-radius: .5rem; */
+			border:none;
+			cursor:pointer;
+			padding:.25rem 1rem;
+		}
 	</style>
 </head>
 <body data-ng-app="myApp">
 	<div class='mainContainer' data-ng-controller="weather">
-		<header>
-			<h1>POGODA</h1>
-			<p>Powered by 
-				<a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
-			</p>
-		</header>
 		<nav class="cities">
 			<div class="search">
 				<!-- <input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />  -->
@@ -243,41 +301,47 @@
 			</ul> -->
 			<!-- <h2>{{ city.name }}</h2> -->
 		</nav>
-		<main class="showWth">
-			<div class="displayDay">	
-				<!-- <h2>{{weather.title}}</h2> -->
-				<h2>{{ weather.city.name }}</h2>
-				<div class="sunInfo">
-					<div>
-						<h3>SUNRISE</h3>
-						<p>{{ covertDataTime(weather.city.sunrise) }}</p>
-					</div>
-					<div>
-						<h3>SUNSET</h3>
-						<p>{{ covertDataTime(weather.city.sunset) }}</p>
-					</div>
-				</div>
-				<div class="list">
-					<div data-ng-repeat="l in weather.list">
-						<div>{{ l.dt_txt }}</div>
-						<div>{{ l.main.feels_like }}</div>
-						<div>{{ l.main.temp }}</div>
-						<!-- <div>ICO{{ l.weather[0].icon }}</div> -->
-						<picture>
-							<!-- <img src="http://openweathermap.org/img/w/10d.png"  -->
-							<!-- src="{{http://openweathermap.org/img/w/{{l.weather[0].icon}}.png}}" -->
-								<!-- [src]="'http://openweathermap.org/img/w/' + l.weather[0].icon + '.png'" -->
-							<img 
-								src="http://openweathermap.org/img/w/{{l.weather[0].icon}}.png"
-								alt="Weather Image" style="width:5rem; height:5rem" />
-						</picture>
-						<!-- <img src = "{{data.imagePath}}.jpg">  -->
-						<!-- <img [src] = "data.imagePath+'.jpg'"> -->
-					</div>
-				</div>
-			<div class="disableView">Wybierz miasto.</div>
-		</main>
+		<header>
+			<h1>POGODA</h1>
+			<p>Powered by 
+				<a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
+			</p>
+		</header>
 	</div>
+	<main class="showWth">
+		<div class="displayDay">	
+			<!-- <h2>{{weather.title}}</h2> -->
+			<h2>{{ weather.city.name }}</h2>
+			<div class="sunInfo">
+				<div>
+					<h3>SUNRISE</h3>
+					<p>{{ covertDataTime(weather.city.sunrise) }}</p>
+				</div>
+				<div>
+					<h3>SUNSET</h3>
+					<p>{{ covertDataTime(weather.city.sunset) }}</p>
+				</div>
+			</div>
+			<div class="list">
+				<div data-ng-repeat="l in weather.list">
+					<div>{{ l.dt_txt }}</div>
+					<div>{{ l.main.feels_like }}</div>
+					<div>{{ l.main.temp }}</div>
+					<!-- <div>ICO{{ l.weather[0].icon }}</div> -->
+					<picture>
+						<!-- <img src="http://openweathermap.org/img/w/10d.png"  -->
+						<!-- src="{{http://openweathermap.org/img/w/{{l.weather[0].icon}}.png}}" -->
+							<!-- [src]="'http://openweathermap.org/img/w/' + l.weather[0].icon + '.png'" -->
+						<img 
+							src="http://openweathermap.org/img/w/{{l.weather[0].icon}}.png"
+							alt="Weather Image" style="width:5rem; height:5rem" />
+					</picture>
+					<!-- <img src = "{{data.imagePath}}.jpg">  -->
+					<!-- <img [src] = "data.imagePath+'.jpg'"> -->
+				</div>
+			</div>
+		<div class="disableView">Wybierz miasto.</div>
+	</main>
 <script>
 const app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
