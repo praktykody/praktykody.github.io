@@ -12,9 +12,9 @@
 			--light-transparent: #fff3;
 		}
 		* { box-sizing: border-box }
-		html, body { height:100vh }
+		html, body { min-height:100vh }
 		body {
-			background-image: url("/docs/images/angular_weather_background.jpg");
+			background-image: url("/images/angular_weather_background.jpg");
 			background-size: cover;
 			display: flex;
 			margin:0;
@@ -57,7 +57,6 @@
 			cursor:pointer;
 			padding:.25rem 1rem;
 		}
-
 		.showWth {
 			align-items: center;
 			display:flex;
@@ -65,75 +64,62 @@
 			justify-content: center;
 		}
 		.showWth .displayDay {
-			background: var(--light-primary);
-			padding:1.5rem 2rem;
-			/* background: rgba(255, 255, 255, 0.2); */
-			background: var(--light-transparent);
-			backdrop-filter: blur(10px);
 			-webkit-backdrop-filter: blur(10px);
+			align-items: center;
+			backdrop-filter: blur(10px);
+			display: flex;
+			flex-direction: column;
+			padding:.5rem;
+			margin:.5rem;
 		}
 		.showWth .displayDay h2,
 		.showWth .displayDay h3 {
-			margin:0;
+			margin:.5rem;
 			text-align: center;
 			text-transform: uppercase;
 		}
-		.showWth .displayDay h2 {
-			/* margin:0 0 1rem 0; */
-			margin-bottom: 1rem;
-		}
 		.showWth .displayDay .sunInfo {
-			/* border:2px dashed red; */
 			display: flex;
-			/* justify-content: space-between; */
 			justify-content: space-around;
+			align-items: center;
+			background: var(--light-transparent);
+		}
+		.showWth .displayDay .sunInfo h2 {
+			order:2;
+		}
+		.showWth .displayDay .sunInfo > div:nth-child(1) {
+			order:1;
+		}
+		.showWth .displayDay .sunInfo > div:nth-child(2) {
+			order:3;
 		}
 		.showWth .displayDay .sunInfo > div {
-			background: var(--light-transparent);
-			/* border:2px dashed darkgoldenrod; */
 			text-align: center;
-			padding:.5rem 2rem;
+			padding:.5rem 1rem;
 		}
 		.showWth .displayDay .list {
-			/* list */
-			/* border:2px dashed yellow; */
 			background: var(--light-transparent);
 			display:flex;
 			max-width:60vw;
 			overflow-x: auto;
 		}
 		.showWth .displayDay .list > div {
-			/* border:2px dashed blueviolet; */
 			background: var(--light-transparent);
-
-			/* padding: 1rem; */
 			padding: 1rem;
-			/* text */
 			text-align: center;
 			margin:.25rem;
-			
 		  white-space: nowrap;
-		
 		}
 	</style>
 </head>
 <body data-ng-app="myApp">
-<!-- <body data-ng-app="myApp" data-ng-controller="weather"> -->
 	<div class="wrapper" data-ng-controller="weather">
-		<!-- <div class='mainContainer' data-ng-controller="weather"> -->
 		<div class='mainContainer'>
 			<nav class="cities">
 				<div class="search">
-					<!-- <input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />  -->
 					<input type="text" data-ng-model="searchCity" placeholder="Szukaj" /> 
 					<button data-ng-click="getCities(searchCity)"> Search </button>     
 				</div>
-				<!-- <ul class="searchList">
-					<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
-						{{c.title}}
-					</li>
-				</ul> -->
-				<!-- <h2>{{ city.name }}</h2> -->
 			</nav>
 			<header>
 				<h1>POGODA</h1>
@@ -144,58 +130,29 @@
 		</div>
 		<main class="showWth">
 			<div class="displayDay">	
-				<!-- <h2>{{weather.title}}</h2> -->
-				<!-- <h2>{{ weather }}</h2> -->
-				<h2>{{ weather.city.name }}</h2>
-				<!-- <h2>{{ weather }}</h2> -->
 				<div class="sunInfo">
+					<h2>{{ weather.city.name }}</h2>
 					<div data-ng-repeat="sun in ['sunrise', 'sunset']">
-						<!-- {{ sun }}
-						TEST -->
-						<!-- <h3>SUNRISE</h3> -->
 						<h3>{{ sun.toUpperCase() }}</h3>
 						<div> {{ covertDataTime(weather.city[sun])[0] }} </div>
 						<div> {{ covertDataTime(weather.city[sun])[1] }} </div>
-						<!-- <p> {{ covertDataTime(weather.city[sun])[0] }} </p> -->
-						<!-- <p> {{ covertDataTime(weather.city[sun])[1] }} </p> -->
-						<!-- <p>{{ covertDataTime(weather.city.sunrise)[0] }}</p> -->
-						<!-- <p>{{ covertDataTime(weather.city.sunrise)[1] }}</p> -->
 					</div>
-					<!-- <div>
-						<h3>SUNRISE</h3>
-						<p>{{ covertDataTime(weather.city.sunrise)[0] }}</p>
-						<p>{{ covertDataTime(weather.city.sunrise)[1] }}</p>
-					</div>
-					<div>
-						<h3>SUNSET</h3>
-						<p>{{ covertDataTime(weather.city.sunset) }}</p>
-					</div> -->
 				</div>
 				<div class="list">
 					<div data-ng-repeat="l in weather.list">
 						<div>{{ covertDataTime(l.dt)[0] }}</div>
 						<div>{{ covertDataTime(l.dt)[1] }}</div>
-						<!-- <div>{{ l.dt_txt }}</div> -->
-						<!-- <div>{{ l.main.feels_like }}</div> -->
-						<!-- <div>ICO{{ l.weather[0].icon }}</div> -->
 						<picture>
-							<!-- <img src="http://openweathermap.org/img/w/10d.png"  -->
-							<!-- src="{{http://openweathermap.org/img/w/{{l.weather[0].icon}}.png}}" -->
-								<!-- [src]="'http://openweathermap.org/img/w/' + l.weather[0].icon + '.png'" -->
 							<img alt="Weather Image" style="width:5rem; height:5rem" 
 								src="http://openweathermap.org/img/w/{{l.weather[0].icon}}.png"
 							/>
 						</picture>
 						<div>{{ l.main.temp }}℃</div>
-						<!-- <img src = "{{data.imagePath}}.jpg">  -->
-						<!-- <img [src] = "data.imagePath+'.jpg'"> -->
 					</div>
 				</div>
-				<!-- <div class="disableView">Wybierz miasto.</div> -->
 			</div>
 		</main>
 	</div>
-
 <script>
 const app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
