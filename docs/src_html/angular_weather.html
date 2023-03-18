@@ -14,8 +14,18 @@
 		html, body { height:100vh }
 		body {
 			margin:0;
-			background-image: url("/images/angular_weather_background.jpg");
+			/* background-image: url("/images/angular_weather_background.jpg"); */
+			background-image: url("/docs/images/angular_weather_background.jpg");
 			background-size: cover;
+			display: flex;
+			/* flex-direction: column; */
+		}
+		.wrapper{
+			border:2px dashed red;
+			background-size: cover;
+			display: flex;
+			flex-direction: column;
+			flex:1;
 		}
 		.mainContainer {
 			display: flex;
@@ -25,14 +35,14 @@
 		}
 		.mainContainer > header {
 			text-align: right;
-			padding:1.5rem;
+			padding:1rem 1.5rem;
 		}
 		.mainContainer > header h1,
 		.mainContainer > header p {
 			margin: 0;
 		}
 		.mainContainer .cities .search {
-			padding:.3rem;
+			padding:.3rem .5rem;
 			display:flex;
 			background: var(--light-secondary);
 		}
@@ -49,64 +59,135 @@
 			cursor:pointer;
 			padding:.25rem 1rem;
 		}
+
+		.showWth {
+			flex:1;
+			border:3px dashed blue;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.showWth .displayDay {
+			border:2px dashed green;
+			background: var(--light-primary);
+			/* display:flex; */
+			padding:1rem;
+		}
+		.showWth .displayDay h2,
+		.showWth .displayDay h3 {
+			margin:0;
+			text-align: center;
+		}
+		.showWth .displayDay .sunInfo {
+			border:2px dashed red;
+			display: flex;
+			/* justify-content: space-between; */
+			justify-content: space-around;
+		}
+		.showWth .displayDay .sunInfo > div {
+			border:2px dashed darkgoldenrod;
+			text-align: center;
+			padding:.5rem;
+		}
+		.showWth .displayDay .list {
+			/* list */
+			border:2px dashed yellow;
+			display:flex;
+			max-width:60vw;
+			overflow-x: auto;
+		}
+		.showWth .displayDay .list > div {
+			border:2px dashed blueviolet;
+			/* padding: 1rem; */
+			padding: 1rem;
+			/* text */
+			text-align: center;
+			margin:.25rem;
+			
+		  white-space: nowrap;
+		
+		}
 	</style>
 </head>
 <body data-ng-app="myApp">
-	<div class='mainContainer' data-ng-controller="weather">
-		<nav class="cities">
-			<div class="search">
-				<!-- <input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />  -->
-				<input type="text" data-ng-model="searchCity" placeholder="Szukaj" /> 
-				<button data-ng-click="getCities(searchCity)"> Search </button>     
+<!-- <body data-ng-app="myApp" data-ng-controller="weather"> -->
+	<div class="wrapper" data-ng-controller="weather">
+		<!-- <div class='mainContainer' data-ng-controller="weather"> -->
+		<div class='mainContainer'>
+			<nav class="cities">
+				<div class="search">
+					<!-- <input type="text" data-ng-model="searchCity" data-ng-change="getCities(searchCity)" placeholder="Szukaj" />  -->
+					<input type="text" data-ng-model="searchCity" placeholder="Szukaj" /> 
+					<button data-ng-click="getCities(searchCity)"> Search </button>     
+				</div>
+				<!-- <ul class="searchList">
+					<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
+						{{c.title}}
+					</li>
+				</ul> -->
+				<!-- <h2>{{ city.name }}</h2> -->
+			</nav>
+			<header>
+				<h1>POGODA</h1>
+				<p>Powered by 
+					<a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
+				</p>
+			</header>
+		</div>
+		<main class="showWth">
+			<div class="displayDay">	
+				<!-- <h2>{{weather.title}}</h2> -->
+				<!-- <h2>{{ weather }}</h2> -->
+				<h2>{{ weather.city.name }}</h2>
+				<!-- <h2>{{ weather }}</h2> -->
+				<div class="sunInfo">
+					<div data-ng-repeat="sun in ['sunrise', 'sunset']">
+						<!-- {{ sun }}
+						TEST -->
+						<!-- <h3>SUNRISE</h3> -->
+						<h3>{{ sun.toUpperCase() }}</h3>
+						<div> {{ covertDataTime(weather.city[sun])[0] }} </div>
+						<div> {{ covertDataTime(weather.city[sun])[1] }} </div>
+						<!-- <p> {{ covertDataTime(weather.city[sun])[0] }} </p> -->
+						<!-- <p> {{ covertDataTime(weather.city[sun])[1] }} </p> -->
+						<!-- <p>{{ covertDataTime(weather.city.sunrise)[0] }}</p> -->
+						<!-- <p>{{ covertDataTime(weather.city.sunrise)[1] }}</p> -->
+					</div>
+					<!-- <div>
+						<h3>SUNRISE</h3>
+						<p>{{ covertDataTime(weather.city.sunrise)[0] }}</p>
+						<p>{{ covertDataTime(weather.city.sunrise)[1] }}</p>
+					</div>
+					<div>
+						<h3>SUNSET</h3>
+						<p>{{ covertDataTime(weather.city.sunset) }}</p>
+					</div> -->
+				</div>
+				<div class="list">
+					<div data-ng-repeat="l in weather.list">
+						<div>{{ covertDataTime(l.dt)[0] }}</div>
+						<div>{{ covertDataTime(l.dt)[1] }}</div>
+						<!-- <div>{{ l.dt_txt }}</div> -->
+						<!-- <div>{{ l.main.feels_like }}</div> -->
+						<!-- <div>ICO{{ l.weather[0].icon }}</div> -->
+						<picture>
+							<!-- <img src="http://openweathermap.org/img/w/10d.png"  -->
+							<!-- src="{{http://openweathermap.org/img/w/{{l.weather[0].icon}}.png}}" -->
+								<!-- [src]="'http://openweathermap.org/img/w/' + l.weather[0].icon + '.png'" -->
+							<img alt="Weather Image" style="width:5rem; height:5rem" 
+								src="http://openweathermap.org/img/w/{{l.weather[0].icon}}.png"
+							/>
+						</picture>
+						<div>{{ l.main.temp }}℃</div>
+						<!-- <img src = "{{data.imagePath}}.jpg">  -->
+						<!-- <img [src] = "data.imagePath+'.jpg'"> -->
+					</div>
+				</div>
+				<!-- <div class="disableView">Wybierz miasto.</div> -->
 			</div>
-			<!-- <ul class="searchList">
-				<li data-ng-repeat="c in cities" data-ng-click="getWeather(c.woeid,c.title)">
-					{{c.title}}
-				</li>
-			</ul> -->
-			<!-- <h2>{{ city.name }}</h2> -->
-		</nav>
-		<header>
-			<h1>POGODA</h1>
-			<p>Powered by 
-				<a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
-			</p>
-		</header>
+		</main>
 	</div>
-	<main class="showWth">
-		<div class="displayDay">	
-			<!-- <h2>{{weather.title}}</h2> -->
-			<h2>{{ weather.city.name }}</h2>
-			<div class="sunInfo">
-				<div>
-					<h3>SUNRISE</h3>
-					<p>{{ covertDataTime(weather.city.sunrise) }}</p>
-				</div>
-				<div>
-					<h3>SUNSET</h3>
-					<p>{{ covertDataTime(weather.city.sunset) }}</p>
-				</div>
-			</div>
-			<div class="list">
-				<div data-ng-repeat="l in weather.list">
-					<div>{{ l.dt_txt }}</div>
-					<div>{{ l.main.feels_like }}</div>
-					<div>{{ l.main.temp }}</div>
-					<!-- <div>ICO{{ l.weather[0].icon }}</div> -->
-					<picture>
-						<!-- <img src="http://openweathermap.org/img/w/10d.png"  -->
-						<!-- src="{{http://openweathermap.org/img/w/{{l.weather[0].icon}}.png}}" -->
-							<!-- [src]="'http://openweathermap.org/img/w/' + l.weather[0].icon + '.png'" -->
-						<img 
-							src="http://openweathermap.org/img/w/{{l.weather[0].icon}}.png"
-							alt="Weather Image" style="width:5rem; height:5rem" />
-					</picture>
-					<!-- <img src = "{{data.imagePath}}.jpg">  -->
-					<!-- <img [src] = "data.imagePath+'.jpg'"> -->
-				</div>
-			</div>
-		<div class="disableView">Wybierz miasto.</div>
-	</main>
+
 <script>
 const app = angular.module("myApp", []);
 var sl = document.querySelector(".searchList");
@@ -124,23 +205,23 @@ app.controller('weather', function($scope, $http, $filter){
 
 	}
 	$scope.getWeather = function(id,city){
+		console.log("city")
 		$scope.searchCity = city;
 		// sl.style.display = "none";
 		// dV.style.display = "flex";
 
-		dV.innerHTML = `
-		<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-			width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-			<path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
-				<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/>
-			</path>
-		</svg>`;
+		// dV.innerHTML = `
+		// <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		// 	width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+		// 	<path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+		// 		<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/>
+		// 	</path>
+		// </svg>`;
 
 		// $http.get("https://api.openweathermap.org/data/2.5/forecast?lat=50.2598987&lon=19.0215852&units=metricappid={API key}")
 		// .then(function(response){
 		const response = {
 			data: {
-
 				"cod": "200",
 				"message": 0,
 				"cnt": 40,
@@ -1628,7 +1709,7 @@ app.controller('weather', function($scope, $http, $filter){
 				}
 			}
 		}
-		dV.style.display = "none";
+		// dV.style.display = "none";
 		$scope.weather = response.data;
 		console.log('scope: ', $scope)
 		// let day = response.data.consolidated_weather;
@@ -1657,7 +1738,9 @@ app.controller('weather', function($scope, $http, $filter){
 		var min = a.getMinutes();
 		var sec = a.getSeconds();
 		var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
-		return time;
+		// return time;
+		// return time.split(" ");
+		return [date + ' ' + month + ' ' + year, hour + ':' + min + ':' + sec];
 	}
 
 
