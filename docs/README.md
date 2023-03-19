@@ -18,6 +18,9 @@ Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 
 [Edytory kodu](/code_editors)
 
+
+<iframe src="https://discord.com/widget?id=1084429706746671204&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
 <style>
 /* h1 .anchor span{
   display:flex;
