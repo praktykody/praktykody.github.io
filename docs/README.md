@@ -14,7 +14,7 @@ Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 <!-- 
 [roadmap source](https://codepen.io/NomadRazor/details/RXWeVz) -->
 
-[Discord](https://discord.gg/xuSDukXA)
+[Discord](https://discord.gg/zhfjEUpmp7)
 
 [Edytory kodu](/code_editors)
 
