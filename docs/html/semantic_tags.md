@@ -74,8 +74,8 @@ W tym znaczniku opisujemy zawartość marginalnie powiązaną z głównym conten
 Służy do zamykania strony - miejsce na media społecznościowe, info o autorze, kontakt, linki, projekty. Działa podobnie, ale odwrotnie do headera.
 Może być użyty parę razy na stronie
 Możemy otwierać sekcje headerami, a zamykać footerami
-
+<!-- 
 ## &lt;noscript&gt;
-W tag &lt;noscript> wpisujemy alternatywną treść wyświetlaną w przeglądarkach nieobsługujących skryptów lub w przeglądarkach, w których użytkownik wyłącza obsługę skryptów. W przeciwnym razie przeglądarka ignoruje ten tag i jego zawartość. W HTML5 znacznik &lt;noscript&gt; można umieścić w elementach &lt;head&gt; i &lt;body&gt;.
+W tag &lt;noscript> wpisujemy alternatywną treść wyświetlaną w przeglądarkach nieobsługujących skryptów lub w przeglądarkach, w których użytkownik wyłącza obsługę skryptów. W przeciwnym razie przeglądarka ignoruje ten tag i jego zawartość. W HTML5 znacznik &lt;noscript&gt; można umieścić w elementach &lt;head&gt; i &lt;body&gt;. -->
 
 [Ćwiczenie 1](/ex/html?id=Ćwiczenia-1)
