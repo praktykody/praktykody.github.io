@@ -56,6 +56,7 @@ Język opisowy oparty na znacznikach (tagach) opisujący zawartość strony inte
 
 #### Przykład: 
 ```html
+Rezultat:
 <a href="http://google.com">Kliknij</a>
 ```
 Rezultat:
@@ -68,7 +69,7 @@ Rezultat:
     <span style="color:var(--red);"><</span><span style="color:var(--blue);">a</span>
     <span style="color:var(--green);">href</span><span>=</span><span>"https://google.com"</span><span style="color:var(--red);">></span>
     <span>&nbsp;Kliknij&nbsp;</span>
-    <span style="color:var(--red);">&lt;\</span><span style="color:var(--blue);">a</span><span style="color:var(--red);">></span>
+    <span style="color:var(--red);">&lt;/</span><span style="color:var(--blue);">a</span><span style="color:var(--red);">></span>
   </div>
 </div>
 
