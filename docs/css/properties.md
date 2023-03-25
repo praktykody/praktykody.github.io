@@ -24,7 +24,7 @@ element.style {
 }
 
 .element{
-	display:block|inline|inline-block|table|table-cell|none;
+	display:block|inline|inline-block|none;
 }
 ```
 
