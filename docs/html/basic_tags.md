@@ -14,33 +14,48 @@ Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konk
 
 ```html
 <table border="1">
-	<tr>
-		<td colspan="2">Komórka1</td>
-	</tr>
-	<tr>
-		<td>Komórka2</td>
-		<td>Komórka3</td>
-	</tr>
-	<tr>
-		<td colspan="2">Komórka 4</td>
-	</tr>
+  <thead>
+    <tr>
+      <th>Nagłówek1</th>
+      <th>Nagłówek2</th>
+  	</tr>
+  <thead>
+  <tbody>
+    <tr>
+      <td>Komórka1</td>
+      <td>Komórka2</td>
+    </tr>
+    <tr>
+      <td>Komórka3</td>
+      <td>Komórka4</td>
+    </tr>
+  </tbody>
 </table>
 ```
   </div>
   <div>
 
   <table border="1" style="width:100%">
-    <tr>
-      <td colspan="2">Komórka1</td>
-    </tr>
-    <tr>
-      <td>Komórka2</td>
-      <td>Komórka3</td>
-    </tr>
-    <tr>
-      <td colspan="2">Komórka 4</td>
-    </tr>
+    <thead>
+      <tr>
+        <th>Nagłówek1</th>
+        <th>Nagłówek2</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td>Komórka1</td>
+        <td>Komórka2</td>
+      </tr>
+      <tr>
+        <td>Komórka3</td>
+        <td>Komórka4</td>
+      </tr>
+    </tbody>
   </table>
+
+
+
   </div>
 </div>
 
@@ -53,37 +68,26 @@ Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konk
   <div>
 
   ```html
+  <ul>
+    <li> Lista nienumerowana 1 </li>
+    <li> Lista nienumerowana 2 </li>			
+  </ul>
+
   <ol>
-    <li>Lista numerowana 1
-      <ul>
-        <li>Lista nienumerowana 1.1</li>
-        <li>Lista nienumerowana 1.2</li>			
-      </ul>
-    </li>
-    <li>Lista numerowana 2
-      <ul>
-        <li>Lista nienumerowana 2.1</li>
-        <li>Lista nienumerowana 2.2</li>
-      </ul>
-    </li>
+    <li> Lista numerowana 1 </li>
+    <li> Lista numerowana 2 </li>
   </ol>
   ```
   </div>
   <div>
-    <ol>
-      <li>Lista numerowana 1
-        <ul>
-          <li>Lista nienumerowana 1.1</li>
-          <li>Lista nienumerowana 1.2</li>			
-        </ul>
-      </li>
-      <li>Lista numerowana 2
-        <ul>
-          <li>Lista nienumerowana 2.1</li>
-          <li>Lista nienumerowana 2.2</li>
-        </ul>
-      </li>
-    </ol>
+  <ul>
+    <li>Lista nienumerowana 1</li>
+    <li>Lista nienumerowana 2</li>			
+  </ul>
+  <ol>
+    <li>Lista numerowana 1 </li>
+    <li>Lista numerowana 2 </li>
+  </ol>
   </div>
 </div>
 
@@ -93,7 +97,7 @@ Img jest “wyjątkowym” znacznikiem pojedynczym. Wynika to z faktu, że wstaw
 ```html
   <img src=”scieżka_do_pliku.format” alt=”Tekst alternatywny” width=”200”  />
 ```
-
+<!-- 
 ## &lt;form&gt;
 Znacznik form pozwala na stworzenie formularza.
 Formularzy używamy do pozyskania informacji od użytkownika. 
@@ -115,7 +119,7 @@ Wewnątrz formularzy używamy znaczników input z odpowiednimi parametrami (w za
       <input type ="submit" />
     </form>
   </div>
-</div>
+</div> -->
 
 ## Komentarze
 Komentarzy w programowaniu używamy aby opisać konkretny fragment kodu. Pomaga to w: 
