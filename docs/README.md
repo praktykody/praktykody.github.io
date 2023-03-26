@@ -25,7 +25,7 @@ Wtaj w projekcie Tworzenia Aplikacji Internetowych 😎
 <!-- FONTS AND ICONS -->
 <!-- https://fonts.google.com/icons?preview.text=Antek%20Pietryga&preview.text_type=custom&query=poppins&selected=Material+Symbols+Outlined:call:FILL@0;wght@400;GRAD@0;opsz@48&icon.query=facebook -->
 <!-- https://caniuse.com/ -->
-
+<!-- https://emojipedia.org/ -->
 
 
 <iframe src="https://discord.com/widget?id=1084429706746671204&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
