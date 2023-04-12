@@ -22,7 +22,7 @@ możesz pobrać te aktualizacje.
 4. Stwórz plik *readme.md* i wpisz do niego treść
 5. Otwórz terminal w VSC ( CTRL + ` )
 6. Skonfiguruj swoje konto git:
-```git
+```bash
 git config --global user.name [TWÓJ_USERNAME]
 git config --global user.email [TWÓJ_EMAIL]
 ```
@@ -36,4 +36,8 @@ git config --global user.email [TWÓJ_EMAIL]
 - Rozwiązanie: 
     - usuń poprzedniego użytkownika z menadżera poświadczeń ( win + R -> "control" -> Konta użytkowników -> Zarządzaj poświadczeniami systemu Windows) - tam znajdź poświadczenia "git" lub "github" i usuń je 
 
-    
+### Nie działa git pull | push 
+- Możliwa przyczyna: 
+    - ktoś wcześniej zalogował się na VSC
+- Rozwiązanie 
+    - wyloguj się w lewym pasku (activity bar) na ikonce chłopka (Accounts) -> czyiś username -> Sign Out
