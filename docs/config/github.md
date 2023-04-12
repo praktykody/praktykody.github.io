@@ -27,3 +27,13 @@ git config --global user.name [TWÓJ_USERNAME]
 git config --global user.email [TWÓJ_EMAIL]
 ```
 7. Kliknij na kontrolę źródła (3 ikonka na lewej belce), "publish to github" -> public repository -> OK, a następnie autoryzuj się.
+
+## :warning: **Najczęściej występujące problemy** i ich rozwiązania
+
+### Nie można połączyć się z repozytorium 
+- Możliwa przyczyna: 
+    - ktoś wcześniej autoryzował się na tym komputerze
+- Rozwiązanie: 
+    - usuń poprzedniego użytkownika z menadżera poświadczeń ( win + R -> "control" -> Konta użytkowników -> Zarządzaj poświadczeniami systemu Windows) - tam znajdź poświadczenia "git" lub "github" i usuń je 
+
+    
