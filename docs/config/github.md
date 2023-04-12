@@ -12,7 +12,7 @@ Kiedy tworzysz gałąź poza “master”, robisz jej kopię lub migawkę, jaka 
 momencie. Jeśli ktoś wprowadził zmiany w “master” podczas pracy nad gałęzią, 
 możesz pobrać te aktualizacje.
 
-## Połącz VSC z GIT i GitHub
+## Połącz VSC z GIT i GitHub przez tworzenie repozytorium
 <!-- 1. Upewnij się, że VSC nie był włączony przed GITem ( profilaktycznie możesz zrestartować VSC) -->
 1. Wyłącz VSC
 2. Swórz folder USERNAME.github.io
@@ -28,7 +28,27 @@ git config --global user.email [TWÓJ_EMAIL]
 ```
 7. Kliknij na kontrolę źródła (3 ikonka na lewej belce), "publish to github" -> public repository -> OK, a następnie autoryzuj się.
 
-## :warning: **Najczęściej występujące problemy** i ich rozwiązania
+## Połącz VSC z GIT i GitHub przez pobieranie repozytorium
+1. Znajdź interesujące Cię repozytorium
+2. Zaakceptuj do niego zaproszenie (lub forkuj)
+3. Sprawdź credentiale w VSC i w menadżerze poświadczeń
+4. Skonfiguruj swoje konto git:
+```bash
+git config --global user.name [TWÓJ_USERNAME]
+git config --global user.email [TWÓJ_EMAIL]
+```
+5. Otwórz terminal w VSC ( CTRL + ` ), wybierz lokalizację i pobierz repozytorium.
+```bash
+cd /desktop
+git clone adres_url_repozytorium
+# następnie otwórz sklonowany folder za pomocą VSC: 
+code nazwa_repozytorium
+```
+
+
+
+
+## Najczęściej występujące problemy i ich rozwiązania
 
 ### Nie można połączyć się z repozytorium 
 - Możliwa przyczyna: 
