@@ -1,8 +1,5 @@
 # Funkcje JS
-Funkcje to bloki kodu, które mogą być wykonywane w wielokrotnie różnych miejscach kodu. Pozwala to m.in na 
-
-Aby funkcja działała poprawnie, musimy ją zadeklarować (stworzyć blok kodu), a następnie możemy ją wywołać (wykonać kod znajdujący się w bloku) gdziekolwiek w kodzie. 
-
+Funkcje to bloki kodu, które mogą być wykonywane w wielokrotnie różnych miejscach kodu.
 ## Deklaracja funkcji
 <div class="exampleTagsContainer">
   <div class="exampleTag">
