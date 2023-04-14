@@ -1,7 +1,6 @@
 # Tagi Semantyczne
 ## Definicja semantyki
 - dział językoznawstwa, którego przedmiotem jest analiza znaczeń wyrazów
-- dział semiotyki zajmujący się badaniem związków, jakie zachodzą między wyrażeniami języka a przedmiotami, do których się one odnoszą
 
 źródło: [https://sjp.pwn.pl/slowniki/semantyczny.html](sjp.pwn.pl)
 
