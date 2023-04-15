@@ -77,7 +77,7 @@ Arkusz stylów CSS to lista dyrektyw ustalających w jaki sposób ma zostać wy�
 ### Klasy
 Selektor klasy wyszukuje każdy element z atrybutem class w dokumencie HTML. Atrybut class jest zdefiniowany jako lista przedmiotów oddzielonych ze sobą spacją, jeden z nich musi zgadzać się z daną klasą w selektorze (CSS)
 ```html
-<div class=”gif_container” ></div>
+<div class="gif_container" ></div>
 ```
 ```css
 .gif_containter{
@@ -90,7 +90,7 @@ Selektor klasy wyszukuje każdy element z atrybutem class w dokumencie HTML. Atr
 możemy użyć kilku klas na jeden tag:
 
 ```html
-<div class=”gif_container darkcolor” ></div>
+<div class="gif_container darkcolor" ></div>
 ```
 ```css
 .darkcolor{
@@ -106,7 +106,7 @@ Czym się różnią od klas?
 - Możesz użyć jednego identyfikatora na stronę
 
 ```html
-<div id=”contact”></div>
+<div id="contact"></div>
 ```
 ```css
 #contact{
