@@ -1,4 +1,6 @@
 # Tagi podstawowe
+
+[lista wszystkich tagów html](https://www.w3schools.com/tags/default.asp)
 ## &lt;div&gt;
 Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konkretne bloki.
 ```html
