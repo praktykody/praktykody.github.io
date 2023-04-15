@@ -106,7 +106,7 @@ Akapit zawsze zaczyna się od nowego wiersza, a przeglądarki automatycznie doda
 Img jest “wyjątkowym” znacznikiem pojedynczym. Wynika to z faktu, że wstawiając zdjęcie nie jesteśmy w stanie określić jego początku i końca, zamiast tego możemy określić jego wysokość i szerokość
 
 ```html
-  <img src=”scieżka_do_pliku.format” alt=”Tekst alternatywny” width=”200”  />
+  <img src="scieżka_do_pliku.format" alt="Tekst alternatywny" width="200"  />
 ```
 <!-- 
 ## &lt;form&gt;
