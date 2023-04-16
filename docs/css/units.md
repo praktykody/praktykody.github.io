@@ -64,6 +64,9 @@
 </div>
 
 ### Rzuty 
+<div class="standardWrapper">
+<div>
+
 - viewport width
 - viewport height
 ```css
@@ -73,7 +76,12 @@
     height:49vh;
 }
 ```
+</div>
+<div>
+
 ![Viewports](../images/css_viewports.webp)
+</div>
+</div>
 
 ### Wielkości czcionek - REM
 ```html
