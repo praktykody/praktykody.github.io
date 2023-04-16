@@ -42,6 +42,9 @@
 
 
 ### Procenty
+<div class="standardWrapper">
+<div>
+
 ```css
 #rodzic{
 	width:200px;
@@ -53,8 +56,12 @@
 	height:150%;	
 }
 ```
+</div>
+<div>
 
 ![Percents example](../images/css_units_percent.webp)
+</div>
+</div>
 
 ### Rzuty 
 - viewport width
