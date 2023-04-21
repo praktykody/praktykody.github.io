@@ -22,24 +22,22 @@ let env;
 send = async () => {
   const url = "https://api.openai.com/v1/chat/completions"
   const config = {
-    method: "POST",
+    // method: "POST",
     headers: {
       "Content-Type": "application/json",
       "Authorization": `Bearer ${ env.OPENAI_API_KEY }`
     }
   }
-  // const body = JSON.stringify({
   const data = {
-    "model": "gpt-3.5-turbo",
+    // "model": "gpt-3.5-turbo",
+    "model": "davinci",
     "messages": [{"role": "user", "content": "Hello!"}]
-  // })
   }
 
   const ai = await axios.post(url, data, config)
   console.log({ ai })
 
 }
-
 </script>
 </body>
 </html>
