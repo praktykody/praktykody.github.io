@@ -14,9 +14,15 @@
 
 
 <script>
+let env;
+( async ()=> {
+  env = await fetch("/env.json").then(dt=>dt.json())
+  console.log({ env })
+})()
 
-  
+
+
+
 </script>
-
 </body>
 </html>
