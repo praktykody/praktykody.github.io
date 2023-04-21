@@ -42,6 +42,9 @@
 
 
 ### Procenty
+<div class="standardWrapper">
+<div>
+
 ```css
 #rodzic{
 	width:200px;
@@ -53,10 +56,17 @@
 	height:150%;	
 }
 ```
+</div>
+<div>
 
 ![Percents example](../images/css_units_percent.webp)
+</div>
+</div>
 
 ### Rzuty 
+<div class="standardWrapper">
+<div>
+
 - viewport width
 - viewport height
 ```css
@@ -66,7 +76,12 @@
     height:49vh;
 }
 ```
+</div>
+<div>
+
 ![Viewports](../images/css_viewports.webp)
+</div>
+</div>
 
 ### Wielkości czcionek - REM
 ```html

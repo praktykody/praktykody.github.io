@@ -11,6 +11,8 @@ Div to skrót od divide czyli dzielić. Chodzi o podział obszaru strony na konk
 ```
 
 ## &lt;p&gt;
+<div class="standardWrapper">
+<div>
 P to akronim od "paragraph" - akapit
 
 Akapit zawsze zaczyna się od nowego wiersza, a przeglądarki automatycznie dodają odstęp (margines) przed i po akapicie.
@@ -18,6 +20,12 @@ Akapit zawsze zaczyna się od nowego wiersza, a przeglądarki automatycznie doda
 <p>This is a paragraph.</p>
 <p>This is another paragraph.</p>
 ```
+</div>
+<div>
+  <p>This is a paragraph.</p>
+  <p>This is another paragraph.</p>
+</div>
+</div>
 
 ## &lt;table&gt;
 <div class="standardWrapper">
