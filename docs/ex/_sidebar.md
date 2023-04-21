@@ -12,5 +12,6 @@
   - [🌽&nbsp;Labirynt](ex/maze.md)
   - [🏃‍♂️&nbsp;Jumping Game](ex/jumping_game.md)
   - [☁️&nbsp;Pogodynka](ex/weather.md)
+  - [🤖&nbsp;AI Chatbot](ex/chat_ai.md)
 
 - <a href="#/tools/regex" style="font-weight: 700;font-size:17px;"> Narzędzia </a>

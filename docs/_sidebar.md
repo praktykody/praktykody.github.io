@@ -39,6 +39,7 @@
   - [🌽&nbsp;Labirynt](ex/maze.md)
   - [🏃‍♂️&nbsp;Jumping Game](ex/jumping_game.md)
   - [☁️&nbsp;Pogodynka](ex/weather.md)
+  - [🤖&nbsp;AI Chatbot](ex/chat_ai.md)
 
 - Narzędzia
 
