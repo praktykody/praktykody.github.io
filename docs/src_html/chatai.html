@@ -6,19 +6,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatAI</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.3.6/axios.min.js" integrity="sha512-06NZg89vaTNvnFgFTqi/dJKFadQ6FIglD6Yg1HHWAUtVFFoXli9BZL4q4EO1UTKpOfCfW5ws2Z6gw49Swsilsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    *{box-sizing: border-box;}
+    body{
+      margin:0;
+      padding:0;
+      background-color:#f1f1f1;
+      height:100vh;
+    }
+    .wrapper{
+      width:100%;
+      height:100%;
+      display:flex;
+      flex-direction: column;
+    }
+    .chatBox{
+      flex:1;
+      overflow-y: scroll;
+      display:flex;
+      flex-direction: column;
+    }
+    .chatBox > div {
+      padding:.75rem 1rem;
+      border-radius:1.5rem;
+      margin:.25rem;
+    }
+    .chatBox .bot{
+      background: #ddd;
+      align-self: flex-start;
+    }
+    .chatBox .user{
+      align-self: flex-end;
+      background: rgb(154, 182, 226);
+    }
+    .message{
+      display:flex;
+    }
+    .message input { 
+      width:100%;
+    }
+    .message button { 
+      padding:.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
   <div class="wrapper">
     <div class="chatBox">
-      <div class="bot">Hello, whats up?</div>
+      <div class="chatBox">
+        <div class="bot">Hello, whats up?</div>
+        <div class="user">hello</div>\
+        <div class="bot">Hi, my friend! Do you want me to tell you a joke?</div>
+        <div class="user">yes, please</div>
+        <div class="bot">Innkeeper: "The room is $15 a night. It's $5 if you make your own bed." Guest: "I'll make my own bed." Innkeeper: "Good. I'll get you some nails and wood." enJoke </div>
+      </div>
     </div>
     <div class="message">
       <input type="text" id="message">
       <button onclick="send()">SEND</button>
     </div>
   </div>
-
 
 <script>
 let env;
@@ -30,7 +79,6 @@ send = async () => {
   chatBox.innerHTML += `<div class="user">${ message }</div>`
   document.getElementById("message").value = ""
 
-  return
   const { chatbot } = await axios.request({
     method: 'GET',
     url: 'https://ai-chatbot.p.rapidapi.com/chat/free',
@@ -42,7 +90,6 @@ send = async () => {
   }).then(d => d.data)
   chatBox.innerHTML += `<div class="bot">${ chatbot.response }</div>`
 }
-
 
 window.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') send()
