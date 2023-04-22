@@ -9,72 +9,45 @@
 </head>
 <body>
 
-  <div class="chatBox">
-
-  </div>
-  <div class="message">
-    <input type="text" id="message">
-    <button onclick="send()">SEND</button>
+  <div class="wrapper">
+    <div class="chatBox">
+      <div class="bot">Hello, whats up?</div>
+    </div>
+    <div class="message">
+      <input type="text" id="message">
+      <button onclick="send()">SEND</button>
+    </div>
   </div>
 
 
 <script>
 let env;
-( async ()=> {
-  // env = await fetch("/env.json").then(dt=>dt.json())
-  env = await axios.get("/env.json").then(dt=>dt.data)
-  console.log({ env })
-})()
+( async ()=> { env = await axios.get("/env.json").then(dt=>dt.data) })()
 
 send = async () => {
-  // const url = "https://api.openai.com/v1/chat/completions"
-  // const config = {
-  //   // method: "POST",
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //     "Authorization": `Bearer ${ env.OPENAI_API_KEY }`
-  //   }
-  // }
-  // const data = {
-  //   // "model": "gpt-3.5-turbo",
-  //   "model": "davinci",
-  //   "messages": [{"role": "user", "content": "Hello!"}]
-  // }
+  const message = document.getElementById("message").value
+  const chatBox = document.querySelector(".chatBox")
+  chatBox.innerHTML += `<div class="user">${ message }</div>`
+  document.getElementById("message").value = ""
 
-  // const ai = await axios.post(url, data, config)
-  // console.log({ ai })
-
-
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://ai-chatbot.p.rapidapi.com/chat/free',
-//   params: {message: 'What\'s your name?', uid: 'user1'},
-//   headers: {
-//     'X-RapidAPI-Key': env.RAPID_API_KEY,
-//     'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
-//   }
-// }
-
-const message = document.getElementById("message").value
-const chatBox = document.querySelector(".chatBox")
-chatBox.innerHTML += `<div class="user">${ message }</div>`
-
-const { chatbot } = await axios.request({
-  method: 'GET',
-  url: 'https://ai-chatbot.p.rapidapi.com/chat/free',
-  // params: {message: 'What\'s your name?', uid: 'user1'},
-  params: { message, uid: 'user1' },
-  headers: {
-    'X-RapidAPI-Key': env.RAPID_API_KEY,
-    'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
-  }
-}).then(d => d.data)
-// const ai = await axios.request(options).then(d => d.data)
-// const ai = await axios.get(options).then(d => d.data)
-chatBox.innerHTML += `<div class="bot">${ chatbot.response }</div>`
-// console.log({ ai })
+  return
+  const { chatbot } = await axios.request({
+    method: 'GET',
+    url: 'https://ai-chatbot.p.rapidapi.com/chat/free',
+    params: { message, uid: 'user1' },
+    headers: {
+      'X-RapidAPI-Key': env.RAPID_API_KEY,
+      'X-RapidAPI-Host': 'ai-chatbot.p.rapidapi.com'
+    }
+  }).then(d => d.data)
+  chatBox.innerHTML += `<div class="bot">${ chatbot.response }</div>`
 }
+
+
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') send()
+}, false)
+
 </script>
 </body>
 </html>
