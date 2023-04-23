@@ -55,13 +55,11 @@
 
   <div class="wrapper">
     <div class="chatBox">
-      <div class="chatBox">
-        <div class="bot">Hello, whats up?</div>
-        <div class="user">hello</div>\
-        <div class="bot">Hi, my friend! Do you want me to tell you a joke?</div>
-        <div class="user">yes, please</div>
-        <div class="bot">Innkeeper: "The room is $15 a night. It's $5 if you make your own bed." Guest: "I'll make my own bed." Innkeeper: "Good. I'll get you some nails and wood." enJoke </div>
-      </div>
+      <div class="bot">Hello, whats up?</div>
+      <div class="user">hello</div>\
+      <div class="bot">Hi, my friend! Do you want me to tell you a joke?</div>
+      <div class="user">yes, please</div>
+      <div class="bot">Innkeeper: "The room is $15 a night. It's $5 if you make your own bed." Guest: "I'll make my own bed." Innkeeper: "Good. I'll get you some nails and wood." </div>
     </div>
     <div class="message">
       <input type="text" id="message">
@@ -70,14 +68,31 @@
   </div>
 
 <script>
-let env;
-( async ()=> { env = await axios.get("/env.json").then(dt=>dt.data) })()
+let env = {};
+( async ()=> { 
+  try {
+    env = await axios.get("/env.json").then(dt=>dt.data) 
+  } catch ( err ) {
+    console.log({ err })
+    env.phantom = true
+  }
+
+  
+})()
+
+
 
 send = async () => {
   const message = document.getElementById("message").value
   const chatBox = document.querySelector(".chatBox")
   chatBox.innerHTML += `<div class="user">${ message }</div>`
   document.getElementById("message").value = ""
+  if(env.phantom){
+    setTimeout(()=>{
+      chatBox.innerHTML += `<div class="bot">To jest wersja demonstracyjna chatBota. Jeśli chcesz z nim porozmawiać, zbuduj go z kluczem z RapidAPI</div>`
+    },500)
+    return null
+  }
 
   const { chatbot } = await axios.request({
     method: 'GET',
